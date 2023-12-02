@@ -10,17 +10,18 @@
   <body class="page__body">
 
     <header class="header">
-      <div class="header__logo logo" role="img">
-        <a class="logo__link" href="index.html">
-          <picture class="logo__icon">
+      <a class="header__logo" href="index.html">
+        <!-- обернуто в див, т.к. на ссылку я не могу повесить role="img", а мне хочется оставить лого из двух отдельных картинок-->
+        <div class="header__logo-container" role="img">
+          <picture class="header__logo-icon">
             <source srcset="#" type="#/#" media="(min-width: 320px)">
             <source srcset="#" type="#/#" media="(min-width: 768px)">
             <source srcset="#" type="#/#" media="(min-width: 1440px)">
             <img src="#" alt="Веселый кот-супергерой" width="33" height="38">
           </picture>
-          <img class="logo__text" src="#" alt="Cat Energy" width="101" height="18">
-        </a>
-      </div>
+          <img class="header__logo-name" src="#" alt="Cat Energy" width="101" height="18">
+        </div>
+      </a>
 
       <button class="header__menu-toggle header__menu-toggle--is-closed" type="button" aria-expanded="false" aria-controls="menu">
         <span class="visually-hidden">Открыть меню</span>
@@ -121,7 +122,7 @@
 
     <footer class="footer">
       <div class="container">
-        <section class="partnership">
+        <section class="footer__partnership partnership">
           <h2 class="partnership__title">Приглашаем к сотрудничеству дилеров!</h2>
           <address class="partnership__adress">
             <p class="partnership__street"><span aria-hidden="true">ул.</span><span class="visually-hidden">улица</span> Большая Конюшенная, <span aria-hidden="true">д.</span><span class="visually-hidden">дом</span> 19/8</p>
@@ -131,39 +132,39 @@
             <source srcset="#" type="#/#" media="(min-width: 320px)">
             <source srcset="#" type="#/#" media="(min-width: 768px)">
             <source srcset="#" type="#/#" media="(min-width: 1440px)">
-            <img src="#" alt="Расположение нашего офиса на карте" width="320" height="362">
+            <img class="partnership__map-img" src="#" alt="Расположение нашего офиса на карте" width="320" height="362">
           </picture>
         </section>
 
-        <div class="logo">
-          <img class="logo__text" src="#" alt="Cat Energy" width="128" height="24">
-        </div>
+        <a class="footer__logo" href="index.html">
+          <img class="footer__logo-icon" src="#" alt="Cat Energy" width="101" height="18">
+        </a>
 
-        <section class="socials">
+        <section class="footer__socials socials">
           <h2 class="visually-hidden">Мы в соцсетях</h2>
           <ul class="socials__list">
             <li class="socials__item">
-              <a class="socials__link" href="https://vk.com/">
+              <a class="socials__link" href="#">
                 <img class="socials__icon" src="#" alt="Вконтакте" width="28" height="22">
               </a>
             </li>
             <li class="socials__item">
-              <a class="socials__link" href="https://www.youtube.com/">
+              <a class="socials__link" href="#">
                 <img class="socials__icon" src="#" alt="YouTube" width="28" height="22">
               </a>
             </li>
             <li class="socials__item">
-              <a class="socials__link" href="https://t.me/">
+              <a class="socials__link" href="#">
                 <img class="socials__icon" src="#" alt="Telegram" width="28" height="22">
               </a>
             </li>
           </ul>
         </section>
 
-        <div class="copyright">
-          <a class="copyright__link" href="https://htmlacademy.ru">
-            <p class="copyright__text">HTML Academy</p>
-            <img class="copyright__logo" src="#" alt="Логотип HTML Academy" width="27" height="34">
+        <div class="footer__copyright">
+          <a class="footer__copyright-link" href="https://htmlacademy.ru">
+            <span class="footer__copyright-text">HTML Academy</span>
+            <img class="footer__copyright-logo" src="#" alt="Логотип HTML Academy" width="27" height="34">
           </a>
         </div>
       </div>
