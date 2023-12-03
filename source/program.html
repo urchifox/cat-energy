@@ -91,28 +91,28 @@
           </label>
         </fieldset>
 
-        <fieldset class="form__section">
-          <legend class="form__title subtitle">Комментарий</legend>
-          <textarea class="form__input" name="comment" placeholder="Расскажите обо всех повадках кота"></textarea>
-        </fieldset>
+        <div class="form__section">
+          <label class="form__title subtitle"for="comment">Комментарийgit </label>
+          <textarea class="form__input" id="comment" name="comment" placeholder="Расскажите обо всех повадках кота"></textarea>
+        </div>
 
         <fieldset class="form__section">
           <legend class="form__title subtitle">Дополнительно</legend>
           <label class="form__label">
             Сахарозаменитель
-            <input class="visually-hidden" name="sweetener" type="checkbox" checked>
+            <input class="visually-hidden" name="additions" value="sweetener" type="checkbox" checked>
           </label>
           <label class="form__label">
             Питьевая вода
-            <input class="visually-hidden" name="water" type="checkbox">
+            <input class="visually-hidden" name="additions" value="water" type="checkbox">
           </label>
           <label class="form__label">
             Молоко
-            <input class="visually-hidden" name="milk" type="checkbox">
+            <input class="visually-hidden" name="additions" value="milk" type="checkbox">
           </label>
           <label class="form__label">
             Витамины
-            <input class="visually-hidden" name="vitamins" type="checkbox">
+            <input class="visually-hidden" name="additions" value="vitamins" type="checkbox">
           </label>
         </fieldset>
 
