@@ -13,11 +13,11 @@
       <a class="header__logo" href="index.html">
         <!-- обернуто в див, т.к. на ссылку я не могу повесить role="img", а мне хочется оставить лого из двух отдельных картинок-->
         <div class="header__logo-container" role="img">
-          <picture class="header__logo-icon">
+          <picture>
             <source srcset="#" type="#/#" media="(min-width: 320px)">
             <source srcset="#" type="#/#" media="(min-width: 768px)">
             <source srcset="#" type="#/#" media="(min-width: 1440px)">
-            <img src="#" alt="Веселый кот-супергерой" width="33" height="38">
+            <img class="header__logo-icon" src="#" alt="Веселый кот-супергерой" width="33" height="38">
           </picture>
           <img class="header__logo-name" src="#" alt="Cat Energy" width="101" height="18">
         </div>
@@ -46,7 +46,7 @@
         <h1 class="hero__title title">Функциональное питание для котов</h1>
         <p class="hero__tagline tagline">Занялся собой? Займись котом!</p>
         <a class="hero__link button button--minor" href="program.html">Подобрать программу</a>
-        <picture class="hero__pictures">
+        <picture>
           <source srcset="#" type="#/#" media="(min-width: 320px)">
           <source srcset="#" type="#/#" media="(min-width: 768px)">
           <source srcset="#" type="#/#" media="(min-width: 1440px)">
@@ -116,15 +116,15 @@
           </div>
 
           <div class="example__slider slider">
-            <picture class="slider__picture slider__picture--before">
+            <picture>
               <source srcset="#" type="#/#" media="(min-width: 320px)">
               <source srcset="#" type="#/#" media="(min-width: 768px)">
-              <img src="#" alt="Толстый кот Борис до перехода на Cat Energy" width="280" height="256">
+              <img class="slider__picture slider__picture--before" src="#" alt="Толстый кот Борис до перехода на Cat Energy" width="280" height="256">
             </picture>
-            <picture class="slider__picture slider__picture--after">
+            <picture>
               <source srcset="#" type="#/#" media="(min-width: 320px)">
               <source srcset="#" type="#/#" media="(min-width: 768px)">
-              <img src="#" alt="Стройный кот Борис после питания Cat Energy" width="280" height="256">
+              <img class="slider__picture slider__picture--after" src="#" alt="Стройный кот Борис после питания Cat Energy" width="280" height="256">
             </picture>
             <button class="slider__control" type="button">
               <span class="visually-hidden">Сравнить состояние до и после</span>
@@ -142,11 +142,11 @@
             <p class="partnership__street"><span aria-hidden="true">ул.</span><span class="visually-hidden">улица</span> Большая Конюшенная, <span aria-hidden="true">д.</span><span class="visually-hidden">дом</span> 19/8</p>
             <p class="partnership__city">Санкт-Петербург</p>
           </address>
-          <picture class="partnership__map">
+          <picture>
             <source srcset="#" type="#/#" media="(min-width: 320px)">
             <source srcset="#" type="#/#" media="(min-width: 768px)">
             <source srcset="#" type="#/#" media="(min-width: 1440px)">
-            <img class="partnership__map-img" src="#" alt="Расположение нашего офиса на карте" width="320" height="362">
+            <img class="partnership__map" src="#" alt="Расположение нашего офиса на карте" width="320" height="362">
           </picture>
         </section>
 
