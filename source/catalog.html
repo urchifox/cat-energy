@@ -48,44 +48,52 @@
         <div class="container">
           <h2 class="visually-hidden">Основная продукция</h2>
           <ul class="catalog__list">
-            <li class="catalog__item card">
-              <h3 class="card__name"><span aria-hidden="true">г</span><span class="visually-hidden">грамм</span></h3>
-              <dl class="card__features">
-                <div class="card__feature-item">
-                  <!-- правильно ли поняла, что число это dt, а название характеристики dd ? -->
-                  <dt class="card__feature-number">
-                    <span aria-hidden="true">г</span>
+            <li class="catalog__item">
+              <article class="card">
+                <h3 class="card__name">
+                  <a class="card__link" href="#">
+                    Название<span aria-hidden="true">г</span>
                     <span class="visually-hidden">грамм</span>
-                  </dt>
-                  <dd class="card__feature-description">Масса</dd>
-                </div>
-                <div class="card__feature-item">
-                  <dt class="card__feature-number"></dt>
-                  <dd class="card__feature-description">Вкус</dd>
-                </div>
-                <div class="card__feature-item">
-                  <dt class="card__feature-number">
-                    <span class="ruble"></span>
-                    <span class="visually-hidden">рублей</span>
-                  </dt>
-                  <dd class="card__feature-description">Цена</dd>
-                </div>
-              </dl>
-              <picture>
-                <source srcset="#" width="0" height="0" type="image/#" media="(min-width: 1440px)">
-                <source srcset="#" width="0" height="0" type="image/#" media="(min-width: 768px)">
-                <source srcset="#" width="0" height="0" type="image/#" media="(min-width: 320px)">
-                <img class="card__cover" src="#" alt="" width="0" height="0">
-              </picture>
-              <button class="card__button button" type="button">Заказать</button>
+                  </a>
+                </h3>
+                <dl class="card__features">
+                  <div class="card__feature-item">
+                    <dt class="card__feature-key">Масса</dt>
+                    <dd class="card__feature-value">число <span aria-hidden="true">г</span>
+                      <span class="visually-hidden">грамм</span>
+                    </dd>
+                  </div>
+                  <div class="card__feature-item">
+                    <dt class="card__feature-key">Вкус</dt>
+                    <dd class="card__feature-value"></dd>
+                  </div>
+                  <div class="card__feature-item">
+                    <dt class="card__feature-key">Цена</dt>
+                    <dd class="card__feature-value">
+                      <span class="ruble">число</span>
+                      <span class="visually-hidden">рублей</span>
+                    </dd>
+                  </div>
+                </dl>
+                <a class="card__link" href="#">
+                  <picture>
+                    <source srcset="#" width="0" height="0" type="image/#" media="(min-width: 1440px)">
+                    <source srcset="#" width="0" height="0" type="image/#" media="(min-width: 768px)">
+                    <source srcset="#" width="0" height="0" type="image/#" media="(min-width: 320px)">
+                    <img class="card__cover" src="#" alt="Название" width="0" height="0">
+                  </picture>
+                </a>
+                <a class="card__button button" href="#">Заказать</a>
+              </article>
+            </li>
+            <li class="catalog__item">
+              <article class="card card--is-empty">
+                <h3 class="card__name">Показать еще 100500 товаров</h3>
+                <p class="card__text">На самом деле вкусов гораздо больше!</p>
+                <a class="card__button button button--secondary" href="#">Показать все</a>
+              </article>
             </li>
           </ul>
-
-          <div class="catalog__more">
-            <h3 class="catalog__name">Показать еще 100500 товаров</h3>
-            <p class="catalog__text">На самом деле вкусов гораздо больше!</p>
-            <a class="catalog__button button button--secondary" href="404.html">Показать все</a>
-          </div>
         </div>
       </section>
 
@@ -94,13 +102,23 @@
           <h2 class="additions__title subtitle">Дополнительные товары</h2>
           <ul class="additions__list">
             <li class="additions__item">
-              <h3 class="additions__name">Товар</h3>
-              <p class="additions__description"></p>
-              <p class="additions__price">
-                <span class="ruble"></span>
-                <span class="visually-hidden">рублей</span>
-              </p>
-              <button class="additions__button button" type="button">Заказать</button>
+              <article class="card card--addition">
+                <h3 class="card__name">Товар</h3>
+                <dl class="card__features">
+                  <div class="card__feature-item">
+                    <dt class="visually-hidden">Объем</dt>
+                    <dd class="card__feature-value"></dd>
+                  </div>
+                  <div class="card__feature-item">
+                    <dt class="visually-hidden">Цена</dt>
+                    <dd class="card__feature-value">
+                      <span class="ruble">число</span>
+                      <span class="visually-hidden">рублей</span>
+                    </dd>
+                  </div>
+                </dl>
+                <a class="card__button button" href="#">Заказать</a>
+              </article>
             </li>
           </ul>
         </div>
@@ -162,7 +180,7 @@
         </section>
 
         <div class="footer__copyright">
-          <a class="footer__copyright-link" href="https://htmlacademy.ru">
+          <a class="footer__copyright-link" href="https://htmlacademy.ru/intensive/adaptive">
             <span class="footer__copyright-text">HTML Academy</span>
             <img class="footer__copyright-logo" src="#" alt="Логотип HTML Academy" width="27" height="34">
           </a>
