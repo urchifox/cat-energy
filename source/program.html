@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html class="page" lang="ru">
+  <head>
+    <meta charset="UTF-8">
+    <title>Cat Energy</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="styles/styles.css">
+    <script src="scripts/index.js" defer></script>
+  </head>
+  <body class="page__body">
+
+    <header class="header">
+      <a class="header__logo" href="index.html">
+        <!-- обернуто в див, т.к. на ссылку я не могу повесить role="img", а мне хочется оставить лого из двух отдельных картинок-->
+        <div class="header__logo-container" role="img">
+          <picture>
+            <source srcset="#" width="0" height="0" type="image/#" media="(min-width: 1440px)">
+            <source srcset="#" width="0" height="0" type="image/#" media="(min-width: 768px)">
+            <source srcset="#" width="0" height="0" type="image/#" media="(min-width: 320px)">
+            <img class="header__logo-icon" src="#" alt="Веселый кот-супергерой" width="33" height="38">
+          </picture>
+          <img class="header__logo-name" src="#" alt="Cat Energy" width="101" height="18">
+        </div>
+      </a>
+
+      <button class="header__menu-toggle header__menu-toggle--is-closed" type="button" aria-expanded="false" aria-controls="menu">
+        <span class="visually-hidden">Открыть меню</span>
+      </button>
+      <nav class="header__nav" id="menu">
+        <ul class="header__nav-list">
+          <li class="header__nav-item">
+            <a class="header__nav-link" href="index.html">Главная</a>
+          </li>
+          <li class="header__nav-item">
+            <a class="header__nav-link" href="catalog.html">Каталог продукции</a>
+          </li>
+          <li class="header__nav-item">
+            <a class="header__nav-link header__nav-link--current" href="program.html">Подбор программы</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main class="content">
+      <h1 class="content__title title">Подбор программы</h1>
+      <p class="content__tagline tagline">Заполните анкету, и мы подберем программу питания для вашего кота</p>
+
+      <form class="form" name="program-request" action="https://echo.htmlacademy.ru" method="post">
+        <!-- нужно ли инпуты оборачивать в список? -->
+        <fieldset class="form__section">
+          <legend class="visually-hidden">Данные кота</legend>
+          <label class="form__label">
+            Имя:
+            <input class="form__input" name="name" type="text" placeholder="Барсик" required>
+          </label>
+          <label class="form__label">
+            Вес <span aria-hidden="true">(кг)</span><span class="visually-hidden">в килограммах</span>:
+            <input class="form__input" name="weight" type="number" placeholder="7" required>
+          </label>
+          <label class="form__label">
+            Возраст <span aria-hidden="true">(лет)</span><span class="visually-hidden">в годах</span>:
+            <input class="form__input" name="age" type="number" placeholder="7">
+          </label>
+        </fieldset>
+
+        <fieldset class="form__section">
+          <legend class="visually-hidden">Задача питания</legend>
+          <label class="form__label">
+            Похудение
+            <input class="visually-hidden" name="program" type="radio" value="weight-loss" checked>
+          </label>
+          <label class="form__label">
+            Набор массы
+            <input class="visually-hidden" name="program" type="radio" value="weight-gain">
+          </label>
+          <label class="form__label">
+            Не знаю (Нужен ваш совет)
+            <input class="visually-hidden" name="program" type="radio" value="dont-know">
+          </label>
+        </fieldset>
+
+        <fieldset class="form__section">
+          <legend class="form__title subtitle">Контактные данные (владельца кота)</legend>
+          <label class="form__label form__label--email">
+            E-mail:
+            <input class="form__input" name="email" type="email" placeholder="kuklachev@gmail.com" required autocomplete="email">
+          </label>
+          <label class="form__label form__label--tel">
+            Телефон:
+            <input class="form__input" name="tel" type="tel" placeholder="8 (960) 900-60-90" required autocomplete="tel">
+          </label>
+        </fieldset>
+
+        <div class="form__section">
+          <label class="form__title subtitle" for="comment">Комментарий</label>
+          <textarea class="form__input" id="comment" name="comment" placeholder="Расскажите обо всех повадках кота"></textarea>
+        </div>
+
+        <fieldset class="form__section">
+          <legend class="form__title subtitle">Дополнительно</legend>
+          <label class="form__label">
+            Сахарозаменитель
+            <input class="visually-hidden" name="additions" value="sweetener" type="checkbox" checked>
+          </label>
+          <label class="form__label">
+            Питьевая вода
+            <input class="visually-hidden" name="additions" value="water" type="checkbox">
+          </label>
+          <label class="form__label">
+            Молоко
+            <input class="visually-hidden" name="additions" value="milk" type="checkbox">
+          </label>
+          <label class="form__label">
+            Витамины
+            <input class="visually-hidden" name="additions" value="vitamins" type="checkbox">
+          </label>
+        </fieldset>
+
+        <button class="form-button button" type="submit">Отправить заявку</button>
+        <p class="form__note" aria-hidden="true"><sup>*</sup> — Обязательные поля</p>
+      </form>
+
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <section class="footer__partnership partnership">
+          <h2 class="partnership__title">Приглашаем к сотрудничеству дилеров!</h2>
+          <address class="partnership__adress">
+            <p class="partnership__street"><span aria-hidden="true">ул.</span><span class="visually-hidden">улица</span> Большая Конюшенная, <span aria-hidden="true">д.</span><span class="visually-hidden">дом</span> 19/8</p>
+            <p class="partnership__city">Санкт-Петербург</p>
+          </address>
+          <picture>
+            <source srcset="#" width="0" height="0" type="image/#" media="(min-width: 1440px)">
+            <source srcset="#" width="0" height="0" type="image/#" media="(min-width: 768px)">
+            <source srcset="#" width="0" height="0" type="image/#" media="(min-width: 320px)">
+            <img class="partnership__map" src="#" alt="Расположение нашего офиса на карте" width="320" height="362">
+          </picture>
+        </section>
+
+        <a class="footer__logo" href="index.html">
+          <img class="footer__logo-icon" src="#" alt="Cat Energy" width="101" height="18">
+        </a>
+
+        <section class="footer__socials socials">
+          <h2 class="visually-hidden">Мы в соцсетях</h2>
+          <ul class="socials__list">
+            <li class="socials__item">
+              <a class="socials__link" href="#">
+                <img class="socials__icon" src="#" alt="Вконтакте" width="28" height="22">
+              </a>
+            </li>
+            <li class="socials__item">
+              <a class="socials__link" href="#">
+                <img class="socials__icon" src="#" alt="YouTube" width="28" height="22">
+              </a>
+            </li>
+            <li class="socials__item">
+              <a class="socials__link" href="#">
+                <img class="socials__icon" src="#" alt="Telegram" width="28" height="22">
+              </a>
+            </li>
+          </ul>
+        </section>
+
+        <div class="footer__copyright">
+          <a class="footer__copyright-link" href="https://htmlacademy.ru/intensive/adaptive">
+            <span class="footer__copyright-text">HTML Academy</span>
+            <img class="footer__copyright-logo" src="#" alt="Логотип HTML Academy" width="27" height="34">
+          </a>
+        </div>
+      </div>
+    </footer>
+
+  </body>
+</html>
