@@ -14,17 +14,18 @@
   <body class="page__body">
 
     <header class="header">
-      <a class="header__logo" href="index.html">
-        <!-- обернуто в див, т.к. на ссылку я не могу повесить role="img", а мне хочется оставить лого из двух отдельных картинок-->
-        <div class="header__logo-container" role="img">
+      <div class="header__logo logo" role="img">
+        <a class="logo__link" href="index.html">
           <picture>
             <source srcset="#" width="0" height="0" type="image/#" media="(min-width: 1440px)">
             <source srcset="#" width="0" height="0" type="image/#" media="(min-width: 768px)">
-            <img class="header__logo-icon" src="#" alt="Веселый кот-супергерой" width="33" height="38">
+            <img class="logo__image logo__image--icon" src="#" alt="Веселый кот-супергерой" width="33" height="38">
           </picture>
-          <img class="header__logo-name" src="#" alt="Cat Energy" width="101" height="18">
-        </div>
-      </a>
+        </a>
+        <a class="logo__link" href="index.html" tabindex="-1">
+          <img class="logo__image logo__image--text" src="#" alt="Cat Energy" width="101" height="18">
+        </a>
+      </div>
 
       <button class="header__menu-toggle header__menu-toggle--is-closed" type="button" aria-expanded="false" aria-controls="menu">
         <span class="visually-hidden">Открыть меню</span>
@@ -38,7 +39,7 @@
             <a class="header__nav-link" href="catalog.html">Каталог продукции</a>
           </li>
           <li class="header__nav-item">
-            <a class="header__nav-link header__nav-link--current" href="program.html">Подбор программы</a>
+            <a class="header__nav-link header__nav-link--current" href="program.html" aria-current="page">Подбор программы</a>
           </li>
         </ul>
       </nav>
@@ -136,9 +137,11 @@
           <!-- .partnership__map -->
         </section>
 
-        <a class="footer__logo" href="index.html">
-          <img class="footer__logo-icon" src="#" alt="Cat Energy" width="101" height="18">
-        </a>
+        <div class="footer__logo logo" role="img">
+          <a class="logo__link" href="index.html">
+            <img class="logo__image logo__image--text" src="#" alt="Cat Energy" width="101" height="18">
+          </a>
+        </div>
 
         <section class="footer__socials socials">
           <h2 class="visually-hidden">Мы в соцсетях</h2>
