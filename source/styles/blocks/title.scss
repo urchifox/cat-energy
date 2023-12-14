@@ -1,3 +1,11 @@
 .title {
-  
+  font-family: $font-family-accent;
+  font-size: 36px;
+  line-height: 36px;
+  color: $color-text-strong;
+
+  @media (min-width: $screen-width-tablet) {
+    font-size: 60px;
+    line-height: 60px;
+  }
 }

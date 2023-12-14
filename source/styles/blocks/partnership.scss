@@ -1,3 +1,25 @@
 .partnership {
-  
+  background-color: $color-bg-basic;
+}
+
+.partnership__title {
+  font-family: $font-family-accent;
+  font-size: 16px;
+  line-height: 20px;
+  color: $color-special_dark-grey-3;
+  text-transform: uppercase;
+
+  @media (min-width: $screen-width-tablet) {
+    font-size: 20px;
+    line-height: 26px;
+  }
+}
+
+.partnership__adress {
+  font-style: normal;
+
+  @media (min-width: $screen-width-tablet) and (max-width: calc($screen-width-desc - 1px)) {
+    text-align: right;
+    line-height: 20px;
+  }
 }

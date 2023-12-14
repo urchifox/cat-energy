@@ -1,3 +1,46 @@
-.form {
-  
+// .form {
+
+// }
+
+.form__item {
+  display: flex;
+}
+
+.form__label {
+  order: -1;
+
+  font-family: $font-family-accent;
+  font-size: 16px;
+  line-height: 18px;
+  text-transform: uppercase;
+
+  @media (min-width: $screen-width-tablet) {
+    font-size: 20px;
+    line-height: normal;
+  }
+}
+
+input[required] + .form__label::after {
+  content: "*";
+}
+
+.form__input {
+  font-family: $font-family-accent;
+  font-size: 16px;
+  line-height: 18px;
+  text-transform: uppercase;
+
+  @media (min-width: $screen-width-tablet) {
+    font-size: 20px;
+    line-height: normal;
+  }
+}
+
+.form__note {
+  font-size: 14px;
+  line-height: 16px;
+
+  @media (min-width: $screen-width-tablet) {
+    font-size: 16px;
+  }
 }

@@ -1,3 +1,50 @@
-.card {
-  
+// .card {
+
+// }
+
+.card__name {
+  font-family: $font-family-accent;
+  font-size: 16px;
+  line-height: 20px;
+  text-transform: uppercase;
+  color: $color-special_dark-grey-2;
+
+  @media (min-width: $screen-width-tablet) {
+    font-size: 20px;
+    line-height: 24px;
+  }
+}
+
+.card__link {
+  color: $color-special_dark-grey-2;
+}
+
+.card__feature-item {
+  font-size: 12px;
+  line-height: 16px;
+
+  @media (min-width: $screen-width-tablet) {
+    font-size: 16px;
+    line-height: 20px;
+  }
+
+  &--addition {
+    font-size: 14px;
+    line-height: 14px;
+
+    @media (min-width: $screen-width-tablet) {
+      font-size: 16px;
+      line-height: 20px;
+    }
+  }
+}
+
+.card__text {
+  font-size: 12px;
+  line-height: 16px;
+
+  @media (min-width: $screen-width-tablet) {
+    font-size: 16px;
+    line-height: 18px;
+  }
 }
