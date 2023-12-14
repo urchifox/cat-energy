@@ -1,0 +1,20 @@
+.button {
+  font-family: $font-family-accent;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  color: $color-bg-basic;
+
+  background-color: $color-accent;
+
+  @media (min-width: $screen-width-tablet) {
+    font-size: 20px;
+    line-height: 26px;
+  }
+
+  &--secondary {
+    color: $color-special_dark-grey;
+    background-color: $color-basic_grey;
+  }
+}

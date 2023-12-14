@@ -1,0 +1,27 @@
+// .goals {
+
+// }
+.goals__item {
+  background-color: $color-basic_grey;
+}
+
+.goals__description {
+  color: $color-special_dark-grey;
+
+  @media (min-width: $screen-width-desc) {
+    color: $color-text-strong;
+  }
+}
+
+.goals__link {
+  font-family: $font-family-accent;
+  font-size: 16px;
+  line-height: 16px;
+  text-transform: uppercase;
+  color: $color-text-strong;
+
+  @media (min-width: $screen-width-tablet) {
+    font-size: 20px;
+    line-height: normal;
+  }
+}
