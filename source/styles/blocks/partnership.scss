@@ -17,9 +17,9 @@
 
 .partnership__adress {
   font-style: normal;
+  line-height: 20px;
 
   @media (min-width: $screen-width-tablet) and (max-width: calc($screen-width-desc - 1px)) {
     text-align: right;
-    line-height: 20px;
   }
 }

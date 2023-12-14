@@ -1,11 +1,12 @@
 .tagline {
   font-family: $font-family-accent;
-  font-size: 14px;
-  line-height: 14px;
+  line-height: 18px;
   text-transform: uppercase;
+  color: $color-text-strong;
 
   @media (min-width: $screen-width-tablet) {
     font-size: 20px;
     line-height: 20px;
+    text-align: left;
   }
 }

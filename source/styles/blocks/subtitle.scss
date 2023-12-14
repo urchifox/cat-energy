@@ -2,6 +2,7 @@
   font-family: $font-family-accent;
   font-size: 24px;
   line-height: 37px;
+  text-wrap: balance;
   color: $color-text-strong;
 
   @media (min-width: $screen-width-tablet) {
