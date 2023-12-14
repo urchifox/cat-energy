@@ -1,2 +1,25 @@
-$primary-font: "Oswald", sans-serif;
-$html-academy-font: "Lato", sans-serif;
+// SCREEN SIZES
+$screen-width-mobile: 320px;
+$screen-width-tablet: 768px;
+$screen-width-desc: 1440px;
+
+// FONTS OPTIONS
+$font-family-basic: "Lato", sans-serif;
+$font-family-accent: "Oswald", sans-serif;
+
+// COLORS
+$color-bg-basic: #ffffff;
+$color-basic_grey: #f2f2f2;
+$color-light_grey: #ececec;
+$color-special_grey: #cdcdcd;
+$color-special_grey-2: #666666;
+$color-special_dark-grey: #444444;
+$color-special_dark-grey-2: #222222;
+$color-special_dark-grey-3: #111111;
+$color-text-strong: #000000;
+$color-status_error: #ff8282;
+$color-accent: #68b738;
+
+// TRANSITION
+$transition-time-basic: 0.3s;
+$transition-timing-function-basic: ease-out;
