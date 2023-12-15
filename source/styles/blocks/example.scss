@@ -28,7 +28,7 @@
   text-transform: uppercase;
   color: $color-text-strong;
 
-  @media screen and #{$desktop-only} {
+  @media screen and #{$not-mobile} {
     font-size: 30px;
     line-height: 37px;
   }
@@ -38,7 +38,7 @@
     line-height: 20px;
     color: $color-text-strong;
 
-    @media screen and #{$desktop-only} {
+    @media screen and #{$not-mobile} {
       font-size: 20px;
     }
   }
@@ -50,9 +50,10 @@
   font-size: 12px;
   line-height: 12px;
   text-align: center;
+  text-transform: lowercase;
   color: $color-special_dark-grey;
 
-  @media screen and #{$desktop-only} {
+  @media screen and #{$not-mobile} {
     font-size: 14px;
     line-height: 14px;
   }
@@ -64,7 +65,7 @@
     text-transform: uppercase;
     color: $color-text-strong;
 
-    @media screen and #{$desktop-only} {
+    @media screen and #{$not-mobile} {
       font-size: 20px;
       line-height: 20px;
     }

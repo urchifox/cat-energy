@@ -55,12 +55,12 @@
               <legend class="visually-hidden">Данные кота</legend>
               <ul class="form__list form__list--text">
                 <li class="form__item">
-                  <input class="form__input form__input--required" id="input-name" name="name" type="text" placeholder="Барсик" required>
-                  <label class="form__label" for="input-name">Имя:</label>
+                  <input class="form__input" id="input-name" name="name" type="text" placeholder="Барсик" required>
+                  <label class="form__label form__label--required" for="input-name">Имя:</label>
                 </li>
                 <li class="form__item">
-                  <input class="form__input form__input--required" id="input-weight" name="weight" type="number" placeholder="7" required>
-                  <label class="form__label" for="input-weight">Вес <span aria-hidden="true">(кг)</span><span class="visually-hidden">в килограммах</span>:</label>
+                  <input class="form__input" id="input-weight" name="weight" type="number" placeholder="7" required>
+                  <label class="form__label form__label--required" for="input-weight">Вес <span aria-hidden="true">(кг)</span><span class="visually-hidden">в килограммах</span>:</label>
                 </li>
                 <li class="form__item">
                   <input class="form__input" id="input-age" name="age" type="number" placeholder="7">
@@ -87,12 +87,12 @@
               <legend class="form__title subtitle">Контактные данные (владельца кота)</legend>
               <ul class="form__list form__list--text">
                 <li class="form__item">
-                  <input class="form__input form__input--required" id="input-email" name="email" type="email" placeholder="kuklachev@gmail.com" required autocomplete="email">
-                  <label class="form__label form__label--email" for="input-email">E-mail:</label>
+                  <input class="form__input" id="input-email" name="email" type="email" placeholder="kuklachev@gmail.com" required autocomplete="email">
+                  <label class="form__label form__label--required form__label--email" for="input-email">E-mail:</label>
                 </li>
                 <li class="form__item">
-                  <input class="form__input form__input--required" id="input-tel" name="tel" type="tel" placeholder="8 (960) 900-60-90" required autocomplete="tel">
-                  <label class="form__label form__label--tel" for="input-tel">Телефон:</label>
+                  <input class="form__input" id="input-tel" name="tel" type="tel" placeholder="8 (960) 900-60-90" required autocomplete="tel">
+                  <label class="form__label form__label--required form__label--tel" for="input-tel">Телефон:</label>
                 </li>
               </ul>
             </fieldset>
@@ -124,7 +124,7 @@
               </ul>
             </fieldset>
 
-            <button class="form-button button" type="submit">Отправить заявку</button>
+            <button class="form__button button" type="submit">Отправить заявку</button>
             <p class="form__note" aria-hidden="true">* — Обязательные поля</p>
           </form>
         </div>

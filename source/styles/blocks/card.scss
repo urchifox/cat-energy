@@ -14,11 +14,22 @@
 
   @media screen and #{$not-mobile} {
     font-size: 20px;
+    text-align: center;
     line-height: 24px;
   }
 
   &--addition {
     line-height: 16px;
+    text-align: left;
+
+    @media screen and #{$not-mobile} {
+      line-height: 20px;
+    }
+  }
+
+  &--show-more {
+    text-align: center;
+    color: $color-special_dark-grey-3;
   }
 }
 
@@ -67,5 +78,6 @@
   @media screen and #{$not-mobile} {
     font-size: 16px;
     line-height: 18px;
+    text-align: center;
   }
 }

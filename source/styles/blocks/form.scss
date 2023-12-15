@@ -3,7 +3,12 @@
 // }
 
 .form__title {
+  padding: 0;
   line-height: 26px;
+
+  @media screen and #{$not-mobile} {
+    line-height: 36px;
+  }
 }
 
 .form__list {
@@ -38,10 +43,17 @@
   font-size: 16px;
   line-height: 18px;
   text-transform: uppercase;
+  color: $color-special_dark-grey;
 
   @media screen and #{$not-mobile} {
     font-size: 20px;
     line-height: normal;
+  }
+}
+
+.form__button {
+  @media screen and #{$not-mobile} {
+    font-size: 20px;
   }
 }
 
