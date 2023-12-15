@@ -1,16 +1,21 @@
-/* GLOBAL */
+// GLOBAL
 @import "./global/variables.scss";
 @import "./global/mixins.scss";
-@import "./global/global.scss";
 @import "./global/fonts.scss";
+@import "./global/global.scss";
+@import "./global/helpers.scss";
 
-/* BLOCKS */
-
-// MAIN BLOCKS
-@import "./blocks/page.scss";
-@import "./blocks/header.scss";
-@import "./blocks/content.scss";
-@import "./blocks/footer.scss";
+// REUSABLE BLOCKS
+@import "./blocks/container.scss";
+@import "./blocks/logo.scss";
+@import "./blocks/title.scss";
+@import "./blocks/subtitle.scss";
+@import "./blocks/tagline.scss";
+@import "./blocks/button.scss";
+@import "./blocks/slider.scss";
+@import "./blocks/socials.scss";
+@import "./blocks/form.scss";
+@import "./blocks/card.scss";
 
 // SECTIONS / ARTICLES
 @import "./blocks/hero.scss";
@@ -23,19 +28,8 @@
 @import "./blocks/promo.scss";
 @import "./blocks/partnership.scss";
 
-// REUSABLE BLOCKS
-@import "./blocks/logo.scss";
-@import "./blocks/title.scss";
-@import "./blocks/subtitle.scss";
-@import "./blocks/tagline.scss";
-@import "./blocks/button.scss";
-@import "./blocks/slider.scss";
-@import "./blocks/socials.scss";
-@import "./blocks/form.scss";
-@import "./blocks/card.scss";
-
-// UTILITIES
-@import "./blocks/visually-hidden.scss";
-@import "./blocks/container.scss";
-@import "./blocks/spaced-number.scss";
-@import "./blocks/ruble.scss";
+// MAIN BLOCKS
+@import "./blocks/page.scss";
+@import "./blocks/header.scss";
+@import "./blocks/content.scss";
+@import "./blocks/footer.scss";
