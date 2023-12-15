@@ -6,7 +6,7 @@
   text-wrap: balance;
   color: $color-text-strong;
 
-  @media (min-width: $screen-width-tablet) {
+  @media screen and #{$not-mobile} {
     font-size: 36px;
     line-height: 36px;
   }

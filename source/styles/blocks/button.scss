@@ -10,7 +10,7 @@
 
   background-color: $color-accent;
 
-  @media (min-width: $screen-width-tablet) {
+  @media screen and #{$not-mobile} {
     font-size: 20px;
     line-height: 26px;
   }

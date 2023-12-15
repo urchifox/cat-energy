@@ -4,10 +4,10 @@
 
 .hero__title {
   margin: 0;
-  
+
   text-align: center;
 
-  @media (min-width: $screen-width-tablet) {
+  @media screen and #{$not-mobile} {
     text-align: left;
   }
 }
