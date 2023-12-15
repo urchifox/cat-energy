@@ -25,10 +25,12 @@
     font-size: 20px;
     line-height: normal;
   }
-}
 
-input[required] + .form__label::after {
-  content: "*";
+  &--required {
+    &::after {
+      content: "*";
+    }
+  }
 }
 
 .form__input {
