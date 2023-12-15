@@ -1,3 +1,11 @@
 // .additions {
 
 // }
+
+.additions__title {
+  margin: 0;
+}
+
+.additions__list {
+  @include clear-list();
+}

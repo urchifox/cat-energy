@@ -1,6 +1,9 @@
 // .header {
 
 // }
+.header__nav-list {
+  @include clear-list();
+}
 
 .header__nav-link {
   font-family: $font-family-accent;

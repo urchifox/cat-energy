@@ -3,8 +3,11 @@
 // }
 
 .card__name {
+  margin: 0;
+
   font-family: $font-family-accent;
   font-size: 16px;
+  font-weight: 400;
   line-height: 20px;
   text-transform: uppercase;
   color: $color-special_dark-grey-2;
@@ -21,6 +24,10 @@
 
 .card__link {
   color: $color-special_dark-grey-2;
+}
+
+.card__features {
+  margin: 0;
 }
 
 .card__feature-item {
@@ -43,7 +50,17 @@
   }
 }
 
+.card__feature-key {
+  margin: 0;
+}
+
+.card__feature-value {
+  margin: 0;
+}
+
 .card__text {
+  margin: 0;
+
   font-size: 12px;
   line-height: 16px;
 

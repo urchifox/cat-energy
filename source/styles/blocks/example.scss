@@ -6,7 +6,21 @@
   }
 }
 
+.example__title {
+  margin: 0;
+}
+
+.example__text {
+  margin: 0;
+}
+
+.example__stats-list {
+  margin: 0;
+}
+
 .example__stats-number {
+  margin: 0;
+
   font-family: $font-family-accent;
   font-size: 24px;
   line-height: 24px;
@@ -31,6 +45,8 @@
 }
 
 .example__stats-description {
+  margin: 0;
+
   font-size: 12px;
   line-height: 12px;
   text-align: center;

@@ -3,6 +3,8 @@
 // }
 
 .hero__title {
+  margin: 0;
+  
   text-align: center;
 
   @media (min-width: $screen-width-tablet) {
@@ -11,6 +13,8 @@
 }
 
 .hero__tagline {
+  margin: 0;
+
   text-align: center;
   line-height: 14px;
 }

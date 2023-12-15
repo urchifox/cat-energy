@@ -1,11 +1,22 @@
 // .goals {
 
 // }
+
+.goals__title {
+  margin: 0;
+}
+
+.goals__list {
+  @include clear-list();
+}
+
 .goals__item {
   background-color: $color-basic_grey;
 }
 
 .goals__description {
+  margin: 0;
+
   color: $color-special_dark-grey;
 
   @media (min-width: $screen-width-desc) {

@@ -1,3 +1,7 @@
 // .socials {
 
 // }
+
+.socials__list {
+  @include clear-list();
+}
