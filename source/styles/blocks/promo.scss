@@ -8,7 +8,7 @@
   background-repeat: no-repeat;
   background-position: cover;
 
-  @media screen and #{$on-tablet} {
+  @media #{$on-tablet} {
     background-image:
       linear-gradient(rgba($color-accent, 0.85), rgba($color-accent, 0.85)),
       image-set(
@@ -16,7 +16,7 @@
         url("../../images/cat-backpack-707-200@2x.jpg") type("image/jpeg") 2x);
   }
 
-  @media screen and #{$on-desktop} {
+  @media #{$on-desktop} {
     background-image:
       linear-gradient(rgba($color-accent, 0.85), rgba($color-accent, 0.85)),
       image-set(
@@ -33,7 +33,7 @@
   line-height: 20px;
   text-align: center;
 
-  @media screen and #{$on-tablet} {
+  @media #{$on-tablet} {
     text-align: left;
   }
 }

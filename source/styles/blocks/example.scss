@@ -1,7 +1,7 @@
 .example {
   background-color: $color-light_grey;
 
-  @media screen and #{$on-tablet-desktop} {
+  @media #{$on-tablet-desktop} {
     background: linear-gradient(to top, $color-light_grey 462px, transparent 462px);
   }
 }
@@ -28,7 +28,7 @@
   text-transform: uppercase;
   color: $color-text-strong;
 
-  @media screen and #{$on-tablet-desktop} {
+  @media #{$on-tablet-desktop} {
     font-size: 30px;
     line-height: 37px;
   }
@@ -38,7 +38,7 @@
     line-height: 20px;
     color: $color-text-strong;
 
-    @media screen and #{$on-tablet-desktop} {
+    @media #{$on-tablet-desktop} {
       font-size: 20px;
     }
   }
@@ -53,7 +53,7 @@
   text-transform: lowercase;
   color: $color-special_dark-grey;
 
-  @media screen and #{$on-tablet-desktop} {
+  @media #{$on-tablet-desktop} {
     font-size: 14px;
     line-height: 14px;
   }
@@ -65,7 +65,7 @@
     text-transform: uppercase;
     color: $color-text-strong;
 
-    @media screen and #{$on-tablet-desktop} {
+    @media #{$on-tablet-desktop} {
       font-size: 20px;
       line-height: 20px;
     }
