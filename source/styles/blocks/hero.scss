@@ -8,12 +8,12 @@
   background-repeat: no-repeat;
   background-position: cover;
 
-  @media screen and #{$tablet-only} {
+  @media screen and #{$on-tablet} {
     background-color: $color-bg-basic;
     background-image: none;
   }
 
-  @media screen and #{$desktop-only} {
+  @media screen and #{$on-desktop} {
     background-image:
       linear-gradient(rgba($color-accent, 0.85), rgba($color-accent, 0.85)),
       image-set(
@@ -27,7 +27,7 @@
 
   text-align: center;
 
-  @media screen and #{$not-mobile} {
+  @media screen and #{$on-tablet-desktop} {
     text-align: left;
   }
 }
@@ -38,7 +38,7 @@
   text-align: center;
   line-height: 14px;
 
-  @media screen and #{$not-mobile} {
+  @media screen and #{$on-tablet-desktop} {
     line-height: 20px;
     text-align: left;
   }

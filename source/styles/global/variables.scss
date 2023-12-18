@@ -5,11 +5,11 @@ $breakpoint-desktop: 1440px;
 $breakpoint-gap: 0.02px;
 
 // MEDIA QUERIES
-$mobile-only: "(max-width: #{$breakpoint-tablet - $breakpoint-gap})";
-$tablet-only: "(min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-desktop - $breakpoint-gap})";
-$desktop-only: "(min-width: #{$breakpoint-desktop})";
-$not-mobile: "(min-width: #{$breakpoint-tablet})";
-$not-desktop: "(max-width: #{$breakpoint-desktop - $breakpoint-gap})";
+$on-mobile: "(max-width: #{$breakpoint-tablet - $breakpoint-gap})";
+$on-tablet: "(min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-desktop - $breakpoint-gap})";
+$on-desktop: "(min-width: #{$breakpoint-desktop})";
+$on-tablet-desktop: "(min-width: #{$breakpoint-tablet})";
+$on-mobile-tablet: "(max-width: #{$breakpoint-desktop - $breakpoint-gap})";
 
 // FONTS OPTIONS
 $font-family-basic: "Lato", sans-serif;

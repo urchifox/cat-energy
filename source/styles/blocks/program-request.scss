@@ -9,7 +9,7 @@
 .program-request__tagline {
   margin: 0;
 
-  @media screen and #{$not-mobile} {
+  @media screen and #{$on-tablet-desktop} {
     line-height: 30px;
   }
 }
