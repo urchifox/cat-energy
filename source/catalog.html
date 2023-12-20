@@ -15,15 +15,25 @@
 
     <header class="header">
       <div class="header__logo logo" role="img">
-        <a class="logo__link" href="index.html" tabindex="-1">
+        <a class="logo__link" href="index.html" tabindex="-1" aria-current="page">
           <picture>
-            <source srcset="#" width="0" height="0" type="image/#" media="(min-width: 1440px)">
-            <source srcset="#" width="0" height="0" type="image/#" media="(min-width: 768px)">
-            <img class="logo__image logo__image--icon" src="#" alt="Веселый кот-супергерой" width="33" height="38">
+            <source type="image/svg+xml" media="(min-width: 1440px)"
+              srcset="images/logo-cat-max.svg"
+              width="70" height="59">
+            <source type="image/svg+xml" media="(min-width: 768px)"
+              srcset="images/logo-cat-med.svg"
+              width="60" height="50">
+            <img class="logo__image logo__image--icon"
+              src="images/logo-cat-min.svg"
+              width="33" height="38"
+              alt="Веселый кот-супергерой">
           </picture>
         </a>
-        <a class="logo__link" href="index.html">
-          <img class="logo__image logo__image--text" src="#" alt="Cat Energy на главную страницу" width="101" height="18">
+        <a class="logo__link" href="index.html" aria-current="page">
+          <img class="logo__image logo__image--text"
+            src="images/logo-text.svg"
+            width="101" height="18"
+            alt="Cat Energy на главную страницу">
         </a>
       </div>
 
@@ -496,8 +506,11 @@
         </section>
 
         <div class="footer__logo logo" role="img">
-          <a class="logo__link" href="index.html">
-            <img class="logo__image logo__image--text" src="#" alt="Cat Energy на главную страницу" width="101" height="18">
+          <a class="logo__link" href="index.html" aria-current="page">
+            <img class="logo__image logo__image--text"
+              src="images/logo-text.svg"
+              width="101" height="18"
+              alt="Cat Energy на главную страницу">
           </a>
         </div>
 
