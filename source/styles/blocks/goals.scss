@@ -11,7 +11,27 @@
 }
 
 .goals__item {
+  position: relative;
+
   background-color: $color-basic_grey;
+
+  &::before {
+    content: "";
+    outline: auto;
+    position: absolute;
+    z-index: 10;
+    top: 21px;
+    left: 20px;
+    width: 50px;
+    height: 53px;
+
+    background-image: url("../../images/icons/stack.svg#cat-slim");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-color: tomato;
+    // radial-gradient(at center, $color-accent 5px, transparent 25px),
+  }
 }
 
 .goals__description {
