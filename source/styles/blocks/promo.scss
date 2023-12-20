@@ -1,10 +1,10 @@
 .promo {
   background-color: $color-accent;
   background-image:
-      linear-gradient(rgba($color-accent, 0.85), rgba($color-accent, 0.85)),
-      image-set(
-        url("../../images/cat-backpack-280-290@2x.jpg") type("image/jpeg") 1x,
-        url("../../images/cat-backpack-280-290@2x.jpg") type("image/jpeg") 2x);
+    linear-gradient(rgba($color-accent, 0.85), rgba($color-accent, 0.85)),
+    image-set(
+      url("../../images/cat-backpack-280-290@2x.jpg") type("image/jpeg") 1x,
+      url("../../images/cat-backpack-280-290@2x.jpg") type("image/jpeg") 2x);
   background-repeat: no-repeat;
   background-position: cover;
 
