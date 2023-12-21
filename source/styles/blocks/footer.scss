@@ -3,10 +3,26 @@
 }
 
 .footer__copyright-link {
-  color: $color-special_dark-grey;
-}
+  position: relative;
 
-.footer__copyright-text {
   font-size: 16px;
   line-height: 20px;
+  color: $color-special_dark-grey;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    display: block;
+    width: 27px;
+    height: 34px;
+
+    background-color: $color-special_grey-2;
+    mask-image: url("../../images/icons/stack.svg#html-academy-logo");
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+  }
 }
