@@ -1,12 +1,26 @@
 .example {
   background-color: $color-light_grey;
 
-  @media (min-width: $screen-width-tablet) {
+  @media #{$on-tablet-desktop} {
     background: linear-gradient(to top, $color-light_grey 462px, transparent 462px);
   }
 }
 
+.example__title {
+  margin: 0;
+}
+
+.example__text {
+  margin: 0;
+}
+
+.example__stats-list {
+  margin: 0;
+}
+
 .example__stats-number {
+  margin: 0;
+
   font-family: $font-family-accent;
   font-size: 24px;
   line-height: 24px;
@@ -14,7 +28,7 @@
   text-transform: uppercase;
   color: $color-text-strong;
 
-  @media (min-width: $screen-width-desc) {
+  @media #{$on-tablet-desktop} {
     font-size: 30px;
     line-height: 37px;
   }
@@ -24,19 +38,22 @@
     line-height: 20px;
     color: $color-text-strong;
 
-    @media (min-width: $screen-width-desc) {
+    @media #{$on-tablet-desktop} {
       font-size: 20px;
     }
   }
 }
 
 .example__stats-description {
+  margin: 0;
+
   font-size: 12px;
   line-height: 12px;
   text-align: center;
+  text-transform: lowercase;
   color: $color-special_dark-grey;
 
-  @media (min-width: $screen-width-desc) {
+  @media #{$on-tablet-desktop} {
     font-size: 14px;
     line-height: 14px;
   }
@@ -48,7 +65,7 @@
     text-transform: uppercase;
     color: $color-text-strong;
 
-    @media (min-width: $screen-width-desc) {
+    @media #{$on-tablet-desktop} {
       font-size: 20px;
       line-height: 20px;
     }

@@ -3,13 +3,16 @@
 }
 
 .partnership__title {
+  margin: 0;
+
   font-family: $font-family-accent;
   font-size: 16px;
+  font-weight: 400;
   line-height: 20px;
   color: $color-special_dark-grey-3;
   text-transform: uppercase;
 
-  @media (min-width: $screen-width-tablet) {
+  @media #{$on-tablet-desktop} {
     font-size: 20px;
     line-height: 26px;
   }
@@ -19,7 +22,15 @@
   font-style: normal;
   line-height: 20px;
 
-  @media (min-width: $screen-width-tablet) and (max-width: calc($screen-width-desc - 1px)) {
+  @media #{$on-tablet} {
     text-align: right;
   }
+}
+
+.partnership__street {
+  margin: 0;
+}
+
+.partnership__city {
+  margin: 0;
 }

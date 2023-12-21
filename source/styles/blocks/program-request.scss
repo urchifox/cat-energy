@@ -1,3 +1,15 @@
 // .program-request {
 
 // }
+
+.program-request__title {
+  margin: 0;
+}
+
+.program-request__tagline {
+  margin: 0;
+
+  @media #{$on-tablet-desktop} {
+    line-height: 30px;
+  }
+}

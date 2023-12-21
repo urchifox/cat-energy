@@ -1,3 +1,70 @@
 // .features {
 
 // }
+
+.features__title {
+  margin: 0;
+}
+
+.features__list {
+  @include clear-list();
+}
+
+.features__item {
+  position: relative;
+
+  &::after {
+    --box-size: 60px;
+
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+
+    transform: translateY(-50%);
+
+    width: var(--box-size);
+    height: var(--box-size);
+
+    background-color: $color-accent;
+    background-image: var(--url);
+    background-size: var(--icon-width) var(--icon-height);
+    background-position: center;
+    background-repeat: no-repeat;
+
+    @media #{$on-tablet-desktop} {
+      --box-size: 80px;
+
+      top: 0;
+      transform: translateY(0);
+    }
+  }
+
+  &--healthy::after {
+    --url: url("../../images/icons/stack.svg#leaf");
+    --icon-width: 30px;
+    --icon-height: 32px;
+  }
+
+  &--powder::after {
+    --url: url("../../images/icons/stack.svg#powder");
+    --icon-width: 26px;
+    --icon-height: 29px;
+  }
+
+  &--food::after {
+    --url: url("../../images/icons/stack.svg#fork-knife");
+    --icon-width: 25px;
+    --icon-height: 30px;
+  }
+
+  &--time::after {
+    --url: url("../../images/icons/stack.svg#clock");
+    --icon-width: 26px;
+    --icon-height: 31px;
+  }
+}
+
+.features__text {
+  margin: 0;
+}

@@ -3,10 +3,21 @@
 // }
 
 .form__title {
+  padding: 0;
   line-height: 26px;
+
+  @media #{$on-tablet-desktop} {
+    line-height: 36px;
+  }
+}
+
+.form__list {
+  @include clear-list();
 }
 
 .form__item {
+  position: relative;
+
   display: flex;
 }
 
@@ -17,33 +28,76 @@
   font-size: 16px;
   text-transform: uppercase;
 
-  @media (min-width: $screen-width-tablet) {
+  @media #{$on-tablet-desktop} {
     font-size: 20px;
     line-height: normal;
   }
-}
 
-input[required] + .form__label::after {
-  content: "*";
+  &--required {
+    &::after {
+      content: "*";
+    }
+  }
+
+  &--email::after,
+  &--tel::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    transform: translateY(-50%);
+
+    width: 20px;
+    height: 20px;
+
+    mask-position: center;
+    mask-repeat: no-repeat;
+    background-color: $color-text-strong;
+    mask-size: var(--mask-width) var(--mask-height);
+    mask-image: var(--mask-url);
+  }
+
+  &--email::after {
+    --mask-url: url("../../images/icons/stack.svg#email");
+    --mask-width: 17px;
+    --mask-height: 13px;
+  }
+
+  &--tel::after {
+    --mask-url: url("../../images/icons/stack.svg#telephone");
+    --mask-width: 15px;
+    --mask-height: 15px;
+  }
 }
 
 .form__input {
+  position: relative;
+
   font-family: $font-family-accent;
   font-size: 16px;
   line-height: 18px;
   text-transform: uppercase;
+  color: $color-special_dark-grey;
 
-  @media (min-width: $screen-width-tablet) {
+  @media #{$on-tablet-desktop} {
     font-size: 20px;
     line-height: normal;
   }
 }
 
+.form__button {
+  @media #{$on-tablet-desktop} {
+    font-size: 20px;
+  }
+}
+
 .form__note {
+  margin: 0;
+
   line-height: 16px;
   color: $color-text-strong;
 
-  @media (min-width: $screen-width-tablet) {
+  @media #{$on-tablet-desktop} {
     font-size: 16px;
   }
 }

@@ -15,15 +15,25 @@
 
     <header class="header">
       <div class="header__logo logo" role="img">
-        <a class="logo__link" href="index.html" tabindex="-1">
+        <a class="logo__link" href="index.html" tabindex="-1" aria-current="page">
           <picture>
-            <source srcset="#" width="0" height="0" type="image/#" media="(min-width: 1440px)">
-            <source srcset="#" width="0" height="0" type="image/#" media="(min-width: 768px)">
-            <img class="logo__image logo__image--icon" src="#" alt="Веселый кот-супергерой" width="33" height="38">
+            <source type="image/svg+xml" media="(min-width: 1440px)"
+              srcset="images/logo-cat-max.svg"
+              width="70" height="59">
+            <source type="image/svg+xml" media="(min-width: 768px)"
+              srcset="images/logo-cat-med.svg"
+              width="60" height="50">
+            <img class="logo__image logo__image--icon"
+              src="images/logo-cat-min.svg"
+              width="33" height="38"
+              alt="Веселый кот-супергерой">
           </picture>
         </a>
-        <a class="logo__link" href="index.html">
-          <img class="logo__image logo__image--text" src="#" alt="Cat Energy на главную страницу" width="101" height="18">
+        <a class="logo__link" href="index.html" aria-current="page">
+          <img class="logo__image logo__image--text"
+            src="images/logo-text.svg"
+            width="101" height="18"
+            alt="Cat Energy на главную страницу">
         </a>
       </div>
 
@@ -366,8 +376,8 @@
               </article>
             </li>
             <li class="catalog__item">
-              <article class="card card--is-empty">
-                <h3 class="card__name">Показать еще 100500 товаров</h3>
+              <article class="card card--show-more">
+                <h3 class="card__name card__name--show-more">Показать еще 100500 товаров</h3>
                 <p class="card__text">На самом деле вкусов гораздо больше!</p>
                 <a class="card__button button button--secondary" href="#">Показать все</a>
               </article>
@@ -462,22 +472,9 @@
 
       <section class="promo">
         <div class="container">
-          <h2 class="promo__text">Закажите все и получите чехол для кота в подарок!</h2>
-          <picture>
-            <source type="image/jpeg" media="(min-width: 1440px)"
-              srcset="images/cat-backpack-245-288@1x.jpg 1x,
-                      images/cat-backpack-245-288@2x.jpg 2x"
-              width="245" height="288">
-            <source type="image/jpeg" media="(min-width: 768px)"
-              srcset="images/cat-backpack-707-200@1x.jpg 1x,
-                      images/cat-backpack-707-200@2x.jpg 2x"
-              width="707" height="200">
-            <img class="promo__picture"
-              src="images/cat-backpack-280-290@1x.jpg"
-              srcset="images/cat-backpack-280-290@2x.jpg 2x"
-              width="280" height="290"
-              alt="Кот в рюкзаке">
-          </picture>
+          <div class="promo__wrapper">
+            <h2 class="promo__text">Закажите все и получите чехол для кота в подарок!</h2>
+          </div>
         </div>
       </section>
 
@@ -491,12 +488,31 @@
             <p class="partnership__street"><span aria-hidden="true">ул.</span><span class="visually-hidden">улица</span> Большая Конюшенная, <span aria-hidden="true">д.</span><span class="visually-hidden">дом</span> 19/8</p>
             <p class="partnership__city">Санкт-Петербург</p>
           </address>
-          <!-- .partnership__map -->
+          <div class="partnership__map">
+            <picture>
+              <source type="image/png" media="(min-width: 1440px)"
+                srcset="images/location-1440-400@1x.png 1x,
+                        images/location-1440-400@2x.png 2x"
+                width="768" height="400">
+              <source type="image/png" media="(min-width: 768px)"
+                srcset="images/location-768-400@1x.png 1x,
+                        images/location-768-400@2x.png 2x"
+                width="768" height="400">
+              <img class="partnership__map-image"
+                src="images/location-320-362@1x.png"
+                srcset="images/location-320-362@2x.png 2x"
+                width="320" height="360"
+                alt="Расположение нашего офиса на карте">
+            </picture>
+          </div>
         </section>
 
         <div class="footer__logo logo" role="img">
-          <a class="logo__link" href="index.html">
-            <img class="logo__image logo__image--text" src="#" alt="Cat Energy на главную страницу" width="101" height="18">
+          <a class="logo__link" href="index.html" aria-current="page">
+            <img class="logo__image logo__image--text"
+              src="images/logo-text.svg"
+              width="101" height="18"
+              alt="Cat Energy на главную страницу">
           </a>
         </div>
 
@@ -504,18 +520,18 @@
           <h2 class="visually-hidden">Мы в соцсетях</h2>
           <ul class="socials__list">
             <li class="socials__item">
-              <a class="socials__link" href="#">
-                <img class="socials__icon" src="#" alt="Вконтакте" width="28" height="22">
+              <a class="socials__link socials__link--vk" href="#">
+                <span class="visually-hidden">Вконтакте</span>
               </a>
             </li>
             <li class="socials__item">
-              <a class="socials__link" href="#">
-                <img class="socials__icon" src="#" alt="YouTube" width="28" height="22">
+              <a class="socials__link socials__link--youtube" href="#">
+                <span class="visually-hidden">YouTube</span>
               </a>
             </li>
             <li class="socials__item">
-              <a class="socials__link" href="#">
-                <img class="socials__icon" src="#" alt="Telegram" width="28" height="22">
+              <a class="socials__link socials__link--telegram" href="#">
+                <span class="visually-hidden">Telegram</span>
               </a>
             </li>
           </ul>
@@ -523,8 +539,7 @@
 
         <div class="footer__copyright">
           <a class="footer__copyright-link" href="https://htmlacademy.ru/intensive/adaptive">
-            <span class="footer__copyright-text">HTML Academy</span>
-            <img class="footer__copyright-logo" src="#" alt="Логотип HTML Academy" width="27" height="34">
+            HTML Academy
           </a>
         </div>
       </div>

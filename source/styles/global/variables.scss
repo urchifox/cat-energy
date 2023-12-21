@@ -1,7 +1,15 @@
 // SCREEN SIZES
-$screen-width-mobile: 320px;
-$screen-width-tablet: 768px;
-$screen-width-desc: 1440px;
+$breakpoint-mobile: 320px;
+$breakpoint-tablet: 768px;
+$breakpoint-desktop: 1440px;
+$breakpoint-gap: 0.02px;
+
+// MEDIA QUERIES
+$on-mobile: "screen and (max-width: #{$breakpoint-tablet - $breakpoint-gap})";
+$on-tablet: "screen and (min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-desktop - $breakpoint-gap})";
+$on-desktop: "screen and (min-width: #{$breakpoint-desktop})";
+$on-tablet-desktop: "screen and (min-width: #{$breakpoint-tablet})";
+$on-mobile-tablet: "screen and (max-width: #{$breakpoint-desktop - $breakpoint-gap})";
 
 // FONTS OPTIONS
 $font-family-basic: "Lato", sans-serif;

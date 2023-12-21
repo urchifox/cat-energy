@@ -1,16 +1,45 @@
-// .hero {
+.hero {
+  background-color: $color-accent;
+  background-image:
+    linear-gradient(rgba($color-accent, 0.85), rgba($color-accent, 0.85)),
+    image-set(
+      url("../../images/cat-hero-320-302@2x.jpg") type("image/jpeg") 1x,
+      url("../../images/cat-hero-320-302@2x.jpg") type("image/jpeg") 2x);
+  background-repeat: no-repeat;
+  background-position: cover;
 
-// }
+  @media #{$on-tablet} {
+    background-color: $color-bg-basic;
+    background-image: none;
+  }
+
+  @media #{$on-desktop} {
+    background-image:
+      linear-gradient(rgba($color-accent, 0.85), rgba($color-accent, 0.85)),
+      image-set(
+        url("../../images/cat-hero-1040-694@2x.jpg") type("image/jpeg") 1x,
+        url("../../images/cat-hero-1040-694@2x.jpg") type("image/jpeg") 2x);
+  }
+}
 
 .hero__title {
+  margin: 0;
+
   text-align: center;
 
-  @media (min-width: $screen-width-tablet) {
+  @media #{$on-tablet-desktop} {
     text-align: left;
   }
 }
 
 .hero__tagline {
+  margin: 0;
+
   text-align: center;
   line-height: 14px;
+
+  @media #{$on-tablet-desktop} {
+    line-height: 20px;
+    text-align: left;
+  }
 }

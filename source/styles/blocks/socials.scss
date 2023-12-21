@@ -1,3 +1,31 @@
 // .socials {
 
 // }
+
+.socials__list {
+  @include clear-list();
+}
+
+.socials__link {
+  display: block;
+  width: 28px;
+  height: 28px;
+
+  background-color: $color-special_grey-2;
+  mask-image: var(--icon-url);
+  mask-size: contain;
+  mask-repeat: no-repeat;
+  mask-position: center;
+
+  &--vk {
+    --icon-url: url("../../images/icons/stack.svg#vk-logo");
+  }
+
+  &--youtube {
+    --icon-url: url("../../images/icons/stack.svg#youtube-logo");
+  }
+
+  &--telegram {
+    --icon-url: url("../../images/icons/stack.svg#telegram-logo");
+  }
+}

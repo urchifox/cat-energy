@@ -1,13 +1,58 @@
-// .promo {
+.promo__wrapper {
+  background-color: $color-accent;
+  background-image:
+    url("../../images/icons/stack.svg#gift"),
+    linear-gradient(rgba($color-accent, 0.85), rgba($color-accent, 0.85)),
+    image-set(
+      url("../../images/cat-backpack-280-290@1x.jpg") type("image/jpeg") 1x,
+      url("../../images/cat-backpack-280-290@2x.jpg") type("image/jpeg") 2x);
+  background-repeat: no-repeat;
+  background-position:
+    top 58px center,
+    center,
+    center;
+  background-size:
+    78px 80px,
+    cover,
+    contain;
 
-// }
+  @media #{$on-tablet} {
+    background-image:
+      url("../../images/icons/stack.svg#gift"),
+      linear-gradient(rgba($color-accent, 0.85), rgba($color-accent, 0.85)),
+      image-set(
+        url("../../images/cat-backpack-707-200@1x.jpg") type("image/jpeg") 1x,
+        url("../../images/cat-backpack-707-200@2x.jpg") type("image/jpeg") 2x);
+    background-position:
+      center left 77px,
+      center,
+      center;
+  }
+
+  @media #{$on-desktop} {
+    background-image:
+      url("../../images/icons/stack.svg#gift"),
+      linear-gradient(rgba($color-accent, 0.85), rgba($color-accent, 0.85)),
+      image-set(
+        url("../../images/cat-backpack-245-288@1x.jpg") type("image/jpeg") 1x,
+        url("../../images/cat-backpack-245-288@2x.jpg") type("image/jpeg") 2x);
+    background-position:
+      top 56px center,
+      center,
+      center;
+  }
+}
 
 .promo__text {
+  margin: 0;
+
   font-size: 16px;
+  font-weight: 400;
   line-height: 20px;
   text-align: center;
+  color: $color-bg-basic;
 
-  @media (min-width: $screen-width-tablet) and (max-width: calc($screen-width-desc - 1px)) {
+  @media #{$on-tablet} {
     text-align: left;
   }
 }

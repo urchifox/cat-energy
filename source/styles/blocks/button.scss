@@ -1,4 +1,6 @@
 .button {
+  border: none;
+
   font-family: $font-family-accent;
   font-size: 16px;
   line-height: 20px;
@@ -7,11 +9,6 @@
   color: $color-bg-basic;
 
   background-color: $color-accent;
-
-  @media (min-width: $screen-width-tablet) {
-    font-size: 20px;
-    line-height: 26px;
-  }
 
   &--secondary {
     color: $color-special_dark-grey;

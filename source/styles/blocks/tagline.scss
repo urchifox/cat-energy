@@ -4,7 +4,7 @@
   text-transform: uppercase;
   color: $color-text-strong;
 
-  @media (min-width: $screen-width-tablet) {
+  @media #{$on-tablet-desktop} {
     font-size: 20px;
     line-height: 20px;
     text-align: left;

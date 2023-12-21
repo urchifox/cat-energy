@@ -1,6 +1,9 @@
 // .header {
 
 // }
+.header__nav-list {
+  @include clear-list();
+}
 
 .header__nav-link {
   font-family: $font-family-accent;
@@ -9,12 +12,12 @@
   text-transform: uppercase;
   color: $color-text-strong;
 
-  @media (min-width: $screen-width-tablet) {
+  @media #{$on-tablet-desktop} {
     font-size: 18px;
     line-height: 24px;
   }
 
-  @media (min-width: $screen-width-desc) {
+  @media #{$on-desktop} {
     font-size: 20px;
     line-height: normal;
   }

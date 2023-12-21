@@ -1,14 +1,111 @@
 // .goals {
 
 // }
+
+.goals__title {
+  margin: 0;
+}
+
+.goals__list {
+  @include clear-list();
+}
+
 .goals__item {
+  position: relative;
+
   background-color: $color-basic_grey;
+
+  &::after {
+    --circle-radius: 50px;
+
+    content: "";
+    position: absolute;
+    top: calc(24px - var(--top-offset));
+    left: calc(20px - var(--side-offset));
+
+    background-image:
+      var(--url-to-vector),
+      radial-gradient(circle closest-side,
+        $color-accent 99%,
+        transparent 100%);
+    background-size:
+      var(--cat-width) var(--cat-height),
+      var(--circle-radius);
+    background-repeat: no-repeat;
+
+    @media #{$on-tablet} {
+      --circle-radius: 200px;
+
+      top: 50%;
+      left: auto;
+      right: calc(63px - var(--side-offset));
+
+      transform: translateY(-50%);
+    }
+
+    @media #{$on-desktop} {
+      --circle-radius: 100px;
+
+      top: calc(47px - var(--top-offset));
+      left: calc(52px - var(--side-offset));
+    }
+  }
+
+  &--weight-loss::after {
+    --url-to-vector: url("../../images/icons/stack.svg#cat-slim");
+    --cat-width: 36px;
+    --cat-height: 50px;
+    --top-offset: 3px;
+    --side-offset: 0px;
+
+    width: var(--circle-radius);
+    height: calc(var(--circle-radius) + var(--top-offset) * 2);
+
+    background-position: top;
+
+    @media #{$on-tablet} {
+      --cat-width: 140px;
+      --cat-height: 194px;
+      --top-offset: 11px;
+    }
+
+    @media #{$on-desktop} {
+      --cat-width: 70px;
+      --cat-height: 97px;
+      --top-offset: 6px;
+    }
+  }
+
+  &--weight-gain::after {
+    --url-to-vector: url("../../images/icons/stack.svg#cat-pro");
+    --cat-width: 67px;
+    --cat-height: 28px;
+    --top-offset: 0px;
+    --side-offset: calc((var(--cat-width) - var(--circle-radius)) / 2);
+
+    width: var(--cat-width);
+    height: var(--circle-radius);
+
+    background-position: center;
+
+    @media #{$on-tablet} {
+      --cat-width: 268px;
+      --cat-height: 112px;
+    }
+
+    @media #{$on-desktop} {
+      --cat-width: 134px;
+      --cat-height: 56px;
+    }
+  }
 }
 
 .goals__description {
+  margin: 0;
+
   color: $color-special_dark-grey;
 
-  @media (min-width: $screen-width-desc) {
+  @media #{$on-desktop} {
     color: $color-text-strong;
   }
 }
@@ -20,7 +117,7 @@
   text-transform: uppercase;
   color: $color-text-strong;
 
-  @media (min-width: $screen-width-tablet) {
+  @media #{$on-tablet-desktop} {
     font-size: 20px;
     line-height: normal;
   }
