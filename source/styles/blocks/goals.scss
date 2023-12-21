@@ -45,7 +45,7 @@
 
     @media #{$on-desktop} {
       --circle-radius: 100px;
-      
+
       top: calc(47px - var(--top-offset));
       left: calc(52px - var(--side-offset));
     }
