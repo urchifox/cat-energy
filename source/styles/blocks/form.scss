@@ -43,6 +43,7 @@
   &--tel::after {
     content: "";
     position: absolute;
+    z-index: 1;
     top: 50%;
     right: 12px;
     transform: translateY(-50%);
