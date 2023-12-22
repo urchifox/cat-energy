@@ -38,37 +38,6 @@
       content: "*";
     }
   }
-
-  &--email::after,
-  &--tel::after {
-    content: "";
-    position: absolute;
-    z-index: 1;
-    top: 50%;
-    right: 12px;
-    transform: translateY(-50%);
-
-    width: 20px;
-    height: 20px;
-
-    mask-position: center;
-    mask-repeat: no-repeat;
-    background-color: $color-text-strong;
-    mask-size: var(--mask-width) var(--mask-height);
-    mask-image: var(--mask-url);
-  }
-
-  &--email::after {
-    --mask-url: url("../../images/icons/stack.svg#email");
-    --mask-width: 17px;
-    --mask-height: 13px;
-  }
-
-  &--tel::after {
-    --mask-url: url("../../images/icons/stack.svg#telephone");
-    --mask-width: 15px;
-    --mask-height: 15px;
-  }
 }
 
 .form__input {

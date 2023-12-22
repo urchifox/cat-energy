@@ -97,12 +97,22 @@
               <legend class="form__title subtitle">Контактные данные (владельца кота)</legend>
               <ul class="form__list form__list--text">
                 <li class="form__item">
-                  <input class="form__input" id="input-email" name="email" type="email" placeholder="kuklachev@gmail.com" required autocomplete="email">
-                  <label class="form__label form__label--required form__label--email" for="input-email">E-mail:</label>
+                  <div class="form__input-container">
+                    <input class="form__input" id="input-email" name="email" type="email" placeholder="kuklachev@gmail.com" required autocomplete="email">
+                    <svg class="form__icon" width="17" height="13" aria-hidden="true">
+                      <use href="images/icons/stack.svg#email"></use>
+                    </svg>
+                  </div>
+                  <label class="form__label form__label--required" for="input-email">E-mail:</label>
                 </li>
                 <li class="form__item">
-                  <input class="form__input" id="input-tel" name="tel" type="tel" placeholder="8 (960) 900-60-90" required autocomplete="tel">
-                  <label class="form__label form__label--required form__label--tel" for="input-tel">Телефон:</label>
+                  <div class="form__input-container">
+                    <input class="form__input" id="input-tel" name="tel" type="tel" placeholder="8 (960) 900-60-90" required autocomplete="tel">
+                    <svg class="form__icon" width="15" height="15" aria-hidden="true">
+                      <use href="images/icons/stack.svg#telephone"></use>
+                    </svg>
+                  </div>
+                  <label class="form__label form__label--required" for="input-tel">Телефон:</label>
                 </li>
               </ul>
             </fieldset>
