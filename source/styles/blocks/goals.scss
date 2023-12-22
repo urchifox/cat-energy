@@ -111,14 +111,43 @@
 }
 
 .goals__link {
+  display: inline-flex;
+  align-items: center;
+
   font-family: $font-family-accent;
   font-size: 16px;
   line-height: 16px;
   text-transform: uppercase;
   color: $color-text-strong;
 
+  &:hover {
+    &::before {
+      width: 26px;
+    }
+  }
+
   @media #{$on-tablet-desktop} {
     font-size: 20px;
     line-height: normal;
+  }
+
+  &::before {
+    content: "";
+    order: 1;
+    margin-left: 15px;
+    width: 18px;
+    height: 2px;
+
+    background-color: currentColor;
+  }
+
+  &::after {
+    content: "";
+    order: 2;
+    width: 8px;
+    height: 8px;
+    transform: translateX(-50%) rotate(45deg);
+
+    background: linear-gradient(45deg, transparent 50%, currentColor 50%);
   }
 }

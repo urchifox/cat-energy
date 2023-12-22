@@ -1,6 +1,30 @@
-// .card {
+.card {
+  &--show-more {
+    position: relative;
 
-// }
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 39px;
+      left: 50%;
+      transform: translateX(-50%);
+
+      width: 30px;
+      height: 2px;
+
+      background-color: $color-basic_grey;
+
+      @media #{$on-tablet-desktop} {
+        top: 80px;
+      }
+    }
+
+    &::after {
+      transform: translateX(-50%) rotate(90deg);
+    }
+  }
+}
 
 .card__name {
   margin: 0;

@@ -24,6 +24,9 @@
 .form__label {
   order: -1;
 
+  display: flex;
+  align-items: center;
+  gap: 15px;
   font-family: $font-family-accent;
   font-size: 16px;
   text-transform: uppercase;
@@ -34,8 +37,54 @@
   }
 
   &--required {
+    display: block;
+
     &::after {
       content: "*";
+    }
+  }
+
+  &--radio::before {
+    content: "";
+    width: 30px;
+    height: 30px;
+    border: 1px solid $color-special_grey;
+    border-radius: 50%;
+    background-image: none;
+    background-size: 13px 13px;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    input:checked + & {
+      background-image: radial-gradient(circle closest-side,
+        $color-accent 90%,
+        transparent 100%);
+    }
+
+    @media #{$on-tablet-desktop} {
+      width: 40px;
+      height: 40px;
+      background-size: 18px 18px;
+    }
+  }
+
+  &--checkbox::before {
+    content: "";
+    width: 30px;
+    height: 30px;
+    border: 1px solid $color-special_grey;
+    background-image: none;
+    background-size: 26px 26px;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    input:checked + & {
+      background-image: url("../../images/icons/stack.svg#check");
+    }
+
+    @media #{$on-tablet-desktop} {
+      width: 40px;
+      height: 40px;
     }
   }
 }
