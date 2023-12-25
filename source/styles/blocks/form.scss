@@ -56,7 +56,8 @@
     background-position: center;
 
     input:checked + & {
-      background-image: radial-gradient(circle closest-side,
+      background-image:
+        radial-gradient(circle closest-side,
         $color-accent 90%,
         transparent 100%);
     }
