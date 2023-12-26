@@ -11,6 +11,19 @@ $on-desktop: "screen and (min-width: #{$breakpoint-desktop})";
 $on-tablet-desktop: "screen and (min-width: #{$breakpoint-tablet})";
 $on-mobile-tablet: "screen and (max-width: #{$breakpoint-desktop - $breakpoint-gap})";
 
+// ADAPTIVE SIZES
+:root {
+  --side-padding: 20px;
+
+  @media #{$on-tablet} {
+    --side-padding: 30px;
+  }
+
+  @media #{$on-desktop} {
+    --side-padding: 110px;
+  }
+}
+
 // FONTS OPTIONS
 $font-family-basic: "Lato", sans-serif;
 $font-family-accent: "Oswald", sans-serif;
