@@ -1,17 +1,21 @@
 const MENU_CLASS = 'header__nav';
-const MENU_MODIFIER = '--is-opened';
 const BUTTON_CLASS = 'header__menu-toggle';
-const BUTTON_MODIFIER = '--is-opened';
+const MODIFIER_OPENED = '--is-opened';
+const MODIFIER_CLOSED = '--is-closed';
 
 const menu = document.querySelector(`.${MENU_CLASS}`);
 const menuButton = document.querySelector(`.${BUTTON_CLASS}`);
 
 const toggleMenu = () => {
-  menu.classList.toggle(`${MENU_CLASS}${MENU_MODIFIER}`);
-  menuButton.classList.toggle(`${BUTTON_CLASS}${BUTTON_MODIFIER}`);
+  menu.classList.toggle(`${MENU_CLASS}${MODIFIER_OPENED}`);
+  menu.classList.toggle(`${MENU_CLASS}${MODIFIER_CLOSED}`);
+  menuButton.classList.toggle(`${BUTTON_CLASS}${MODIFIER_OPENED}`);
+  menuButton.classList.toggle(`${BUTTON_CLASS}${MODIFIER_CLOSED}`);
 };
 
 const init = () => {
+  menu.classList.add(`${MENU_CLASS}${MODIFIER_CLOSED}`);
+  menuButton.classList.add(`${BUTTON_CLASS}${MODIFIER_CLOSED}`);
   menuButton.addEventListener('click', toggleMenu);
 };
 
