@@ -1,5 +1,42 @@
 .partnership {
+  position: relative;
   background-color: $color-bg-basic;
+}
+
+.partnership__info {
+  padding-top: 26px;
+  padding-bottom: 26px;
+
+  display: grid;
+  grid-template-columns: 140px 140px;
+  justify-content: space-between;
+
+  background-color: $color-bg-basic;
+
+  @media #{$on-tablet} {
+    padding-top: 61px;
+    padding-bottom: 61px;
+    padding-left: 70px;
+    padding-right: 70px;
+
+    grid-template-columns: 163px 157px;
+  }
+
+  @media #{$on-desktop} {
+    position: absolute;
+    top: 50%;
+    left: var(--side-padding);
+    transform: translateY(-50%);
+
+    padding-top: 61px;
+    padding-bottom: 61px;
+    padding-left: 80px;
+    padding-right: 80px;
+    width: auto;
+
+    grid-template-columns: 163px 157px;
+    gap: 81px;
+  }
 }
 
 .partnership__title {
@@ -33,4 +70,10 @@
 
 .partnership__city {
   margin: 0;
+}
+
+.partnership__map-image {
+  display: block;
+  width: 100%;
+  object-fit: cover;
 }

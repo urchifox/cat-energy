@@ -4,6 +4,10 @@
 
 .socials__list {
   @include clear-list();
+
+  display: flex;
+  justify-content: center;
+  gap: 24px;
 }
 
 .socials__link {
