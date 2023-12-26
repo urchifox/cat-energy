@@ -13,43 +13,40 @@
   </head>
   <body class="page__body">
 
-    <header class="header">
-      <div class="header__logo logo" role="img">
-        <a class="logo__link" href="index.html" tabindex="-1" aria-current="page">
-          <picture>
-            <source type="image/svg+xml" media="(min-width: 1440px)"
-              srcset="images/logo-cat-max.svg"
-              width="70" height="59">
-            <source type="image/svg+xml" media="(min-width: 768px)"
-              srcset="images/logo-cat-med.svg"
-              width="60" height="50">
-            <img class="logo__image logo__image--icon"
-              src="images/logo-cat-min.svg"
-              width="33" height="38"
-              alt="Веселый кот-супергерой">
-          </picture>
-        </a>
-        <a class="logo__link" href="index.html" aria-current="page">
-          <img class="logo__image logo__image--text"
-            src="images/logo-text.svg"
-            width="101" height="18"
-            alt="Cat Energy на главную страницу">
-        </a>
-      </div>
-
-      <button class="header__menu-toggle header__menu-toggle--is-closed" type="button" aria-expanded="false" aria-controls="menu">
+    <header class="page__header header container">
+      <a class="header__logo header__logo--pic logo" href="index.html" tabindex="-1" aria-current="page">
+        <picture>
+          <source type="image/svg+xml" media="(min-width: 1440px)"
+            srcset="images/logo-cat-max.svg"
+            width="70" height="59">
+          <source type="image/svg+xml" media="(min-width: 768px)"
+            srcset="images/logo-cat-med.svg"
+            width="60" height="50">
+          <img class="logo__image logo__image--icon"
+            src="images/logo-cat-min.svg"
+            width="33" height="38"
+            alt="Веселый кот-супергерой">
+        </picture>
+      </a>
+      <a class="header__logo header__logo--text logo" href="index.html" aria-current="page">
+        <img class="logo__image logo__image--text"
+          src="images/logo-text.svg"
+          width="101" height="18"
+          alt="Cat Energy на главную страницу">
+      </a>
+      <button class="header__menu-toggle" type="button" aria-expanded="false" aria-controls="menu">
         <span class="visually-hidden">Открыть меню</span>
       </button>
       <nav class="header__nav" id="menu">
         <ul class="header__nav-list">
           <li class="header__nav-item">
-            <a class="header__nav-link" href="index.html">Главная</a>
+            <a class="header__nav-link header__nav-link--current" href="index.html" aria-current="page">Главная</a>
           </li>
           <li class="header__nav-item">
             <a class="header__nav-link" href="catalog.html">Каталог продукции</a>
           </li>
           <li class="header__nav-item">
-            <a class="header__nav-link header__nav-link--current" href="program.html" aria-current="page">Подбор программы</a>
+            <a class="header__nav-link" href="program.html">Подбор программы</a>
           </li>
         </ul>
       </nav>
@@ -79,16 +76,16 @@
               </ul>
               <ul class="form__list form__list--radio">
                 <li class="form__item">
-                  <label class="form__label" for="input-program-loss">Похудение</label>
                   <input class="visually-hidden" id="input-program-loss" name="program" type="radio" value="weight-loss" checked>
+                  <label class="form__label form__label--radio" for="input-program-loss">Похудение</label>
                 </li>
                 <li class="form__item">
-                  <label class="form__label" for="input-program-gain">Набор массы</label>
                   <input class="visually-hidden" id="input-program-gain" name="program" type="radio" value="weight-gain">
+                  <label class="form__label form__label--radio" for="input-program-gain">Набор массы</label>
                 </li>
                 <li class="form__item">
-                  <label class="form__label" for="input-program-know">Не знаю (Нужен ваш совет)</label>
                   <input class="visually-hidden" id="input-program-know" name="program" type="radio" value="dont-know">
+                  <label class="form__label form__label--radio" for="input-program-know">Не знаю (Нужен ваш совет)</label>
                 </li>
               </ul>
             </fieldset>
@@ -97,12 +94,22 @@
               <legend class="form__title subtitle">Контактные данные (владельца кота)</legend>
               <ul class="form__list form__list--text">
                 <li class="form__item">
-                  <input class="form__input form__input--email" id="input-email" name="email" type="email" placeholder="kuklachev@gmail.com" required autocomplete="email">
-                  <label class="form__label form__label--required form__label--email" for="input-email">E-mail:</label>
+                  <div class="form__input-container">
+                    <input class="form__input" id="input-email" name="email" type="email" placeholder="kuklachev@gmail.com" required autocomplete="email">
+                    <svg class="form__icon" width="17" height="13" aria-hidden="true">
+                      <use href="images/icons/stack.svg#email"></use>
+                    </svg>
+                  </div>
+                  <label class="form__label form__label--required" for="input-email">E-mail:</label>
                 </li>
                 <li class="form__item">
-                  <input class="form__input form__input--tel" id="input-tel" name="tel" type="tel" placeholder="8 (960) 900-60-90" required autocomplete="tel">
-                  <label class="form__label form__label--required form__label--tel" for="input-tel">Телефон:</label>
+                  <div class="form__input-container">
+                    <input class="form__input" id="input-tel" name="tel" type="tel" placeholder="8 (960) 900-60-90" required autocomplete="tel">
+                    <svg class="form__icon" width="15" height="15" aria-hidden="true">
+                      <use href="images/icons/stack.svg#telephone"></use>
+                    </svg>
+                  </div>
+                  <label class="form__label form__label--required" for="input-tel">Телефон:</label>
                 </li>
               </ul>
             </fieldset>
@@ -121,15 +128,15 @@
                 </li>
                 <li class="form__item">
                   <input class="visually-hidden" id="input-additions-water" name="additions" value="water" type="checkbox">
-                  <label class="form__label" for="input-additions-water">Питьевая вода</label>
+                  <label class="form__label form__label--checkbox" for="input-additions-water">Питьевая вода</label>
                 </li>
                 <li class="form__item">
                   <input class="visually-hidden" id="input-additions-milk" name="additions" value="milk" type="checkbox">
-                  <label class="form__label" for="input-additions-milk">Молоко</label>
+                  <label class="form__label form__label--checkbox" for="input-additions-milk">Молоко</label>
                 </li>
                 <li class="form__item">
                   <input class="visually-hidden" id="input-additions-vitamins" name="additions" value="vitamins" type="checkbox">
-                  <label class="form__label" for="input-additions-vitamins">Витамины</label>
+                  <label class="form__label form__label--checkbox" for="input-additions-vitamins">Витамины</label>
                 </li>
               </ul>
             </fieldset>
@@ -142,42 +149,41 @@
 
     </main>
 
-    <footer class="footer">
-      <div class="container">
-        <section class="footer__partnership partnership">
+    <footer class="page__footer footer">
+      <section class="footer__partnership partnership">
+        <div class="partnership__info container">
           <h2 class="partnership__title">Приглашаем к сотрудничеству дилеров!</h2>
           <address class="partnership__adress">
             <p class="partnership__street"><span aria-hidden="true">ул.</span><span class="visually-hidden">улица</span> Большая Конюшенная, <span aria-hidden="true">д.</span><span class="visually-hidden">дом</span> 19/8</p>
             <p class="partnership__city">Санкт-Петербург</p>
           </address>
-          <div class="partnership__map">
-            <picture>
-              <source type="image/png" media="(min-width: 1440px)"
-                srcset="images/location-1440-400@1x.png 1x,
-                        images/location-1440-400@2x.png 2x"
-                width="768" height="400">
-              <source type="image/png" media="(min-width: 768px)"
-                srcset="images/location-768-400@1x.png 1x,
-                        images/location-768-400@2x.png 2x"
-                width="768" height="400">
-              <img class="partnership__map-image"
-                src="images/location-320-362@1x.png"
-                srcset="images/location-320-362@2x.png 2x"
-                width="320" height="360"
-                alt="Расположение нашего офиса на карте">
-            </picture>
-          </div>
-        </section>
-
-        <div class="footer__logo logo" role="img">
-          <a class="logo__link" href="index.html" aria-current="page">
-            <img class="logo__image logo__image--text"
-              src="images/logo-text.svg"
-              width="101" height="18"
-              alt="Cat Energy на главную страницу">
-          </a>
         </div>
+        <div class="partnership__map">
+          <picture>
+            <source type="image/png" media="(min-width: 1440px)"
+              srcset="images/location-1440-400@1x.png 1x,
+                      images/location-1440-400@2x.png 2x"
+              width="1440" height="400">
+            <source type="image/png" media="(min-width: 768px)"
+              srcset="images/location-768-400@1x.png 1x,
+                      images/location-768-400@2x.png 2x"
+              width="768" height="400">
+            <img class="partnership__map-image"
+              src="images/location-320-362@1x.png"
+              srcset="images/location-320-362@2x.png 2x"
+              width="320" height="360"
+              alt="Расположение нашего офиса на карте">
+          </picture>
+        </div>
+      </section>
 
+      <div class="footer__container container">
+        <a class="footer__logo logo" href="index.html">
+          <img class="logo__image logo__image--text"
+            src="images/logo-text.svg"
+            width="101" height="18"
+            alt="Cat Energy на главную страницу">
+        </a>
         <section class="footer__socials socials">
           <h2 class="visually-hidden">Мы в соцсетях</h2>
           <ul class="socials__list">
@@ -198,12 +204,9 @@
             </li>
           </ul>
         </section>
-
-        <div class="footer__copyright">
-          <a class="footer__copyright-link" href="https://htmlacademy.ru/intensive/adaptive">
-            HTML Academy
-          </a>
-        </div>
+        <a class="footer__copyright" href="https://htmlacademy.ru/intensive/adaptive">
+          HTML Academy
+        </a>
       </div>
     </footer>
 
