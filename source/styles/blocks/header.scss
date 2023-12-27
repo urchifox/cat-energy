@@ -1,59 +1,53 @@
 .header {
   position: relative;
 
-  display: grid;
-  grid-template-areas:
-    "logo-pic logo-text button"
-    "menu menu menu";
-  grid-template-columns: 33px 1fr 33px;
-  align-items: center;
+  display: flex;
+  flex-direction: column;
 
   background-color: $color-bg-basic;
-
-  @media #{$on-mobile} {
-    & > *:not(.header__nav) {
-      padding-top: 13px;
-      padding-bottom: 15px;
-    }
-  }
 
   @media #{$on-tablet} {
     padding-top: 25px;
 
-    grid-template-areas: "logo-pic logo-text menu";
-    grid-template-columns: auto auto 1fr;
-    gap: 13px;
+    flex-direction: row;
+    gap: 33px;
   }
 
   @media #{$on-desktop} {
-    position: absolute;
-    top: 55px;
-    left: 0;
-    right: 0;
+    padding-top: 55px;
 
-    grid-template-areas: "logo-pic logo-text menu";
-    grid-template-columns: auto auto 1fr;
-    gap: 14px;
+    flex-direction: row;
+    gap: 33px;
 
     background-color: transparent;
   }
 }
 
-.header__logo {
-  justify-self: center;
+.header__icons-container {
+  padding-top: 13px;
+  padding-bottom: 15px;
 
-  &--pic {
-    grid-area: logo-pic;
-  }
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 33px;
+  align-items: center;
 
-  &--text {
-    grid-area: logo-text;
+
+  @media #{$on-tablet-desktop} {
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+
+    width: auto;
+    display: flex;
+    gap: 13px;
+    flex-shrink: 0;
   }
 }
 
+
 .header__menu-toggle {
   position: relative;
-  grid-area: button;
 
   padding: 0;
   width: 24px;
@@ -120,8 +114,6 @@
 }
 
 .header__nav {
-  grid-area: menu;
-
   @media #{$on-mobile} {
     text-align: center;
 
@@ -129,6 +121,7 @@
 
     &--is-opened {
       position: absolute;
+      z-index: 1;
       top: 100%;
       left: calc(0px - var(--side-padding));
       right: calc(0px - var(--side-padding));
@@ -138,18 +131,23 @@
       display: none;
     }
   }
+
+  @media #{$on-tablet-desktop} {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
 }
 
 .header__nav-list {
   @include clear-list();
 
   @media #{$on-tablet-desktop} {
-    padding-left: 33px;
-
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-end;
+    align-items: center;
     gap: 12px 33px;
   }
 }

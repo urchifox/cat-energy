@@ -1,45 +1,146 @@
 .hero {
-  background-color: $color-accent;
-  background-image:
-    linear-gradient(rgba($color-accent, 0.85), rgba($color-accent, 0.85)),
-    image-set(
-      url("../../images/cat-hero-320-302@2x.jpg") type("image/jpeg") 1x,
-      url("../../images/cat-hero-320-302@2x.jpg") type("image/jpeg") 2x);
-  background-repeat: no-repeat;
-  background-position: cover;
+  position: relative;
+
+  padding-top: 27px;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: -3;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    height: 320px;
+
+    @media #{$on-tablet} {
+      display: none;
+    }
+
+    @media #{$on-desktop} {
+      left: 50%;
+      height: 694px;
+    }
+  }
+
+  &::before {
+    background-color: $color-accent;
+    background-image:
+      image-set(
+        url("../../images/cat-hero-320-302@2x.jpg") type("image/jpeg") 1x,
+        url("../../images/cat-hero-320-302@2x.jpg") type("image/jpeg") 2x);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    @media #{$on-desktop} {
+      background-image:
+        image-set(
+          url("../../images/cat-hero-1040-694@2x.jpg") type("image/jpeg") 1x,
+          url("../../images/cat-hero-1040-694@2x.jpg") type("image/jpeg") 2x);
+      background-position: right center;
+    }
+  }
+
+  &::after {
+    background-color: rgba($color-accent, 0.85);
+  }
 
   @media #{$on-tablet} {
-    background-color: $color-bg-basic;
-    background-image: none;
+    padding-top: 65px;
   }
 
   @media #{$on-desktop} {
-    background-image:
-      linear-gradient(rgba($color-accent, 0.85), rgba($color-accent, 0.85)),
-      image-set(
-        url("../../images/cat-hero-1040-694@2x.jpg") type("image/jpeg") 1x,
-        url("../../images/cat-hero-1040-694@2x.jpg") type("image/jpeg") 2x);
+    position: static;
+    padding-top: 110px;
+  }
+}
+
+.hero__container {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  @media #{$on-tablet} {
+    padding-left: 90px;
+    padding-bottom: 526px;
+    align-items: flex-start;
+  }
+
+  @media #{$on-desktop} {
+    padding-left: 80px;
+    align-items: flex-start;
   }
 }
 
 .hero__title {
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 25px;
 
+  max-width: 250px;
   text-align: center;
+  color: $color-bg-basic;
 
   @media #{$on-tablet-desktop} {
+    margin-bottom: 40px;
+
+    max-width: 420px;
     text-align: left;
+    color: $color-text-strong;
   }
 }
 
 .hero__tagline {
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 29px;
 
   text-align: center;
   line-height: 14px;
+  color: $color-bg-basic;
 
   @media #{$on-tablet-desktop} {
+    margin-bottom: 50px;
+
     line-height: 20px;
     text-align: left;
+    color: $color-text-strong;
+  }
+}
+
+.hero__image {
+  margin-bottom: 3px;
+  display: block;
+
+  @media #{$on-tablet} {
+    position: absolute;
+    z-index: -1;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-bottom: 0;
+  }
+
+  @media #{$on-desktop} {
+    position: absolute;
+    z-index: -1;
+    top: -81px;
+    bottom: auto;
+    left: 447px;
+    margin-bottom: 0;
+  }
+}
+
+.hero__link {
+  order: 1;
+
+  width: 100%;
+
+  @media #{$on-tablet-desktop} {
+    padding-right: 26px;
+    padding-left: 26px;
+    width: auto;
   }
 }
