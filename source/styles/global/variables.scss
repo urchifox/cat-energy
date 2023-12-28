@@ -1,7 +1,7 @@
 // SCREEN SIZES
 $breakpoint-mobile: 320px;
 $breakpoint-tablet: 768px;
-$breakpoint-desktop: 1440px;
+$breakpoint-desktop: 1280px;
 $breakpoint-gap: 0.02px;
 
 // MEDIA QUERIES
@@ -15,12 +15,8 @@ $on-mobile-tablet: "screen and (max-width: #{$breakpoint-desktop - $breakpoint-g
 :root {
   --side-padding: 20px;
 
-  @media #{$on-tablet} {
+  @media #{$on-tablet-desktop} {
     --side-padding: 30px;
-  }
-
-  @media #{$on-desktop} {
-    --side-padding: 110px;
   }
 }
 
