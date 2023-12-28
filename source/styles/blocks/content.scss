@@ -17,3 +17,15 @@
     margin-bottom: 82px;
   }
 }
+
+.content__goals {
+  margin-bottom: 20px;
+
+  @media #{$on-tablet} {
+    margin-bottom: 45;
+  }
+
+  @media #{$on-desktop} {
+    margin-bottom: 71px;
+  }
+}
