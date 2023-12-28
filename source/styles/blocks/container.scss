@@ -4,5 +4,5 @@
   padding-left: var(--side-padding);
   padding-right: var(--side-padding);
   width: 100%;
-  max-width: 1220px;
+  max-width: calc(1220px + var(--side-padding) * 2);
 }
