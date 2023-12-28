@@ -39,7 +39,7 @@
         image-set(
           url("../../images/cat-hero-1040-694@2x.jpg") type("image/jpeg") 1x,
           url("../../images/cat-hero-1040-694@2x.jpg") type("image/jpeg") 2x);
-      background-position: right center;
+      background-position: center left 0;
     }
   }
 
@@ -72,6 +72,7 @@
 
   @media #{$on-desktop} {
     padding-left: 80px;
+    padding-bottom: 185px;
     align-items: flex-start;
   }
 }
@@ -128,7 +129,7 @@
     z-index: -1;
     top: -81px;
     bottom: auto;
-    left: 447px;
+    left: calc(50% - 163px);
     margin-bottom: 0;
   }
 }
@@ -138,9 +139,15 @@
 
   width: 100%;
 
+
   @media #{$on-tablet-desktop} {
+    padding-top: 14px;
+    padding-bottom: 14px;
     padding-right: 26px;
     padding-left: 26px;
     width: auto;
+
+    font-size: 20px;
+    line-height: 26px;
   }
 }

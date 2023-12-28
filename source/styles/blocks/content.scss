@@ -5,3 +5,15 @@
 .content__title {
   margin: 0;
 }
+
+.content__hero {
+  margin-bottom: 20px;
+
+  @media #{$on-tablet} {
+    margin-bottom: 0;
+  }
+
+  @media #{$on-desktop} {
+    margin-bottom: 82px;
+  }
+}

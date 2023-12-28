@@ -1,4 +1,8 @@
 .header {
+
+}
+
+.header__container {
   position: relative;
 
   display: flex;
@@ -10,6 +14,7 @@
     padding-top: 25px;
 
     flex-direction: row;
+    justify-content: space-between;
     gap: 33px;
   }
 
@@ -17,6 +22,7 @@
     padding-top: 55px;
 
     flex-direction: row;
+    justify-content: space-between;
     gap: 33px;
 
     background-color: transparent;
@@ -123,8 +129,11 @@
       position: absolute;
       z-index: 1;
       top: 100%;
-      left: calc(0px - var(--side-padding));
-      right: calc(0px - var(--side-padding));
+      left: 0;
+      right: 0;
+
+      padding-left: var(--side-padding);
+      padding-right: var(--side-padding);
     }
 
     &--is-closed {
