@@ -5,6 +5,10 @@
   grid-template-columns: 1fr;
   gap: 20px;
 
+  @media #{$on-tablet} {
+    gap: 30px;
+  }
+
   @media #{$on-desktop} {
     grid-template-columns: 1fr 1fr;
     gap: 80px;
