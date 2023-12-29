@@ -22,10 +22,22 @@
   margin-bottom: 20px;
 
   @media #{$on-tablet} {
-    margin-bottom: 45;
+    margin-bottom: 45px;
   }
 
   @media #{$on-desktop} {
     margin-bottom: 71px;
+  }
+}
+
+.content__features {
+  margin-bottom: 49px;
+
+  @media #{$on-tablet} {
+    margin-bottom: 45px;
+  }
+
+  @media #{$on-desktop} {
+    margin-bottom: 83px;
   }
 }
