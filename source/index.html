@@ -126,12 +126,11 @@
       </section>
 
       <section class="example">
-        <div class="container">
-          <h2 class="example__title title">Живой пример</h2>
-          <p class="example__text">Борис сбросил 5 кг за 2 месяца, просто заменив свой обычный корм на Cat Energy Slim. Отличный результат без изнуряющих тренировок! При этом он не менял своих привычек и по-прежнему спит по 16 часов в день.</p>
-
-          <div class="example__stats">
-            <dl  class="example__stats-list">
+        <div class="example__container container">
+          <div class="example__info">
+            <h2 class="example__title title">Живой пример</h2>
+            <p class="example__text">Борис сбросил 5 кг за 2 месяца, просто заменив свой обычный корм на Cat Energy Slim. Отличный результат без изнуряющих тренировок! При этом он не менял своих привычек и по-прежнему спит по 16 часов в день.</p>
+            <dl  class="example__stats">
               <div class="example__stats-item">
                 <dt  class="example__stats-description">Снижение веса</dt>
                 <dd  class="example__stats-number">
@@ -154,31 +153,35 @@
           </div>
 
           <div class="example__slider slider">
-            <picture>
-              <source type="image/png" media="(min-width: 768px)"
-                srcset="images/cat-slider-before-560-512@1x.png 1x,
-                        images/cat-slider-before-560-512@2x.png 2x"
-                width="560" height="512">
-              <img class="slider__picture slider__picture--before"
-                src="images/cat-slider-before-280-256@1x.png"
-                srcset="images/cat-slider-before-280-256@2x.png 2x"
-                width="280" height="256"
-                alt="Толстый кот Борис до перехода на Cat Energy">
-            </picture>
-            <picture>
-              <source type="image/png" media="(min-width: 768px)"
-                srcset="images/cat-slider-after-280-256@1x.png 1x,
-                        images/cat-slider-after-280-256@2x.png 2x"
-                width="560" height="512">
-              <img class="slider__picture slider__picture--before"
-                src="images/cat-slider-after-280-256@1x.png"
-                srcset="images/cat-slider-after-280-256@2x.png 2x"
-                width="280" height="256"
-                alt="Стройный кот Борис после питания Cat Energy">
-            </picture>
-            <button class="slider__control" type="button">
+            <div class="slider__picture-container slider__picture-container--before">
+              <picture>
+                <source type="image/png" media="(min-width: 768px)"
+                  srcset="images/cat-slider-before-560-512@1x.png 1x,
+                          images/cat-slider-before-560-512@2x.png 2x"
+                  width="560" height="512">
+                <img class="slider__picture slider__picture--before"
+                  src="images/cat-slider-before-280-256@1x.png"
+                  srcset="images/cat-slider-before-280-256@2x.png 2x"
+                  width="280" height="256"
+                  alt="Толстый кот Борис до перехода на Cat Energy">
+              </picture>
+            </div>
+            <div class="slider__picture-container slider__picture-container--after">
+              <picture>
+                <source type="image/png" media="(min-width: 768px)"
+                  srcset="images/cat-slider-after-280-256@1x.png 1x,
+                          images/cat-slider-after-280-256@2x.png 2x"
+                  width="560" height="512">
+                <img class="slider__picture slider__picture--after"
+                  src="images/cat-slider-after-280-256@1x.png"
+                  srcset="images/cat-slider-after-280-256@2x.png 2x"
+                  width="280" height="256"
+                  alt="Стройный кот Борис после питания Cat Energy">
+              </picture>
+            </div>
+            <!-- <button class="slider__control" type="button">
               <span class="visually-hidden">Сравнить состояние до и после</span>
-            </button>
+            </button> -->
           </div>
         </div>
       </section>

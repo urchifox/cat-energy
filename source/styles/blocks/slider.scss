@@ -1,6 +1,33 @@
-// .slider {
+.slider {
+  --left-width: 50%;
 
-// }
+  width: 280px;
+  display: grid;
+  grid-template-columns: var(--left-width) calc(100% - var(--left-width));
+
+  @media #{$on-tablet-desktop} {
+    width: 560px;
+  }
+}
+
+.slider__picture-container {
+  display: flex;
+  overflow: hidden;
+  flex-shrink: 0;
+
+  &--before {
+    justify-content: flex-start;
+  }
+
+  &--after {
+    justify-content: flex-end;
+  }
+}
+
+.slider__picture {
+  display: block;
+  max-width: none
+}
 
 .slider__control {
   position: relative;
