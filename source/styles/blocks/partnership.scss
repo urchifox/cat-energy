@@ -79,5 +79,14 @@
 .partnership__map-image {
   display: block;
   width: 100%;
+  max-height: 400px;
   object-fit: cover;
+
+  @media #{$on-tablet} {
+    max-height: 500px;
+  }
+
+  @media #{$on-desktop} {
+    max-height: 600px;
+  }
 }
