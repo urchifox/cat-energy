@@ -47,6 +47,14 @@
   }
 }
 
+.header__logo {
+  &--text img {
+    @media #{$on-desktop} {
+      width: 118px;
+      height: auto;
+    }
+  }
+}
 
 .header__menu-toggle {
   position: relative;
