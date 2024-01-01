@@ -23,9 +23,13 @@
   flex-direction: column;
   gap: 20px;
 
+  @media #{$on-tablet} {
+    gap: 99px;
+  }
+
   @media #{$on-desktop} {
     flex-direction: row;
-    justify-content: space-between;
+    gap: 224px;
   }
 }
 
@@ -33,27 +37,35 @@
   margin-top: 0;
   margin-bottom: 40px;
 
-  line-height: 100%;
+  line-height: 40px;
 
   @media #{$on-tablet} {
     margin-bottom: 60px;
+
+    line-height: 60px;
   }
 
   @media #{$on-desktop} {
     margin-bottom: 146px;
+
+    line-height: 60px;
   }
 }
 
 .example__text {
   margin-top: 0;
-  margin-bottom: 20px;
+  margin-bottom: 0;
 
-  @media #{$on-tablet} {
-    margin-bottom: 55px;
-  }
+  &:last-of-type {
+    margin-bottom: 20px;
 
-  @media #{$on-desktop} {
-    margin-bottom: 69px;
+    @media #{$on-tablet} {
+      margin-bottom: 55px;
+    }
+
+    @media #{$on-desktop} {
+      margin-bottom: 69px;
+    }
   }
 }
 
@@ -66,6 +78,11 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 20px 32px;
+
+  @media #{$on-tablet-desktop} {
+    justify-content: flex-start;
+    gap: 55px 43px;
+  }
 }
 
 .example__stats-item {
@@ -74,8 +91,23 @@
   align-items: center;
 
   &--summary {
+    width: 100%;
     flex-direction: row;
+    justify-content: center;
     gap: 4px;
+
+    @media #{$on-tablet} {
+      margin-left: auto;
+
+      width: fit-content;
+      flex-direction: column;
+      align-items: flex-end;
+    }
+
+    @media #{$on-desktop} {
+      gap: 63px;
+      justify-content: flex-start;
+    }
   }
 }
 
@@ -84,7 +116,7 @@
 
   padding-top: 14px;
   padding-bottom: 17px;
-  width: 124px;
+  min-width: 124px;
   border: 1px solid $color-special_grey;
   border-radius: 3px;
 
@@ -96,16 +128,17 @@
   color: $color-text-strong;
 
   @media #{$on-tablet-desktop} {
+    min-width: 162px;
+
     font-size: 30px;
     line-height: 37px;
-    width: 162px;
   }
 
   &--summary {
     padding-top: 0;
     padding-bottom: 0;
 
-    width: fit-content;
+    min-width: fit-content;
     border: 0;
     font-size: 14px;
     line-height: 20px;
@@ -121,7 +154,7 @@
   margin-top: -10px;
   margin-bottom: 0;
 
-  width: 81px;
+  width: calc(100% - 22px * 2);
 
   font-size: 12px;
   line-height: 12px;
@@ -131,10 +164,19 @@
 
   background-color: $color-light_grey;
 
-  @media #{$on-tablet-desktop} {
+  @media #{$on-tablet} {
+    width: calc(100% - 10px * 2);
+
     font-size: 14px;
     line-height: 14px;
     background-color: $color-bg-basic;
+  }
+
+  @media #{$on-desktop} {
+    width: calc(100% - 10px * 2);
+
+    font-size: 14px;
+    line-height: 14px;
   }
 
   &--summary {
@@ -159,4 +201,10 @@
 
 .example__slider {
   align-self: center;
+  width: 280px;
+  flex-shrink: 0;
+
+  @media #{$on-tablet-desktop} {
+    width: 560px;
+  }
 }
