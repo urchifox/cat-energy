@@ -4,6 +4,8 @@ $breakpoint-tablet: 768px;
 $breakpoint-desktop: 1280px;
 $breakpoint-gap: 0.02px;
 
+$max-content-width: 1220px;
+
 // MEDIA QUERIES
 $on-mobile: "screen and (max-width: #{$breakpoint-tablet - $breakpoint-gap})";
 $on-tablet: "screen and (min-width: #{$breakpoint-tablet}) and (max-width: #{$breakpoint-desktop - $breakpoint-gap})";

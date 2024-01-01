@@ -7,14 +7,26 @@
 
   padding-top: 40px;
   padding-bottom: 40px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr;
+  justify-items: center;
   gap: 20px;
 
   @media #{$on-tablet-desktop} {
-    flex-direction: row;
-    justify-content: space-between;
+    grid-template-columns: 1fr auto 1fr;
+    justify-items: normal;
+    align-items: center;
+    gap: 48px;
+  }
+
+  @media #{$on-tablet} {
+    padding-top: 55px;
+    padding-bottom: 55px;
+  }
+
+  @media #{$on-desktop} {
+    padding-top: 66px;
+    padding-bottom: 66px;
   }
 }
 
@@ -26,14 +38,10 @@
   border-bottom: 1px solid $color-special_grey;
 
   @media #{$on-tablet-desktop} {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
-    padding: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    width: fit-content;
     border: none;
-    width: auto;
   }
 }
 
