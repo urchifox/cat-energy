@@ -1,4 +1,24 @@
+.promo {
+  // TODO переписать на марджины
+  padding-top: 35px;
+  padding-bottom: 35px;
+
+  @media #{$on-tablet} {
+    padding-top: 70px;
+    padding-bottom: 75px;
+  }
+
+  @media #{$on-desktop} {
+    display: inline;
+    // width: fit-content;
+  }
+}
+
 .promo__wrapper {
+  padding-top: 187px;
+  padding-bottom: 43px;
+  min-height: 290px;
+
   background-color: $color-accent;
   background-image:
     url("../../images/icons/stack.svg#gift"),
@@ -14,9 +34,12 @@
   background-size:
     78px 80px,
     cover,
-    contain;
+    cover;
 
   @media #{$on-tablet} {
+    padding-top: 70px;
+    padding-bottom: 70px;
+    min-height: 200px;
     background-image:
       url("../../images/icons/stack.svg#gift"),
       linear-gradient(rgba($color-accent, 0.85), rgba($color-accent, 0.85)),
@@ -30,6 +53,10 @@
   }
 
   @media #{$on-desktop} {
+    padding-top: 185px;
+    padding-bottom: 43px;
+    width: 245px;
+    min-height: 288px;
     background-image:
       url("../../images/icons/stack.svg#gift"),
       linear-gradient(rgba($color-accent, 0.85), rgba($color-accent, 0.85)),
@@ -44,7 +71,12 @@
 }
 
 .promo__text {
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+
+  width: 161px;
 
   font-size: 16px;
   font-weight: 400;
@@ -54,5 +86,6 @@
 
   @media #{$on-tablet} {
     text-align: left;
+    margin-left: 421px;
   }
 }

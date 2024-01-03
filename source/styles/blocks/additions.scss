@@ -1,17 +1,103 @@
-// .additions {
+.additions {
+  // TODO убрать марджины в элемент
+  margin-top: 25px;
 
-// }
+  @media #{$on-tablet} {
+    margin-top: 70px;
+  }
+
+  @media #{$on-desktop} {
+    margin-top: 76px;
+  }
+}
+
 
 .additions__title {
-  margin: 0;
+  --side-offset: 20px;
+
+  position: relative;
+  margin-top: 0;
+  margin-bottom: 36px;
+
+  width: fit-content;
+  max-width: 100%;
 
   line-height: 24px;
 
-  @media #{$on-tablet-desktop} {
+  box-shadow:
+   var(--side-offset) 0 $color-bg-basic,
+   calc(0px - var(--side-offset)) 0 $color-bg-basic;
+
+  background-color: $color-bg-basic;
+
+  &::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 15px;
+    right: 0;
+
+    width: 100vw;
+    height: 2px;
+
+    background-color: $color-accent;
+    box-shadow: 100vw 0px 0px $color-accent;
+
+    @media #{$on-tablet-desktop} {
+      top: 24px;
+    }
+  }
+
+  @media #{$on-tablet} {
+    --side-offset: 0px;
+
+    margin-bottom: 83px;
+
+    padding-left: 40px;
+    padding-right: 40px;
+    line-height: 36px;
+  }
+
+  @media #{$on-desktop} {
+    --side-offset: 40px;
+
+    margin-bottom: 80px;
+
     line-height: 36px;
   }
 }
 
 .additions__list {
   @include clear-list();
+
+  width: 100%;
+
+  // display: flex;
+  // flex-wrap: wrap;
+  // align-items: stretch;
+  // gap: 0 30px;
+
+  @media #{$on-desktop} {
+    // width: fit-content;
+    display: inline;
+
+  }
 }
+
+.additions__item {
+  margin-top: -1px;
+
+  width: 100%;
+
+  border-top: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
+
+  @media #{$on-tablet} {
+    border: 1px solid #cdcdcd;
+  }
+
+  @media #{$on-desktop} {
+    width: fit-content;
+  }
+}
+
