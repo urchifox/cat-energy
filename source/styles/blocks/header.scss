@@ -23,6 +23,10 @@
 
     background-color: transparent;
   }
+
+  &--with-separator {
+    border-bottom: 1px solid $color-light_grey;
+  }
 }
 
 .header__icons-container {
@@ -155,6 +159,22 @@
 .header__nav-list {
   @include clear-list();
 
+  position: relative;
+
+  @media #{$on-mobile} {
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: calc(0px - var(--side-padding));
+      right: calc(0px - var(--side-padding));
+
+      height: 1px;
+
+      background-color: $color-light_grey;
+    }
+  }
+
   @media #{$on-tablet-desktop} {
     display: flex;
     flex-direction: row;
@@ -171,10 +191,10 @@
   padding: 22px 0;
 
   @media #{$on-mobile} {
-    &::before {
+    &::after {
       content: "";
       position: absolute;
-      top: -1px;
+      bottom: -1px;
       left: calc(0px - var(--side-padding));
       right: calc(0px - var(--side-padding));
 
