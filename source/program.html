@@ -13,43 +13,48 @@
   </head>
   <body class="page__body">
 
-    <header class="page__header header container">
-      <a class="header__logo header__logo--pic logo" href="index.html" tabindex="-1" aria-current="page">
-        <picture>
-          <source type="image/svg+xml" media="(min-width: 1280px)"
-            srcset="images/logo-cat-max.svg"
-            width="70" height="59">
-          <source type="image/svg+xml" media="(min-width: 768px)"
-            srcset="images/logo-cat-med.svg"
-            width="60" height="50">
-          <img class="logo__image logo__image--icon"
-            src="images/logo-cat-min.svg"
-            width="33" height="38"
-            alt="Веселый кот-супергерой">
-        </picture>
-      </a>
-      <a class="header__logo header__logo--text logo" href="index.html" aria-current="page">
-        <img class="logo__image logo__image--text"
-          src="images/logo-text.svg"
-          width="101" height="18"
-          alt="Cat Energy на главную страницу">
-      </a>
-      <button class="header__menu-toggle" type="button" aria-expanded="false" aria-controls="menu">
-        <span class="visually-hidden">Открыть меню</span>
-      </button>
-      <nav class="header__nav" id="menu">
-        <ul class="header__nav-list">
-          <li class="header__nav-item">
-            <a class="header__nav-link header__nav-link--current" href="index.html" aria-current="page">Главная</a>
-          </li>
-          <li class="header__nav-item">
-            <a class="header__nav-link" href="catalog.html">Каталог продукции</a>
-          </li>
-          <li class="header__nav-item">
-            <a class="header__nav-link" href="program.html">Подбор программы</a>
-          </li>
-        </ul>
-      </nav>
+    <header class="page__header header">
+      <div class="header__container container">
+        <div class="header__icons-container">
+          <a class="header__logo header__logo--pic logo" href="index.html" tabindex="-1">
+            <picture>
+              <source type="image/svg+xml" media="(min-width: 1280px)"
+                srcset="images/logo-cat-max.svg"
+                width="70" height="59">
+              <source type="image/svg+xml" media="(min-width: 768px)"
+                srcset="images/logo-cat-med.svg"
+                width="60" height="50">
+              <img class="logo__image logo__image--icon"
+                src="images/logo-cat-min.svg"
+                width="33" height="38"
+                alt="Веселый кот-супергерой">
+            </picture>
+          </a>
+          <a class="header__logo header__logo--text logo" href="index.html">
+            <img class="logo__image logo__image--text"
+              src="images/logo-text.svg"
+              width="101" height="18"
+              alt="Cat Energy на главную страницу">
+          </a>
+          <button class="header__menu-toggle" type="button" aria-expanded="false" aria-controls="menu">
+            <span class="visually-hidden">Открыть меню</span>
+          </button>
+        </div>
+
+        <nav class="header__nav" id="menu">
+          <ul class="header__nav-list">
+            <li class="header__nav-item">
+              <a class="header__nav-link header__nav-link--current" href="index.html">Главная</a>
+            </li>
+            <li class="header__nav-item">
+              <a class="header__nav-link" href="catalog.html">Каталог продукции</a>
+            </li>
+            <li class="header__nav-item">
+              <a class="header__nav-link" href="program.html" aria-current="page">Подбор программы</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <main class="content">
