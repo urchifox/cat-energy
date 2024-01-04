@@ -61,3 +61,15 @@
     margin-bottom: 87px;
   }
 }
+
+.content__program-request {
+  margin-bottom: 32px;
+
+  @media #{$on-tablet} {
+    margin-bottom: 60px;
+  }
+
+  @media #{$on-desktop} {
+    margin-bottom: 79px;
+  }
+}
