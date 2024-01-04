@@ -1,7 +1,5 @@
 .partnership {
   position: relative;
-
-  background-color: $color-bg-basic;
 }
 
 .partnership__info {
@@ -11,8 +9,6 @@
   display: grid;
   grid-template-columns: 140px 140px;
   justify-content: space-between;
-
-  background-color: $color-bg-basic;
 
   @media #{$on-tablet} {
     padding-top: 61px;
@@ -36,6 +32,12 @@
 
     grid-template-columns: 163px 157px;
     gap: 81px;
+
+    background-color: $color-bg-basic;
+  }
+
+  &--contrast {
+    background-color: $color-bg-basic;
   }
 }
 

@@ -1,15 +1,17 @@
+// TODO либо сделать модификатор --product и вынести в него дефолтные свойства,либо убрать --addition в отдельный блок
+
 .card {
-  padding-top: 21px;
+  padding-top: 20px;
   padding-bottom: 25px;
   height: 100%;
 
   display: grid;
   grid-template-areas:
-    'cover name'
-    'cover features'
-    'button button';
+    "cover name"
+    "cover features"
+    "button button";
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto auto 1fr ;
+  grid-template-rows: auto auto 1fr;
 
   @media #{$on-tablet-desktop} {
     padding-top: 0;
@@ -18,28 +20,27 @@
     padding-left: 37px;
 
     grid-template-areas:
-      'cover'
-      'name'
-      'features'
-      'button';
+      "cover"
+      "name"
+      "features"
+      "button";
     grid-template-columns: 1fr;
-    grid-template-rows: 161px auto auto 1fr;
+    grid-template-rows: auto auto auto 1fr;
 
     background-color: $color-basic_grey;
   }
 
-  @media #{$on-desktop} {
-    grid-template-rows: 151px auto auto 1fr;
-  }
-
   &--show-more {
-    position: relative;
+    --icon-size: 30px;
+    --icon-margin-bottom: 23px;
+
+    padding-top: 25px;
 
     grid-template-areas:
-      'icon'
-      'name'
-      'text'
-      'button';
+      "icon"
+      "name"
+      "text"
+      "button";
     grid-template-columns: 1fr;
 
     background: transparent;
@@ -47,13 +48,13 @@
     &::before,
     &::after {
       content: "";
-      margin-bottom: 27px;
+      margin-bottom: var(--icon-margin-bottom);
       grid-area: icon;
       justify-self: center;
       align-self: center;
 
       width: 2px;
-      height: 30px;
+      height: var(--icon-size);
 
       background-color: $color-basic_grey;
     }
@@ -63,38 +64,39 @@
     }
 
     @media #{$on-tablet-desktop} {
-      grid-template-rows: 161px auto auto 1fr;
-      border: 2px solid #F2F2F2;
+      --icon-size: 60px;
 
-      &::before,
-      &::after {
-        margin-bottom: 0;
-        height: 60px;
-      }
+      padding-top: 50px;
+      padding-bottom: 38px;
+      border: 2px solid #f2f2f2;
+    }
+
+    @media #{$on-tablet-desktop} {
+      --icon-margin-bottom: 50px;
     }
 
     @media #{$on-desktop} {
-      grid-template-rows: 151px auto auto 1fr;
+      --icon-margin-bottom: 40px;
     }
   }
 
   &--addition {
-    padding-top: 12px;
+    padding-top: 13px;
     padding-bottom: 17px;
     grid-template-areas:
-      'name'
-      'features'
-      'button';
+      "name"
+      "features"
+      "button";
     grid-template-columns: 1fr;
 
     background-color: transparent;
 
     @media #{$on-tablet} {
       padding-top: 26px;
-      padding-bottom: 26px;
+      padding-bottom: 27px;
       grid-template-areas:
-        'name features'
-        'button button';
+        "name features"
+        "button button";
       grid-template-columns: 1fr 1fr;
       grid-template-rows: auto auto;
       gap: 25px;
@@ -106,7 +108,7 @@
       padding-left: 0;
       padding-right: 0;
 
-      grid-template-areas:'name features button';
+      grid-template-areas: "name features button";
       grid-template-columns: 285px 285px 245px;
       grid-template-rows: auto;
       gap: 40px;
@@ -129,6 +131,7 @@
 
   @media #{$on-tablet-desktop} {
     margin-bottom: 15px;
+
     font-size: 20px;
     text-align: center;
     line-height: 24px;
@@ -136,6 +139,21 @@
 
   @media #{$on-desktop} {
     margin-bottom: 24px;
+  }
+
+  &--show-more {
+    margin-bottom: 8px;
+
+    text-align: center;
+    color: $color-special_dark-grey-3;
+
+    @media #{$on-tablet} {
+      margin-bottom: 23px;
+    }
+
+    @media #{$on-desktop} {
+      margin-bottom: 26px;
+    }
   }
 
   &--addition {
@@ -146,22 +164,11 @@
       line-height: 20px;
       margin-bottom: 0;
     }
-
-    @media #{$on-desktop} {
-      margin-bottom: 0;
-    }
   }
+}
 
-  &--show-more {
-    margin-bottom: 8px;
-
-    text-align: center;
-    color: $color-special_dark-grey-3;
-
-    @media #{$on-tablet-desktop} {
-      margin-bottom: 26px;
-    }
-  }
+.card__link {
+  color: $color-special_dark-grey-2;
 }
 
 .card__name-break {
@@ -176,10 +183,6 @@
       display: none;
     }
   }
-}
-
-.card__link {
-  color: $color-special_dark-grey-2;
 }
 
 .card__features {
@@ -200,8 +203,9 @@
     @media #{$on-tablet} {
       margin-bottom: 0;
       display: grid;
-      grid-template-columns: 1fr 90px;
+      grid-template-columns: 1fr 60px;
       text-align: right;
+      gap: 33px;
     }
 
     @media #{$on-desktop} {
@@ -227,7 +231,8 @@
   }
 
   &--addition {
-    display: block;
+    justify-content: flex-end;
+
     font-size: 14px;
     line-height: 14px;
 
@@ -235,6 +240,7 @@
       padding-top: 0;
       padding-bottom: 0;
       border: none;
+
       font-size: 16px;
       line-height: 20px;
     }
@@ -257,7 +263,6 @@
   line-height: 16px;
   text-align: center;
 
-
   @media #{$on-tablet-desktop} {
     font-size: 16px;
     line-height: 18px;
@@ -267,19 +272,25 @@
 .card__cover {
   margin-bottom: 17px;
   grid-area: cover;
+  align-self: self-start;
+
+  height: 107px;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  @media #{$on-tablet} {
+  @media #{$on-tablet-desktop} {
     margin-top: -71px;
-    margin-bottom: 22px;
+    height: 210px;
+  }
+
+  @media #{$on-tablet} {
+    margin-bottom: 23px;
   }
 
   @media #{$on-desktop} {
-    margin-top: -71px;
-    margin-bottom: 12px;
+    margin-bottom: 13px;
   }
 }
 

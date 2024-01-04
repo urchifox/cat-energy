@@ -25,7 +25,9 @@
   }
 
   &--with-separator {
-    border-bottom: 1px solid $color-light_grey;
+    @media #{$on-mobile} {
+      border-bottom: 1px solid $color-light_grey;
+    }
   }
 }
 
@@ -224,6 +226,11 @@
   @media #{$on-desktop} {
     font-size: 20px;
     line-height: normal;
-    color: $color-bg-basic;
+  }
+
+  &--contrast {
+    @media #{$on-desktop} {
+      color: $color-bg-basic;
+    }
   }
 }

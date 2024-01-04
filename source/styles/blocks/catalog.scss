@@ -1,15 +1,3 @@
-.catalog {
-  padding-top: 27px;
-
-  @media #{$on-tablet} {
-    padding-top: 65px;
-  }
-
-  @media #{$on-desktop} {
-    padding-top: 74px;
-  }
-}
-
 .catalog__title {
   margin-top: 0;
   margin-bottom: 40px;
@@ -47,23 +35,16 @@
   @media #{$on-mobile} {
     position: relative;
 
-    &::before,
-    &::after {
+    &::before {
       content: "";
       position: absolute;
+      top: 0;
+      bottom: -1px;
       left: calc(0px - var(--side-padding));
       right: calc(0px - var(--side-padding));
-      height: 1px;
 
-      background-color: #ebebeb;
-    }
-
-    &::before {
-      top: 0;
-    }
-
-    &::after {
-      bottom: -1px;
+      border-top: 1px solid #ebebeb;
+      border-bottom: 1px solid #ebebeb;
     }
   }
 }
