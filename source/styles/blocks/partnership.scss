@@ -13,7 +13,8 @@
   @media #{$on-tablet} {
     padding-top: 61px;
     padding-bottom: 61px;
-    width: calc(628px + var(--side-padding) * 2);
+    padding-left: calc(var(--side-padding) + 40px);
+    padding-right: calc(var(--side-padding) + 40px);
 
     grid-template-columns: 163px 157px;
   }

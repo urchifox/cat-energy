@@ -6,17 +6,19 @@
     content: "";
     position: absolute;
     z-index: -3;
-    top: 0;
+    top: -27px;
     left: 0;
     right: 0;
 
     height: 302px;
 
     @media #{$on-tablet} {
+      top: 0;
       display: none;
     }
 
     @media #{$on-desktop} {
+      top: 0;
       left: 50%;
       height: 694px;
     }
@@ -52,6 +54,7 @@
 
   @media #{$on-desktop} {
     position: static;
+    padding-top: 36px;
   }
 }
 
