@@ -170,7 +170,7 @@
   gap: 13px;
 
   @media #{$on-desktop} {
-    &:not(&--textarea) {
+    &:not(.form__item--textarea) {
       max-width: 570px;
     }
   }
@@ -196,66 +196,61 @@
     }
   }
 
-  &--radio {
-    --input-size: 30px;
-    --checked-icon-size: 13px 13px;
-
+  &--radio,
+  &--checkbox {
     display: flex;
     align-items: center;
     gap: 15px;
+
+    &:disabled {
+      opacity: 0.3;
+    }
 
     &::before {
       content: "";
       width: var(--input-size);
       height: var(--input-size);
       border: 1px solid $color-special_grey;
-      border-radius: 50%;
+    }
+
+    &:not(:disabled):hover::before {
+      border-color: #bababa;
     }
 
     input:checked + &::before {
-      background-image:
-        radial-gradient(circle closest-side,
-        $color-accent 90%,
-        transparent 100%);
+      background-image: var(--checked-background-image);
       background-size: var(--checked-icon-size);
       background-repeat: no-repeat;
       background-position: center;
     }
 
     @media #{$on-tablet-desktop} {
+      gap: 20px;
+    }
+  }
+
+  &--radio {
+    --input-size: 30px;
+    --checked-icon-size: 13px 13px;
+    --checked-background-image: radial-gradient(circle closest-side, #68b738 90%, transparent 100%);
+
+    &::before {
+      border-radius: 50%;
+    }
+
+    @media #{$on-tablet-desktop} {
       --input-size: 40px;
       --checked-icon-size: 18px 18px;
-
-      gap: 20px;
     }
   }
 
   &--checkbox {
     --input-size: 30px;
     --checked-icon-size: 26px 26px;
-
-    display: flex;
-    align-items: center;
-    gap: 15px;
-
-    &::before {
-      content: "";
-      width: var(--input-size);
-      height: var(--input-size);
-      border: 1px solid $color-special_grey;
-    }
-
-    input:checked + &::before {
-      background-image: url("../../images/icons/stack.svg#check");
-      background-size: var(--checked-icon-size);
-      background-repeat: no-repeat;
-      background-position: center;
-    }
+    --checked-background-image: url("../../images/icons/stack.svg#check");
 
     @media #{$on-tablet-desktop} {
       --input-size: 40px;
-
-      gap: 20px;
     }
   }
 }
@@ -283,6 +278,30 @@
   line-height: 18px;
   text-transform: uppercase;
   color: $color-special_dark-grey;
+
+  transition: border-color $transition-basic;
+
+  &:hover {
+    border-color: $color-special_grey;
+  }
+
+  &:not(:placeholder-shown):invalid {
+    border-color: $color-status_error;
+  }
+
+  &:active,
+  &:focus {
+    border-color: $color-special_dark-grey;
+  }
+
+  &::placeholder {
+    transition: opacity $transition-basic;
+    opacity: 0.5;
+  }
+
+  &:focus::placeholder {
+    opacity: 0;
+  }
 
   @media #{$on-tablet-desktop} {
     padding-top: 11px;
@@ -315,7 +334,19 @@
   top: 50%;
   right: 12px;
 
+  stroke: $color-special_dark-grey-2;
+
   transform: translateY(-50%);
+  transition: stroke $transition-basic;
+
+  .form__input:not(:placeholder-shown):not(:active):not(:focus):invalid + & {
+    stroke: $color-status_error;
+  }
+
+  .form__input:active + &,
+  .form__input:focus + & {
+    stroke: $color-accent;
+  }
 }
 
 .form__footer-container {
