@@ -262,14 +262,15 @@
     }
   }
 
-
   &--contrast {
-    &::after {
-      background-color: $color-bg-basic;
-    }
-
     @media #{$on-desktop} {
       color: $color-bg-basic;
+    }
+  }
+
+  &--contrast::after {
+    @media #{$on-desktop} {
+      background-color: $color-bg-basic;
     }
   }
 }
