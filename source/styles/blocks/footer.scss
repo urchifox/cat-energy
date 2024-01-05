@@ -30,6 +30,19 @@
   }
 }
 
+.footer__logo-icon {
+  fill: #111111;
+  transition: fill $transition-basic;
+
+  &:hover {
+    fill: #3e3e3e;
+  }
+
+  &:active {
+    fill: #6b6b6b;
+  }
+}
+
 .footer__socials {
   padding-top: 20px;
   padding-bottom: 20px;
@@ -56,6 +69,22 @@
   line-height: 20px;
   color: $color-special_dark-grey;
 
+  transition: opacity $transition-basic;
+
+  &:hover {
+    &::after {
+      background-color: $color-accent;
+    }
+  }
+
+  &:active {
+    opacity: 0.3;
+
+    &::after {
+      background-color: $color-accent;
+    }
+  }
+
   &::after {
     content: "";
     display: block;
@@ -67,6 +96,10 @@
     mask-size: contain;
     mask-repeat: no-repeat;
     mask-position: center;
+
+    transition:
+      background-color $transition-basic,
+      opacity $transition-basic;
   }
 
   @media #{$on-tablet-desktop} {
