@@ -123,10 +123,16 @@
   text-transform: uppercase;
   color: $color-text-strong;
 
+  transition: opacity $transition-basic;
+
   &:hover {
     &::after {
       width: 32px;
     }
+  }
+
+  &:active {
+    opacity: 0.2;
   }
 
   @media #{$on-tablet-desktop} {
@@ -144,6 +150,8 @@
     background-image: url("../../images/icons/stack.svg#arrow");
     background-size: cover;
     background-position: right center;
+
+    transition: width $transition-basic;
   }
 }
 
