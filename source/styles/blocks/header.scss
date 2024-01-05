@@ -40,6 +40,15 @@
   gap: 33px;
   align-items: center;
 
+  transition: opacity $transition-basic;
+
+  &:hover {
+    opacity: 0.8;
+  }
+
+  &:active {
+    opacity: 0.6;
+  }
 
   @media #{$on-tablet-desktop} {
     padding-top: 0;
@@ -212,11 +221,23 @@
 }
 
 .header__nav-link {
+  position: relative;
+
   font-family: $font-family-accent;
   font-size: 20px;
   line-height: 20px;
   text-transform: uppercase;
   color: $color-text-strong;
+
+  transition: opacity $transition-basic;
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
 
   @media #{$on-tablet-desktop} {
     font-size: 18px;
@@ -228,7 +249,25 @@
     line-height: normal;
   }
 
+  &--current::after {
+    @media #{$on-tablet-desktop} {
+      content: "";
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      right: 0;
+      height: 2px;
+
+      background-color: $color-accent;
+    }
+  }
+
+
   &--contrast {
+    &::after {
+      background-color: $color-bg-basic;
+    }
+    
     @media #{$on-desktop} {
       color: $color-bg-basic;
     }
