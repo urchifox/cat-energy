@@ -172,15 +172,20 @@
 }
 
 .card__name-break {
-  &:nth-child(1) {
-    @media #{$on-tablet-desktop} {
-      display: none;
+  &::after {
+    content: "\A";
+
+  }
+
+  &:nth-child(1)::after {
+    @media #{$on-mobile} {
+      white-space: pre;
     }
   }
 
-  &:nth-child(2) {
-    @media #{$on-mobile} {
-      display: none;
+  &:nth-child(2)::after {
+    @media #{$on-tablet-desktop} {
+      white-space: pre;
     }
   }
 }

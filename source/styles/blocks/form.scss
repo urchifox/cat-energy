@@ -66,6 +66,16 @@
   }
 }
 
+.form__title-break {
+  &::after {
+    content: "\A";
+
+    @media #{$on-mobile} {
+      white-space: pre;
+    }
+  }
+}
+
 .form__list-container {
   display: grid;
   gap: 24px;

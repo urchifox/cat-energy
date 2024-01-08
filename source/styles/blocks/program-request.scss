@@ -28,3 +28,10 @@
     line-height: 30px;
   }
 }
+
+.program-request__tagline-break {
+  &::after {
+    content: "\A";
+    white-space: pre;
+  }
+}
