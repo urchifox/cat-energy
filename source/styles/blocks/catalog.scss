@@ -35,16 +35,22 @@
   @media #{$on-mobile} {
     position: relative;
 
-    &::before {
+    &::before, after {
       content: "";
       position: absolute;
-      top: 0;
-      bottom: -1px;
       left: calc(0px - var(--side-padding));
       right: calc(0px - var(--side-padding));
 
-      border-top: 1px solid #ebebeb;
-      border-bottom: 1px solid #ebebeb;
+      height: 1px;
+      background-color: #ebebeb;
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    &::after {
+      top: 100%;
     }
   }
 }
