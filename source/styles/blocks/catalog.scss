@@ -35,7 +35,8 @@
   @media #{$on-mobile} {
     position: relative;
 
-    &::before, after {
+    &::before,
+    &::after {
       content: "";
       position: absolute;
       left: calc(0px - var(--side-padding));

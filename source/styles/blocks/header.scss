@@ -165,9 +165,11 @@
   0% {
     transform: translate(-50%, -50%) translateY(-8px);
   }
+
   50% {
     transform: translate(-50%, -50%)  rotate(0deg);
   }
+
   100% {
     transform: translate(-50%, -50%)  rotate(45deg);
   }
@@ -177,9 +179,11 @@
   0% {
     transform: translate(-50%, -50%) translateY(8px);
   }
+
   50% {
     transform: translate(-50%, -50%)  rotate(0deg);
   }
+
   100% {
     transform: translate(-50%, -50%)  rotate(-45deg);
   }
@@ -189,9 +193,11 @@
   0% {
     transform: translate(-50%, -50%)  rotate(45deg);
   }
+
   50% {
     transform: translate(-50%, -50%)  rotate(0deg);
   }
+
   100% {
     transform: translate(-50%, -50%) translateY(-8px);
   }
@@ -201,9 +207,11 @@
   0% {
     transform: translate(-50%, -50%)  rotate(-45deg);
   }
+
   50% {
     transform: translate(-50%, -50%)  rotate(0deg);
   }
+
   100% {
     transform: translate(-50%, -50%) translateY(8px);
   }

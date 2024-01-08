@@ -183,7 +183,6 @@
 .card__name-break {
   &::after {
     content: "\A";
-
   }
 
   &:nth-child(1)::after {
