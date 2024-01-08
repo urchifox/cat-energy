@@ -169,6 +169,15 @@
 
 .card__link {
   color: $color-special_dark-grey-2;
+  transition: opacity $transition-basic;
+
+  &:hover {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
 }
 
 .card__name-break {
@@ -301,6 +310,16 @@
 
 .card__image {
   display: block;
+
+  transition: transform $transition-basic;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
 }
 
 .card__button {
