@@ -7,10 +7,11 @@
     position: absolute;
     z-index: -3;
     top: -27px;
+    bottom: 178px;
     left: 0;
     right: 0;
 
-    height: 302px;
+    // height: 302px;
 
     @media #{$on-tablet} {
       top: 0;
@@ -67,14 +68,17 @@
 
   @media #{$on-tablet} {
     padding-left: 90px;
+    padding-right: 90px;
     padding-bottom: 526px;
     align-items: flex-start;
   }
 
   @media #{$on-desktop} {
     padding-left: 80px;
-    padding-bottom: 185px;
+    padding-bottom: 0;
     align-items: flex-start;
+
+    min-height: 470px;
   }
 }
 
@@ -82,33 +86,46 @@
   margin-top: 0;
   margin-bottom: 25px;
 
-  max-width: 250px;
+  max-width: 100%;
+
   text-align: center;
+  overflow-wrap: break-word;
   color: $color-bg-basic;
 
   @media #{$on-tablet-desktop} {
     margin-bottom: 40px;
 
-    max-width: 420px;
     text-align: left;
     color: $color-text-strong;
+  }
+
+  @media #{$on-desktop} {
+    max-width: 490px;
   }
 }
 
 .hero__tagline {
   margin-top: 0;
-  margin-bottom: 29px;
+  margin-bottom: 25px;
+
+  max-width: 100%;
 
   text-align: center;
-  line-height: 14px;
+  line-height: 18px;
+  overflow-wrap: break-word;
   color: $color-bg-basic;
 
   @media #{$on-tablet-desktop} {
-    margin-bottom: 50px;
+    margin-bottom: 45px;
 
-    line-height: 20px;
+    line-height: 25px;
     text-align: left;
     color: $color-text-strong;
+  }
+
+
+  @media #{$on-desktop} {
+    max-width: 490px;
   }
 }
 
@@ -139,7 +156,7 @@
   order: 1;
 
   width: 100%;
-
+  overflow-wrap: break-word;
 
   @media #{$on-tablet-desktop} {
     padding-top: 14px;
@@ -150,5 +167,10 @@
 
     font-size: 20px;
     line-height: 26px;
+  }
+
+
+  @media #{$on-desktop} {
+    max-width: 490px;
   }
 }
