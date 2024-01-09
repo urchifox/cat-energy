@@ -22,6 +22,7 @@
   padding-right: 20px;
   padding-bottom: 18px;
   padding-left: 20px;
+  width: 100%;
 
   display: grid;
   grid-template-areas:
@@ -29,6 +30,8 @@
     "text text"
     "link link";
   grid-template-columns: var(--circle-radius) 1fr;
+  grid-template-rows: auto auto 1fr;
+  gap: 0 20px;
 
   background-color: $color-basic_grey;
 
@@ -37,7 +40,7 @@
 
     padding-top: 77px;
     padding-right: 63px;
-    padding-bottom: 53px;
+    padding-bottom: 57px;
     padding-left: 52px;
 
     grid-template-areas:
@@ -45,6 +48,7 @@
       "text icon"
       "link icon";
     grid-template-columns: 1fr var(--circle-radius);
+    gap: 0 50px;
   }
 
   @media #{$on-desktop} {
@@ -52,32 +56,31 @@
 
     padding-top: 47px;
     padding-right: 61px;
-    padding-bottom: 55px;
+    padding-bottom: 57px;
     padding-left: 52px;
+
+    gap: 0 62px;
   }
 }
 
 .goals__title {
+  word-break: break-word;
   grid-area: title;
   margin-top: 0;
   margin-bottom: 0;
-  margin-left: 20px;
+
   align-self: center;
 
-  @media #{$on-tablet} {
-    margin-left: 0;
-  }
-
-  @media #{$on-desktop} {
-    margin-left: 62px;
-  }
+  // почему тут не работает  overflow-wrap: break-word ??
+  word-break: break-word;
 }
 
 .goals__description {
   grid-area: text;
   margin-top: 22px;
-  margin-bottom: 15px;
+  margin-bottom: 14px;
 
+  overflow-wrap: break-word;
   color: $color-special_dark-grey;
 
   @media #{$on-mobile} {
@@ -85,18 +88,16 @@
     border-bottom: 1px solid $color-light_grey-2;
   }
 
-
   @media #{$on-tablet} {
     margin-top: 24px;
-    margin-bottom: 48px;
-    margin-right: 53px;
+    margin-bottom: 52px;
 
     color: $color-text-strong;
   }
 
   @media #{$on-desktop} {
     margin-top: 39px;
-    margin-bottom: 23px;
+    margin-bottom: 27px;
 
     color: $color-text-strong;
   }
@@ -109,25 +110,28 @@
 
 .goals__link {
   grid-area: link;
+  align-self: self-end;
 
-  padding-top: 4px;
-  padding-bottom: 4px;
   width: fit-content;
+  max-width: 100%;
 
   display: flex;
   align-items: center;
+  gap: 15px;
 
   font-family: $font-family-accent;
   font-size: 16px;
-  line-height: 16px;
+  line-height: normal;
   text-transform: uppercase;
+  // почему тут не работает  overflow-wrap: break-word ??
+  word-break: break-word;
   color: $color-text-strong;
 
   transition: opacity $transition-basic;
 
   &:hover {
     &::after {
-      width: 32px;
+      background-position: right center;
     }
   }
 
@@ -137,21 +141,22 @@
 
   @media #{$on-tablet-desktop} {
     font-size: 20px;
-    line-height: normal;
+    gap: 25px;
   }
 
   &::after {
     content: "";
-    margin-left: 15px;
 
-    width: 24px;
+    width: 32px;
     height: 12px;
+    flex-shrink: 0;
 
     background-image: url("../../images/icons/stack.svg#arrow");
     background-size: cover;
-    background-position: right center;
+    background-position: right 8px center;
+    background-repeat: no-repeat;
 
-    transition: width $transition-basic;
+    transition: background-position $transition-basic;
   }
 }
 
