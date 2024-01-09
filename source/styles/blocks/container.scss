@@ -4,5 +4,5 @@
   padding-left: var(--side-padding);
   padding-right: var(--side-padding);
   width: 100%;
-  max-width: 1800px;
+  max-width: calc($max-content-width + var(--side-padding) * 2);
 }

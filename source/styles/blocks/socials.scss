@@ -1,7 +1,3 @@
-// .socials {
-
-// }
-
 .socials__list {
   @include clear-list();
 
@@ -20,6 +16,19 @@
   mask-size: contain;
   mask-repeat: no-repeat;
   mask-position: center;
+
+  transition:
+    background-color $transition-basic,
+    opacity $transition-basic;
+
+  &:hover {
+    background-color: $color-accent;
+  }
+
+  &:active {
+    background-color: $color-accent;
+    opacity: 0.3;
+  }
 
   &--vk {
     --icon-url: url("../../images/icons/stack.svg#vk-logo");

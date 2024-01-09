@@ -1,78 +1,208 @@
-// .goals {
-
-// }
-
-.goals__title {
-  margin: 0;
-}
-
 .goals__list {
   @include clear-list();
+
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+
+  @media #{$on-tablet} {
+    gap: 30px;
+  }
+
+  @media #{$on-desktop} {
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+  }
 }
 
 .goals__item {
-  position: relative;
+  --circle-radius: 50px;
+
+  padding-top: 24px;
+  padding-right: 20px;
+  padding-bottom: 18px;
+  padding-left: 20px;
+  width: 100%;
+
+  display: grid;
+  grid-template-areas:
+    "icon title"
+    "text text"
+    "link link";
+  grid-template-columns: var(--circle-radius) 1fr;
+  grid-template-rows: auto auto 1fr;
+  gap: 0 20px;
 
   background-color: $color-basic_grey;
 
+  @media #{$on-tablet} {
+    --circle-radius: 200px;
+
+    padding-top: 77px;
+    padding-right: 63px;
+    padding-bottom: 57px;
+    padding-left: 52px;
+
+    grid-template-areas:
+      "title icon"
+      "text icon"
+      "link icon";
+    grid-template-columns: 1fr var(--circle-radius);
+    gap: 0 50px;
+  }
+
+  @media #{$on-desktop} {
+    --circle-radius: 100px;
+
+    padding-top: 47px;
+    padding-right: 61px;
+    padding-bottom: 57px;
+    padding-left: 52px;
+
+    gap: 0 62px;
+  }
+}
+
+.goals__title {
+  grid-area: title;
+  margin-top: 0;
+  margin-bottom: 0;
+
+  align-self: center;
+
+  // почему тут не работает  overflow-wrap: break-word ??
+  word-break: break-word;
+}
+
+.goals__description {
+  grid-area: text;
+  margin-top: 22px;
+  margin-bottom: 14px;
+
+  overflow-wrap: break-word;
+  color: $color-special_dark-grey;
+
+  @media #{$on-mobile} {
+    padding-bottom: 23px;
+    border-bottom: 1px solid $color-light_grey-2;
+  }
+
+  @media #{$on-tablet} {
+    margin-top: 24px;
+    margin-bottom: 52px;
+
+    color: $color-text-strong;
+  }
+
+  @media #{$on-desktop} {
+    margin-top: 39px;
+    margin-bottom: 27px;
+
+    color: $color-text-strong;
+  }
+}
+
+.goals__text {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.goals__link {
+  grid-area: link;
+  align-self: self-end;
+
+  width: fit-content;
+  max-width: 100%;
+
+  display: flex;
+  align-items: center;
+  gap: 15px;
+
+  font-family: $font-family-accent;
+  font-size: 16px;
+  line-height: normal;
+  text-transform: uppercase;
+  // почему тут не работает  overflow-wrap: break-word ??
+  word-break: break-word;
+  color: $color-text-strong;
+
+  transition: opacity $transition-basic;
+
+  &:hover {
+    &::after {
+      background-position: right center;
+    }
+  }
+
+  &:active {
+    opacity: 0.2;
+  }
+
+  @media #{$on-tablet-desktop} {
+    font-size: 20px;
+    gap: 25px;
+  }
+
   &::after {
-    --circle-radius: 50px;
-
     content: "";
-    position: absolute;
-    top: calc(24px - var(--top-offset));
-    left: calc(20px - var(--side-offset));
 
-    background-image:
-      var(--url-to-vector),
-      radial-gradient(circle closest-side,
-        $color-accent 99%,
-        transparent 100%);
-    background-size:
-      var(--cat-width) var(--cat-height),
-      var(--circle-radius);
+    width: 32px;
+    height: 12px;
+    flex-shrink: 0;
+
+    background-image: url("../../images/icons/stack.svg#arrow");
+    background-size: cover;
+    background-position: right 8px center;
     background-repeat: no-repeat;
 
-    @media #{$on-tablet} {
-      --circle-radius: 200px;
+    transition: background-position $transition-basic;
+  }
+}
 
-      top: 50%;
-      left: auto;
-      right: calc(63px - var(--side-offset));
+.goals__icon {
+  grid-area: icon;
+  position: relative;
+  align-self: center;
 
-      transform: translateY(-50%);
-    }
+  width: var(--circle-radius);
+  height: var(--circle-radius);
 
-    @media #{$on-desktop} {
-      --circle-radius: 100px;
+  border-radius: 50%;
+  background-color: $color-accent;
 
-      top: calc(47px - var(--top-offset));
-      left: calc(52px - var(--side-offset));
-    }
+  &::after {
+    content: "";
+    position: absolute;
+
+    width: var(--cat-width);
+    height: var(--cat-height);
+
+    background-image: var(--url-to-vector);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    top: calc(50% + var(--vertical-shift, 0px));
+    left: calc(50% + var(--horizontal-shift, 0px));
+    transform: translate(-50%, -50%);
   }
 
   &--weight-loss::after {
     --url-to-vector: url("../../images/icons/stack.svg#cat-slim");
     --cat-width: 36px;
     --cat-height: 50px;
-    --top-offset: 3px;
-    --side-offset: 0px;
-
-    width: var(--circle-radius);
-    height: calc(var(--circle-radius) + var(--top-offset) * 2);
-
-    background-position: top;
+    --vertical-shift: -3px;
 
     @media #{$on-tablet} {
       --cat-width: 140px;
       --cat-height: 194px;
-      --top-offset: 11px;
+      --vertical-shift: -11px;
     }
 
     @media #{$on-desktop} {
       --cat-width: 70px;
       --cat-height: 97px;
-      --top-offset: 6px;
+      --vertical-shift: -6px;
     }
   }
 
@@ -80,13 +210,6 @@
     --url-to-vector: url("../../images/icons/stack.svg#cat-pro");
     --cat-width: 67px;
     --cat-height: 28px;
-    --top-offset: 0px;
-    --side-offset: calc((var(--cat-width) - var(--circle-radius)) / 2);
-
-    width: var(--cat-width);
-    height: var(--circle-radius);
-
-    background-position: center;
 
     @media #{$on-tablet} {
       --cat-width: 268px;
@@ -97,57 +220,5 @@
       --cat-width: 134px;
       --cat-height: 56px;
     }
-  }
-}
-
-.goals__description {
-  margin: 0;
-
-  color: $color-special_dark-grey;
-
-  @media #{$on-desktop} {
-    color: $color-text-strong;
-  }
-}
-
-.goals__link {
-  display: inline-flex;
-  align-items: center;
-
-  font-family: $font-family-accent;
-  font-size: 16px;
-  line-height: 16px;
-  text-transform: uppercase;
-  color: $color-text-strong;
-
-  &:hover {
-    &::before {
-      width: 26px;
-    }
-  }
-
-  @media #{$on-tablet-desktop} {
-    font-size: 20px;
-    line-height: normal;
-  }
-
-  &::before {
-    content: "";
-    order: 1;
-    margin-left: 15px;
-    width: 18px;
-    height: 2px;
-
-    background-color: currentColor;
-  }
-
-  &::after {
-    content: "";
-    order: 2;
-    width: 8px;
-    height: 8px;
-    transform: translateX(-50%) rotate(45deg);
-
-    background: linear-gradient(45deg, transparent 50%, currentColor 50%);
   }
 }

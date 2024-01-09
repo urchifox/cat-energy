@@ -1,8 +1,10 @@
 // SCREEN SIZES
 $breakpoint-mobile: 320px;
 $breakpoint-tablet: 768px;
-$breakpoint-desktop: 1440px;
+$breakpoint-desktop: 1280px;
 $breakpoint-gap: 0.02px;
+
+$max-content-width: 1220px;
 
 // MEDIA QUERIES
 $on-mobile: "screen and (max-width: #{$breakpoint-tablet - $breakpoint-gap})";
@@ -15,12 +17,8 @@ $on-mobile-tablet: "screen and (max-width: #{$breakpoint-desktop - $breakpoint-g
 :root {
   --side-padding: 20px;
 
-  @media #{$on-tablet} {
+  @media #{$on-tablet-desktop} {
     --side-padding: 30px;
-  }
-
-  @media #{$on-desktop} {
-    --side-padding: 110px;
   }
 }
 
@@ -32,6 +30,7 @@ $font-family-accent: "Oswald", sans-serif;
 $color-bg-basic: #ffffff;
 $color-basic_grey: #f2f2f2;
 $color-light_grey: #ececec;
+$color-light_grey-2: #d9d9d9;
 $color-special_grey: #cdcdcd;
 $color-special_grey-2: #666666;
 $color-special_dark-grey: #444444;
@@ -40,7 +39,9 @@ $color-special_dark-grey-3: #111111;
 $color-text-strong: #000000;
 $color-status_error: #ff8282;
 $color-accent: #68b738;
+$color-accent-2: #5eaa2f;
 
 // TRANSITION
-$transition-time-basic: 0.3s;
+$transition-time-basic: 0.2s;
 $transition-timing-function-basic: ease-out;
+$transition-basic: $transition-time-basic $transition-timing-function-basic;
