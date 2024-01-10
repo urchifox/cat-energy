@@ -42,6 +42,29 @@
   gap: 33px;
   align-items: center;
 
+  @media #{$on-tablet-desktop} {
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+
+    width: fit-content;
+    display: flex;
+    gap: 13px;
+    flex-shrink: 0;
+
+    transition: opacity $transition-basic;
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:active {
+      opacity: 0.6;
+    }
+  }
+}
+
+.header__logo {
   transition: opacity $transition-basic;
 
   &:hover {
@@ -52,19 +75,6 @@
     opacity: 0.6;
   }
 
-  @media #{$on-tablet-desktop} {
-    padding-top: 0;
-    padding-right: 0;
-    padding-bottom: 0;
-
-    width: fit-content;
-    display: flex;
-    gap: 13px;
-    flex-shrink: 0;
-  }
-}
-
-.header__logo {
   &--text img {
     @media #{$on-desktop} {
       width: 118px;
