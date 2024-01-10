@@ -27,6 +27,7 @@
     @media #{$on-desktop} {
       top: 0;
       left: 50%;
+      z-index: -1;
 
       height: 694px;
 
