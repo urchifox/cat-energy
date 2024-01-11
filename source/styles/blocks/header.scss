@@ -9,6 +9,7 @@
 
   @media #{$on-tablet} {
     padding-top: 25px;
+    padding-bottom: 25px;
 
     flex-direction: row;
     justify-content: space-between;
@@ -17,6 +18,7 @@
 
   @media #{$on-desktop} {
     padding-top: 55px;
+    padding-bottom: 55px;
 
     flex-direction: row;
     justify-content: space-between;
@@ -65,6 +67,7 @@
 }
 
 .header__logo {
+  width: fit-content;
   transition: opacity $transition-basic;
 
   &:hover {
@@ -237,9 +240,9 @@
     background-color: $color-bg-basic;
 
     transition:
-        transform $transition-basic,
-        opacity $transition-basic;
-// TODO навигация должна выезжать снизу хедера и уезжать тоже плавно, не работает
+      transform $transition-basic,
+      opacity $transition-basic;
+    // TODO навигация должна выезжать снизу хедера и уезжать тоже плавно, не работает
     &--is-opened {
       position: absolute;
       z-index: 1;
@@ -271,8 +274,7 @@
   }
 
   @media #{$on-desktop} {
-    padding-left: 15px;
-    max-width: 50%;
+    max-width: 570px;
   }
 }
 
