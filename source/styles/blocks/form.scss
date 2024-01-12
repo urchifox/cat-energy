@@ -211,7 +211,7 @@
     display: flex;
     align-items: center;
     gap: 15px;
-    
+
     cursor: pointer;
 
     &:disabled {
@@ -293,11 +293,24 @@
 
   transition: border-color $transition-basic;
 
+  &[type="number"]::-webkit-outer-spin-button,
+  &[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+  }
+
+  &[type='number'],
+  &[type="number"]:hover,
+  &[type="number"]:focus {
+      appearance: none;
+      -moz-appearance: textfield;
+  }
+
   &:hover {
     border-color: $color-special_grey;
   }
 
-  &:not(:placeholder-shown):invalid {
+  &:not(:placeholder-shown):invalid,
+  &--invalid {
     border-color: $color-status_error;
   }
 
@@ -351,7 +364,8 @@
   transform: translateY(-50%);
   transition: stroke $transition-basic;
 
-  .form__input:not(:placeholder-shown):not(:active):not(:focus):invalid + & {
+  .form__input:not(:placeholder-shown):not(:active):not(:focus):invalid + &,
+  .form__input--invalid + & {
     stroke: $color-status_error;
   }
 
