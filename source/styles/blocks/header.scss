@@ -68,13 +68,16 @@
   cursor: pointer;
   transition: opacity $transition-basic;
 
-  &:hover {
-    opacity: 0.8;
+  @media #{$on-mobile} {
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:active {
+      opacity: 0.6;
+    }
   }
 
-  &:active {
-    opacity: 0.6;
-  }
 
   &--text img {
     @media #{$on-desktop} {
