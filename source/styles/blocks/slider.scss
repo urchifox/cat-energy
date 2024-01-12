@@ -63,6 +63,7 @@
   border-radius: 50%;
 
   background-color: $color-bg-basic;
+  cursor: pointer;
 
   &:hover {
     --icon-color: #{$color-accent};

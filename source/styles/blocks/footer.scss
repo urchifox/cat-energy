@@ -33,6 +33,7 @@
 .footer__logo-icon {
   display: block;
   fill: #111111;
+  cursor: pointer;
   transition: fill $transition-basic;
 
   &:hover {
@@ -70,6 +71,7 @@
   line-height: 20px;
   color: $color-special_dark-grey;
 
+  cursor: pointer;
   transition: opacity $transition-basic;
 
   &:hover {

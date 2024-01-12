@@ -169,6 +169,7 @@
 
 .card__link {
   color: $color-special_dark-grey-2;
+  cursor: pointer;
   transition: opacity $transition-basic;
 
   &:hover {
@@ -292,6 +293,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  
+  cursor: pointer;
 
   @media #{$on-tablet-desktop} {
     margin-top: -71px;

@@ -126,6 +126,7 @@
   word-break: break-word;
   color: $color-text-strong;
 
+  cursor: pointer;
   transition: opacity $transition-basic;
 
   &:hover {

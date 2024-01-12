@@ -65,6 +65,7 @@
 }
 
 .header__logo {
+  cursor: pointer;
   transition: opacity $transition-basic;
 
   &:hover {
@@ -346,6 +347,7 @@
   overflow-wrap: break-word;
   color: $color-text-strong;
 
+  cursor: pointer;
   transition: opacity $transition-basic;
 
   &:hover {
