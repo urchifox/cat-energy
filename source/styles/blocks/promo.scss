@@ -30,7 +30,7 @@
     background-image: url("../../images/icons/stack.svg#gift");
     background-repeat: no-repeat;
     background-position: center;
-    block-size: contain;
+    background-size: contain;
   }
 
   @media #{$on-tablet} {
