@@ -1,8 +1,8 @@
 .goals__list {
   @include clear-list();
 
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   gap: 20px;
 
   @media #{$on-tablet} {
@@ -10,7 +10,9 @@
   }
 
   @media #{$on-desktop} {
-    grid-template-columns: 1fr 1fr;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 80px;
   }
 }
@@ -59,6 +61,9 @@
     padding-bottom: 57px;
     padding-left: 52px;
 
+    width: 570px;
+    flex-grow: 1;
+
     gap: 0 62px;
   }
 }
@@ -70,7 +75,6 @@
 
   align-self: center;
 
-  // почему тут не работает  overflow-wrap: break-word ??
   word-break: break-word;
 }
 
@@ -122,7 +126,6 @@
   font-size: 16px;
   line-height: normal;
   text-transform: uppercase;
-  // почему тут не работает  overflow-wrap: break-word ??
   word-break: break-word;
   color: $color-text-strong;
 
