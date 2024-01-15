@@ -65,10 +65,12 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 23px;
 
   font-size: 16px;
   line-height: 20px;
   color: $color-special_dark-grey;
+  word-break: break-word;
 
   transition: opacity $transition-basic;
 
@@ -91,6 +93,7 @@
     display: block;
     width: 27px;
     height: 34px;
+    flex-shrink: 0;
 
     background-color: $color-special_grey-2;
     mask-image: url("../../images/icons/stack.svg#html-academy-logo");
@@ -105,6 +108,5 @@
 
   @media #{$on-tablet-desktop} {
     justify-content: flex-end;
-    gap: 23px;
   }
 }
