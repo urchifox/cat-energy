@@ -30,6 +30,15 @@
   }
 }
 
+.footer__logo {
+  width: fit-content;
+
+  &:focus-visible {
+    outline: 2px solid $color-text-strong;
+    outline-offset: 4px;
+  }
+}
+
 .footer__logo-icon {
   display: block;
   fill: #111111;
@@ -90,6 +99,15 @@
     }
   }
 
+  &:focus-visible {
+    outline: 2px solid $color-text-strong;
+    outline-offset: 4px;
+
+    &::after {
+      background-color: $color-accent;
+    }
+  }
+
   &::after {
     content: "";
     display: block;
@@ -109,6 +127,7 @@
   }
 
   @media #{$on-tablet-desktop} {
-    justify-content: flex-end;
+    justify-self: flex-end;
+    width: fit-content;
   }
 }

@@ -7,28 +7,45 @@
 }
 
 .socials__link {
+  position: relative;
+
   display: block;
   width: 28px;
   height: 22px;
 
-  background-color: $color-special_grey-2;
-  mask-image: var(--icon-url);
-  mask-size: contain;
-  mask-repeat: no-repeat;
-  mask-position: center;
-
   cursor: pointer;
-  transition:
-    background-color $transition-basic,
-    opacity $transition-basic;
 
-  &:hover {
+  &:hover::after {
     background-color: $color-accent;
   }
 
-  &:active {
+  &:active::after {
     background-color: $color-accent;
     opacity: 0.3;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-text-strong;
+    outline-offset: 4px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
+    background-color: $color-special_grey-2;
+    mask-image: var(--icon-url);
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+
+    transition:
+      background-color $transition-basic,
+      opacity $transition-basic;
   }
 
   &--vk {

@@ -29,6 +29,11 @@
     color: rgba($color-bg-basic, 0.3);
   }
 
+  &:focus-visible {
+    outline: 2px solid $color-text-strong;
+    outline-offset: 4px;
+  }
+
   &--secondary {
     color: $color-special_dark-grey;
     background-color: $color-basic_grey;
