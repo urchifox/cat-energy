@@ -4,6 +4,7 @@
   font-weight: 400;
   line-height: 36px;
   color: $color-text-strong;
+  overflow-wrap: break-word;
 
   @media #{$on-tablet-desktop} {
     font-size: 60px;

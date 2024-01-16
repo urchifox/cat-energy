@@ -63,15 +63,22 @@
   border-radius: 50%;
 
   background-color: $color-bg-basic;
+  cursor: pointer;
 
   &:hover {
     --icon-color: #{$color-accent};
     border-color: $color-accent;
   }
 
-  &:active {
+  &:active,
+  &:focus-visible {
     --icon-color: #{$color-accent-2};
     border-color: $color-accent-2;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-text-strong;
+    outline-offset: 4px;
   }
 
   &::after {

@@ -168,7 +168,14 @@
 }
 
 .card__link {
+  margin-left: auto;
+  margin-right: auto;
+
+  display: block;
+  width: fit-content;
+
   color: $color-special_dark-grey-2;
+  cursor: pointer;
   transition: opacity $transition-basic;
 
   &:hover {
@@ -177,6 +184,11 @@
 
   &:active {
     opacity: 0.3;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-text-strong;
+    outline-offset: 4px;
   }
 }
 
@@ -292,6 +304,8 @@
   display: flex;
   justify-content: center;
   align-items: center;
+
+  cursor: pointer;
 
   @media #{$on-tablet-desktop} {
     margin-top: -71px;

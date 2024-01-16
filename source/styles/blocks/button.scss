@@ -11,9 +11,11 @@
   text-align: center;
   text-transform: uppercase;
   color: $color-bg-basic;
+  word-break: break-word;
 
   background-color: $color-accent;
 
+  cursor: pointer;
   transition:
     background-color $transition-basic,
     color $transition-basic;
@@ -25,6 +27,11 @@
   &:active {
     background-color: $color-accent-2;
     color: rgba($color-bg-basic, 0.3);
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-text-strong;
+    outline-offset: 4px;
   }
 
   &--secondary {

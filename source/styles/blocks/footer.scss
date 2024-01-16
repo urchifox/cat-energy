@@ -30,9 +30,19 @@
   }
 }
 
+.footer__logo {
+  width: fit-content;
+
+  &:focus-visible {
+    outline: 2px solid $color-text-strong;
+    outline-offset: 4px;
+  }
+}
+
 .footer__logo-icon {
   display: block;
   fill: #111111;
+  cursor: pointer;
   transition: fill $transition-basic;
 
   &:hover {
@@ -65,11 +75,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 23px;
 
   font-size: 16px;
   line-height: 20px;
   color: $color-special_dark-grey;
+  word-break: break-word;
 
+  cursor: pointer;
   transition: opacity $transition-basic;
 
   &:hover {
@@ -86,11 +99,21 @@
     }
   }
 
+  &:focus-visible {
+    outline: 2px solid $color-text-strong;
+    outline-offset: 4px;
+
+    &::after {
+      background-color: $color-accent;
+    }
+  }
+
   &::after {
     content: "";
     display: block;
     width: 27px;
     height: 34px;
+    flex-shrink: 0;
 
     background-color: $color-special_grey-2;
     mask-image: url("../../images/icons/stack.svg#html-academy-logo");
@@ -104,7 +127,7 @@
   }
 
   @media #{$on-tablet-desktop} {
-    justify-content: flex-end;
-    gap: 23px;
+    justify-self: flex-end;
+    width: fit-content;
   }
 }

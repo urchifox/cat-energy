@@ -74,21 +74,30 @@
 
 .header__logo {
   width: fit-content;
+  cursor: pointer;
   transition: opacity $transition-basic;
 
-  &:hover {
-    opacity: 0.8;
+  @media #{$on-mobile} {
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &:active {
+      opacity: 0.6;
+    }
   }
 
-  &:active {
-    opacity: 0.6;
-  }
 
   &--text img {
     @media #{$on-desktop} {
       width: 118px;
       height: auto;
     }
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-text-strong;
+    outline-offset: 4px;
   }
 }
 
@@ -179,62 +188,6 @@
 
   .header__menu-toggle--is-opened & {
     opacity: 0;
-  }
-}
-
-@keyframes top-to-cross {
-  0% {
-    transform: translate(-50%, -50%) translateY(-8px);
-  }
-
-  50% {
-    transform: translate(-50%, -50%)  rotate(0deg);
-  }
-
-  100% {
-    transform: translate(-50%, -50%)  rotate(45deg);
-  }
-}
-
-@keyframes bottom-to-cross {
-  0% {
-    transform: translate(-50%, -50%) translateY(8px);
-  }
-
-  50% {
-    transform: translate(-50%, -50%)  rotate(0deg);
-  }
-
-  100% {
-    transform: translate(-50%, -50%)  rotate(-45deg);
-  }
-}
-
-@keyframes top-to-burger {
-  0% {
-    transform: translate(-50%, -50%)  rotate(45deg);
-  }
-
-  50% {
-    transform: translate(-50%, -50%)  rotate(0deg);
-  }
-
-  100% {
-    transform: translate(-50%, -50%) translateY(-8px);
-  }
-}
-
-@keyframes bottom-to-burger {
-  0% {
-    transform: translate(-50%, -50%)  rotate(-45deg);
-  }
-
-  50% {
-    transform: translate(-50%, -50%)  rotate(0deg);
-  }
-
-  100% {
-    transform: translate(-50%, -50%) translateY(8px);
   }
 }
 
@@ -356,6 +309,7 @@
 
   display: block;
   width: fit-content;
+  max-width: 100%;
 
   font-family: $font-family-accent;
   font-size: 20px;
@@ -364,6 +318,7 @@
   overflow-wrap: break-word;
   color: $color-text-strong;
 
+  cursor: pointer;
   transition: opacity $transition-basic;
 
   &:hover {
@@ -372,6 +327,11 @@
 
   &:active {
     opacity: 0.3;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-text-strong;
+    outline-offset: 4px;
   }
 
   @media #{$on-tablet-desktop} {
@@ -408,5 +368,61 @@
     @media #{$on-desktop} {
       background-color: $color-bg-basic;
     }
+  }
+}
+
+@keyframes top-to-cross {
+  0% {
+    transform: translate(-50%, -50%) translateY(-8px);
+  }
+
+  50% {
+    transform: translate(-50%, -50%)  rotate(0deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%)  rotate(45deg);
+  }
+}
+
+@keyframes bottom-to-cross {
+  0% {
+    transform: translate(-50%, -50%) translateY(8px);
+  }
+
+  50% {
+    transform: translate(-50%, -50%)  rotate(0deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%)  rotate(-45deg);
+  }
+}
+
+@keyframes top-to-burger {
+  0% {
+    transform: translate(-50%, -50%)  rotate(45deg);
+  }
+
+  50% {
+    transform: translate(-50%, -50%)  rotate(0deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) translateY(-8px);
+  }
+}
+
+@keyframes bottom-to-burger {
+  0% {
+    transform: translate(-50%, -50%)  rotate(-45deg);
+  }
+
+  50% {
+    transform: translate(-50%, -50%)  rotate(0deg);
+  }
+
+  100% {
+    transform: translate(-50%, -50%) translateY(8px);
   }
 }

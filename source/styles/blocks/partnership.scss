@@ -22,8 +22,9 @@
   padding-bottom: 26px;
 
   display: grid;
-  grid-template-columns: 140px 140px;
+  grid-template-columns: 130px 140px;
   justify-content: space-between;
+  gap: 10px;
 
   @media #{$on-tablet} {
     padding-top: 61px;
@@ -60,6 +61,7 @@
   line-height: 20px;
   color: $color-special_dark-grey-3;
   text-transform: uppercase;
+  word-break: break-word;
 
   @media #{$on-tablet-desktop} {
     font-size: 20px;
@@ -70,6 +72,7 @@
 .partnership__adress {
   font-style: normal;
   line-height: 20px;
+  word-break: break-word;
 
   @media #{$on-tablet} {
     text-align: right;
@@ -79,6 +82,8 @@
 .partnership__street {
   margin: 0;
 
+  word-break: break-word;
+
   @media #{$on-tablet-desktop} {
     margin-bottom: 20px;
   }
@@ -86,6 +91,8 @@
 
 .partnership__city {
   margin: 0;
+
+  word-break: break-word;
 }
 
 .partnership__map {
