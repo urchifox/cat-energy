@@ -9,6 +9,7 @@
 
   @media #{$on-tablet} {
     padding-top: 25px;
+    padding-bottom: 25px;
 
     flex-direction: row;
     justify-content: space-between;
@@ -17,6 +18,7 @@
 
   @media #{$on-desktop} {
     padding-top: 55px;
+    padding-bottom: 55px;
 
     flex-direction: row;
     justify-content: space-between;
@@ -42,6 +44,12 @@
   gap: 33px;
   align-items: center;
 
+  @media #{$on-mobile} {
+    position: relative;
+    z-index: 2;
+    background-color: $color-bg-basic;
+  }
+
   @media #{$on-tablet-desktop} {
     padding-top: 0;
     padding-right: 0;
@@ -65,6 +73,7 @@
 }
 
 .header__logo {
+  width: fit-content;
   cursor: pointer;
   transition: opacity $transition-basic;
 
@@ -184,10 +193,6 @@
     text-align: center;
     background-color: $color-bg-basic;
 
-    transition:
-        transform $transition-basic,
-        opacity $transition-basic;
-// TODO навигация должна выезжать снизу хедера и уезжать тоже плавно, не работает
     &--is-opened {
       position: absolute;
       z-index: 1;
@@ -195,8 +200,15 @@
       left: 0;
       right: 0;
 
+      padding-left: var(--side-padding);
+      padding-right: var(--side-padding);
+
       transform: translateY(0);
       opacity: 1;
+      transition:
+        transform $transition-basic,
+        opacity $transition-basic,
+        visibility 0s;
     }
 
     &--is-closed {
@@ -206,9 +218,16 @@
       left: 0;
       right: 0;
 
-      pointer-events: none;
+      padding-left: var(--side-padding);
+      padding-right: var(--side-padding);
+
       transform: translateY(-40px);
       opacity: 0;
+      visibility: hidden;
+      transition:
+        transform $transition-basic,
+        opacity $transition-basic,
+        visibility 0s $transition-time-basic;
     }
   }
 
@@ -219,8 +238,7 @@
   }
 
   @media #{$on-desktop} {
-    padding-left: 15px;
-    max-width: 50%;
+    max-width: 570px;
   }
 }
 
