@@ -28,6 +28,7 @@
   max-width: calc(100% - var(--side-offset));
   display: inline-block;
   line-height: 26px;
+  word-break: break-word;
 
   box-shadow:
     var(--side-offset) 0 $color-bg-basic,
@@ -193,6 +194,8 @@
   font-size: 16px;
   text-transform: uppercase;
 
+  word-break: break-word;
+
   @media #{$on-tablet-desktop} {
     font-size: 20px;
     line-height: normal;
@@ -220,6 +223,7 @@
 
     &::before {
       content: "";
+      flex-shrink: 0;
       width: var(--input-size);
       height: var(--input-size);
       border: 1px solid $color-special_grey;
@@ -284,6 +288,7 @@
   border: 1px solid #e7e7e7;
 
   flex-grow: 1;
+  min-width: 150px;
 
   font-family: $font-family-accent;
   font-size: 16px;
@@ -408,6 +413,7 @@
   line-height: 16px;
   color: $color-text-strong;
   text-align: center;
+  word-break: break-word;
 
   @media #{$on-tablet-desktop} {
     font-size: 16px;
