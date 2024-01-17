@@ -328,8 +328,6 @@
   grid-area: cover;
   align-self: self-start;
 
-  height: 107px;
-
   display: flex;
   justify-content: center;
   align-items: center;
@@ -361,6 +359,10 @@
 
   &:active {
     transform: scale(0.9);
+  }
+
+  @media #{$on-tablet-desktop} {
+    max-height: 220px;
   }
 }
 
