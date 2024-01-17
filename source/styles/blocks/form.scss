@@ -120,10 +120,6 @@
 
     gap: 13px;
 
-    &:has(:focus-visible) {
-      outline: 2px $color-text-strong solid;
-    }
-
     @media #{$on-tablet} {
       padding-top: 23px;
       padding-bottom: 27px;
@@ -327,7 +323,7 @@
     border-color: $color-special_grey;
   }
 
-  &:not(:placeholder-shown):not(:active):not(:focus):invalid,
+  &:not(:where(:placeholder-shown, :active, :focus)):invalid,
   &--invalid {
     border-color: $color-status_error;
     outline: 1px $color-status_error solid;
@@ -385,7 +381,7 @@
   transform: translateY(-50%);
   transition: stroke $transition-basic;
 
-  .form__input:not(:placeholder-shown):not(:active):not(:focus):invalid + &,
+  .form__input:not(:where(:placeholder-shown, :active, :focus)):invalid + &,
   .form__input--invalid + & {
     stroke: $color-status_error;
   }
