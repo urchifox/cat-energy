@@ -35,7 +35,7 @@
 
   @media #{$on-tablet} {
     padding-top: 57px;
-    padding-bottom: 60px;
+    padding-bottom: 61px;
     padding-left: 77px;
     padding-right: 77px;
 
@@ -77,6 +77,7 @@
   line-height: 20px;
   text-align: center;
   color: $color-bg-basic;
+  word-break: word-break;
 
   @media #{$on-tablet} {
     text-align: left;

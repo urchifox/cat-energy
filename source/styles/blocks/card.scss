@@ -10,7 +10,7 @@
     "cover name"
     "cover features"
     "button button";
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 50% 50%;
   grid-template-rows: auto auto 1fr;
 
   @media #{$on-tablet-desktop} {
@@ -71,7 +71,7 @@
       border: 2px solid #f2f2f2;
     }
 
-    @media #{$on-tablet-desktop} {
+    @media #{$on-tablet} {
       --icon-margin-bottom: 50px;
     }
 
@@ -88,18 +88,19 @@
       "features"
       "button";
     grid-template-columns: 1fr;
+    align-items: center;
 
     background-color: transparent;
 
     @media #{$on-tablet} {
-      padding-top: 26px;
+      padding-top: 25px;
       padding-bottom: 27px;
       grid-template-areas:
         "name features"
         "button button";
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: minmax(auto, calc(50% - 30px)) 1fr;
       grid-template-rows: auto auto;
-      gap: 25px;
+      gap: 22px 60px;
     }
 
     @media #{$on-desktop} {
@@ -109,10 +110,9 @@
       padding-right: 0;
 
       grid-template-areas: "name features button";
-      grid-template-columns: 285px 285px 245px;
+      grid-template-columns: 305px 305px 245px;
       grid-template-rows: auto;
-      gap: 40px;
-      align-items: center;
+      gap: 10px 20px;
     }
   }
 }
@@ -128,13 +128,12 @@
   line-height: 20px;
   text-transform: uppercase;
   color: $color-special_dark-grey-2;
+  word-break: break-word;
 
   @media #{$on-tablet-desktop} {
-    margin-bottom: 15px;
-
     font-size: 20px;
-    text-align: center;
     line-height: 24px;
+    text-align: center;
   }
 
   @media #{$on-desktop} {
@@ -157,22 +156,21 @@
   }
 
   &--addition {
-    line-height: 16px;
+    margin-bottom: 7px;
     text-align: left;
 
     @media #{$on-tablet-desktop} {
-      line-height: 20px;
       margin-bottom: 0;
     }
   }
 }
 
 .card__link {
-  margin-left: auto;
   margin-right: auto;
 
   display: block;
   width: fit-content;
+  word-break: break-word;
 
   color: $color-special_dark-grey-2;
   cursor: pointer;
@@ -189,6 +187,10 @@
   &:focus-visible {
     outline: 2px solid $color-text-strong;
     outline-offset: 4px;
+  }
+
+  @media #{$on-tablet-desktop} {
+    margin-left: auto;
   }
 }
 
@@ -220,28 +222,34 @@
   }
 
   &--addition {
-    margin-bottom: 15px;
+    margin-bottom: 14px;
 
     display: flex;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 7px 15px;
 
     @media #{$on-tablet} {
       margin-bottom: 0;
       display: grid;
-      grid-template-columns: 1fr 60px;
-      text-align: right;
-      gap: 33px;
+      grid-template-columns: 68% 1fr;
+      gap: 10px 30px;
     }
 
     @media #{$on-desktop} {
       margin-bottom: 0;
+      display: grid;
+      grid-template-columns: 1fr 60px;
+      gap: 10px 20px;
     }
   }
 }
 
 .card__feature-item {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
 
   font-size: 12px;
   line-height: 16px;
@@ -256,10 +264,12 @@
   }
 
   &--addition {
-    justify-content: flex-end;
-
     font-size: 14px;
-    line-height: 14px;
+    line-height: normal;
+
+    @media #{$on-tablet} {
+      text-align: right;
+    }
 
     @media #{$on-tablet-desktop} {
       padding-top: 0;
@@ -273,11 +283,27 @@
 }
 
 .card__feature-key {
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+
+  word-break: break-word;
 }
 
 .card__feature-value {
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: 15px;
+
+  flex-grow: 1;
+
+  word-break: break-word;
+  text-align: right;
+
+  &--addition {
+    margin-left: 0;
+
+    text-align: inherit;
+  }
 }
 
 .card__text {
@@ -287,8 +313,11 @@
   font-size: 12px;
   line-height: 16px;
   text-align: center;
+  word-break: break-word;
 
   @media #{$on-tablet-desktop} {
+    margin-bottom: 32px;
+
     font-size: 16px;
     line-height: 18px;
   }
@@ -338,4 +367,8 @@
 .card__button {
   grid-area: button;
   align-self: self-end;
+
+  &--addition {
+    align-self: center;
+  }
 }
