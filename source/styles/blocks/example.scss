@@ -12,7 +12,7 @@
 
   @media #{$on-desktop} {
     padding-top: 0;
-    padding-bottom: 75px;
+    padding-bottom: 68px;
     background: linear-gradient(to bottom, transparent 136px, $color-light_grey 136px);
   }
 }
@@ -20,6 +20,7 @@
 .example__container {
   display: grid;
   justify-items: center;
+  align-items: start;
   gap: 20px;
 
   @media #{$on-tablet} {
@@ -27,8 +28,8 @@
   }
 
   @media #{$on-desktop} {
-    grid-template-columns: 570px 570px;
-    justify-content: space-between;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
   }
 }
 
@@ -80,51 +81,56 @@
   align-items: flex-start;
   gap: 20px 32px;
 
-  @media #{$on-tablet} {
-    justify-content: space-between;
-    gap: 55px 43px;
-  }
-
-  @media #{$on-desktop} {
+  @media #{$on-tablet-desktop} {
     justify-content: flex-start;
     gap: 55px 43px;
   }
 }
 
 .example__stats-item {
-  min-width: 120px;
-  max-width: 200px;
+  flex-grow: 1;
+  max-width: 250px;
+  min-width: 124px;
 
   display: flex;
   flex-direction: column-reverse;
   align-items: center;
 
+  @media #{$on-tablet-desktop} {
+    flex-grow: 0;
+    min-width: 162px;
+  }
+
   &--summary {
     width: 100%;
-    min-width: none;
+    min-width: auto;
     max-width: none;
 
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     gap: 4px;
 
     @media #{$on-tablet} {
+      margin-top: 6px;
       margin-left: auto;
 
       width: fit-content;
       flex-direction: column;
       align-items: flex-end;
+      gap: 5px;
     }
 
     @media #{$on-desktop} {
-      gap: 63px;
       justify-content: flex-start;
+      gap: 10px 63px;
     }
   }
 }
 
 .example__stats-number {
   margin: 0;
+  flex-shrink: 0;
 
   padding-top: 13px;
   padding-bottom: 13px;
@@ -140,9 +146,10 @@
   text-align: center;
   text-transform: uppercase;
   color: $color-text-strong;
+  word-break: break-word;
 
   @media #{$on-tablet-desktop} {
-    min-width: 162px;
+    padding-bottom: 20px;
 
     font-size: 30px;
     line-height: 37px;
@@ -160,8 +167,14 @@
     line-height: 20px;
     color: $color-text-strong;
 
-    @media #{$on-tablet-desktop} {
+    @media #{$on-tablet} {
       font-size: 20px;
+      text-align: right;
+    }
+
+    @media #{$on-desktop} {
+      font-size: 20px;
+      text-align: left;
     }
   }
 }
@@ -169,8 +182,8 @@
 .example__stats-description {
   margin-top: -10px;
   margin-bottom: 0;
-  margin-left: 18px;
-  margin-right: 18px;
+  margin-left: 10px;
+  margin-right: 10px;
 
   padding-left: 14px;
   padding-right: 14px;
@@ -180,11 +193,13 @@
   text-align: center;
   text-transform: lowercase;
   color: $color-special_dark-grey;
+  word-break: break-word;
 
   background-color: $color-light_grey;
 
   @media #{$on-tablet} {
-    width: calc(100% - 10px * 2);
+    padding-left: 9px;
+    padding-right: 9px;
 
     font-size: 14px;
     line-height: 14px;
@@ -192,7 +207,8 @@
   }
 
   @media #{$on-desktop} {
-    width: calc(100% - 10px * 2);
+    padding-left: 9px;
+    padding-right: 9px;
 
     font-size: 14px;
     line-height: 14px;
@@ -211,13 +227,18 @@
     font-size: 14px;
     line-height: 20px;
     text-transform: uppercase;
+    text-align: left;
     color: $color-text-strong;
 
     background-color: transparent;
 
+    @media #{$on-tablet} {
+      text-align: right;
+    }
+
     @media #{$on-tablet-desktop} {
       font-size: 20px;
-      line-height: 20px;
+      line-height: normal;
     }
   }
 }
@@ -225,12 +246,14 @@
 .example__stats-description-break {
   &::after {
     content: "\A";
+  }
+
+  @media #{$on-mobile} {
     white-space: pre;
   }
 }
 
 .example__slider {
-  align-self: center;
   width: 280px;
   flex-shrink: 0;
 
