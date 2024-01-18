@@ -154,6 +154,8 @@
     position: relative;
     z-index: -1;
     top: -83px;
+
+    margin-bottom: -83px;
   }
 
   @media #{$on-desktop} {
@@ -161,6 +163,8 @@
     z-index: -1;
     top: -81px;
     left: -120px;
+
+    margin-bottom: -81px;
   }
 }
 
