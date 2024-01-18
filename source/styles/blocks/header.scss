@@ -132,6 +132,11 @@
     outline-offset: 4px;
   }
 
+  &:disabled {
+    cursor: auto;
+    opacity: 0.3;
+  }
+
   &::before,
   &::after {
     content: "";
