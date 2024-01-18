@@ -83,7 +83,7 @@
   margin-top: 22px;
   margin-bottom: 14px;
 
-  overflow-wrap: break-word;
+  word-break: break-word;
   color: $color-special_dark-grey;
 
   @media #{$on-mobile} {

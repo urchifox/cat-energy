@@ -315,7 +315,7 @@
   font-size: 20px;
   line-height: 24px;
   text-transform: uppercase;
-  overflow-wrap: break-word;
+  word-break: break-word;
   color: $color-text-strong;
 
   cursor: pointer;

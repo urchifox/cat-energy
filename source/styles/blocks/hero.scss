@@ -98,7 +98,7 @@
   grid-area: title;
 
   text-align: center;
-  overflow-wrap: break-word;
+  word-break: break-word;
   color: $color-bg-basic;
 
   @media #{$on-tablet-desktop} {
@@ -116,7 +116,7 @@
 
   text-align: center;
   line-height: 18px;
-  overflow-wrap: break-word;
+  word-break: break-word;
   color: $color-bg-basic;
 
   @media #{$on-tablet-desktop} {
@@ -128,31 +128,39 @@
   }
 }
 
-.hero__image {
+.hero__image-container {
   margin-bottom: 3px;
-  grid-area: picture;
 
+  grid-area: picture;
+  justify-self: center;
+
+  @media #{$on-tablet} {
+    margin-bottom: 0;
+    margin-left: -90px;
+    margin-right: -90px;
+  }
+
+  @media #{$on-desktop} {
+    margin-bottom: 0;
+
+    justify-self: start;
+  }
+}
+
+.hero__image {
   display: block;
 
   @media #{$on-tablet} {
     position: relative;
     z-index: -1;
-    left: 50%;
-    transform: translateX(-50%) translateX(90px);
-    margin-top: -83px;
-    margin-left: -90px;
-    margin-right: -90px;
-
-    max-width: fit-content;
+    top: -83px;
   }
 
   @media #{$on-desktop} {
-    position: absolute;
+    position: relative;
     z-index: -1;
     top: -81px;
     left: -120px;
-
-    margin-bottom: 0;
   }
 }
 
