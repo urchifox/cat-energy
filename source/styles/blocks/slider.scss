@@ -35,6 +35,10 @@
     .slider__control:active + & {
       --separator-color: #{$color-accent-2};
     }
+
+    .slider__control:disabled + & {
+      --separator-color: #{$color-special_grey};
+    }
   }
 
 
@@ -80,6 +84,14 @@
     outline: 2px solid $color-text-strong;
     outline-offset: 4px;
   }
+
+  &:disabled {
+    --icon-color: #{$color-special_grey};
+    border-color: $color-special_grey;
+    background-color: $color-basic_grey;
+    pointer-events: none;
+  }
+
 
   &::after {
     content: "";

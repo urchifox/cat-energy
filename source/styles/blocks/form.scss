@@ -200,6 +200,11 @@
 
   word-break: break-word;
 
+  :where(:disabled, .form__input-container:has(:disabled)) + & {
+    color: $color-special_grey;
+    pointer-events: none;
+  }
+
   @media #{$on-tablet-desktop} {
     font-size: 20px;
     line-height: normal;
@@ -221,8 +226,10 @@
 
     cursor: pointer;
 
-    &:disabled {
-      opacity: 0.3;
+    :disabled + &::before {
+      background-color: $color-basic_grey;
+      filter: saturate(0);
+      pointer-events: none;
     }
 
     &::before {
@@ -335,6 +342,11 @@
     outline: 1px $color-special_dark-grey solid;
   }
 
+  &:disabled {
+    background-color: $color-basic_grey;
+    pointer-events: none;
+  }
+
   &::placeholder {
     transition: opacity $transition-basic;
     opacity: 0.5;
@@ -390,6 +402,10 @@
   .form__input:focus + & {
     stroke: $color-accent;
   }
+
+  .form__input:disabled + & {
+    stroke: $color-special_grey;
+  }
 }
 
 .form__footer-container {
@@ -410,6 +426,12 @@
 
 .form__button {
   width: 100%;
+
+  &:disabled {
+    color: $color-basic_grey;
+    background-color: $color-special_grey;
+    pointer-events: none;
+  }
 
   @media #{$on-tablet-desktop} {
     padding-top: 14px;
