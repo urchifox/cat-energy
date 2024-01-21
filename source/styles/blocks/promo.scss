@@ -12,6 +12,8 @@
   background-image:
     linear-gradient(rgba($color-accent, 0.85), rgba($color-accent, 0.85)),
     image-set(
+      url("../../images/cat-backpack-280-290@1x.webp") type("image/webp") 1x,
+      url("../../images/cat-backpack-280-290@2x.webp") type("image/webp") 2x,
       url("../../images/cat-backpack-280-290@1x.jpg") type("image/jpeg") 1x,
       url("../../images/cat-backpack-280-290@2x.jpg") type("image/jpeg") 2x);
   background-repeat: no-repeat;
@@ -46,6 +48,8 @@
     background-image:
       linear-gradient(rgba($color-accent, 0.85), rgba($color-accent, 0.85)),
       image-set(
+        url("../../images/cat-backpack-707-200@1x.webp") type("image/webp") 1x,
+        url("../../images/cat-backpack-707-200@2x.webp") type("image/webp") 2x,
         url("../../images/cat-backpack-707-200@1x.jpg") type("image/jpeg") 1x,
         url("../../images/cat-backpack-707-200@2x.jpg") type("image/jpeg") 2x);
   }
@@ -61,6 +65,8 @@
     background-image:
       linear-gradient(rgba($color-accent, 0.85), rgba($color-accent, 0.85)),
       image-set(
+        url("../../images/cat-backpack-245-288@1x.webp") type("image/webp") 1x,
+        url("../../images/cat-backpack-245-288@2x.webp") type("image/webp") 2x,
         url("../../images/cat-backpack-245-288@1x.jpg") type("image/jpeg") 1x,
         url("../../images/cat-backpack-245-288@2x.jpg") type("image/jpeg") 2x);
   }
