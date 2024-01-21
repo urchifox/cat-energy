@@ -32,6 +32,8 @@
 
 .footer__logo {
   width: fit-content;
+  cursor: pointer;
+  transition: opacity $transition-basic;
 
   &:focus-visible {
     outline: 2px solid $color-text-strong;
@@ -39,11 +41,9 @@
   }
 }
 
-.footer__logo-icon {
+.footer__logo-image {
   display: block;
   fill: #111111;
-  cursor: pointer;
-  transition: fill $transition-basic;
 
   &:hover {
     fill: #3e3e3e;
