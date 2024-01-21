@@ -1,5 +1,4 @@
 .form__section {
-  border: none;
   margin-left: 0;
   margin-right: 0;
   margin-bottom: 24px;
@@ -8,6 +7,7 @@
   padding-bottom: 0;
   padding-left: 0;
   padding-right: 0;
+  border: none;
 
   &:last-of-type {
     margin-bottom: 35px;
@@ -35,20 +35,25 @@
 
   position: relative;
   margin-bottom: 35px;
-  padding: 0;
+
+  padding-left: 0;
+  padding-right: 0;
   width: fit-content;
   max-width: calc(100% - var(--side-offset));
+
   display: inline-block;
+
   line-height: 26px;
   word-break: break-word;
 
+  background-color: $color-bg-basic;
   box-shadow:
     var(--side-offset) 0 $color-bg-basic,
     calc(0px - var(--side-offset)) 0 $color-bg-basic;
-  background-color: $color-bg-basic;
 
   &::before {
     content: "";
+
     position: absolute;
     z-index: -1;
     top: 15px;

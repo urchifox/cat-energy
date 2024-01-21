@@ -39,13 +39,13 @@
     background-color: $color-basic_grey;
 
     &:hover {
-      background-color: $color-special_grey;
       color: $color-special_dark-grey;
+      background-color: $color-special_grey;
     }
 
     &:active {
-      background-color: $color-special_grey;
       color: $color-special_dark-grey;
+      background-color: $color-special_grey;
     }
   }
 }
