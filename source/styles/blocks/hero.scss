@@ -3,7 +3,9 @@
 
   &::before {
     content: "";
+
     position: absolute;
+    z-index: -1;
     top: -27px;
     bottom: 178px;
     left: 0;
@@ -29,8 +31,6 @@
     @media #{$on-desktop} {
       top: 0;
       left: 50%;
-      right: 0;
-      z-index: -1;
 
       height: 694px;
 
@@ -56,8 +56,6 @@
 }
 
 .hero__container {
-  position: relative;
-
   display: grid;
   grid-template-areas:
     "title"
@@ -68,15 +66,15 @@
   grid-template-columns: 1fr;
 
   @media #{$on-tablet} {
+    padding-left: 90px;
+    padding-right: 90px;
+
     grid-template-areas:
       "title"
       "tagline"
       "link"
       "picture";
     justify-items: stretch;
-
-    padding-left: 90px;
-    padding-right: 90px;
   }
 
   @media #{$on-desktop} {

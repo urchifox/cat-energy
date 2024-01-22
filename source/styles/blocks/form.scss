@@ -98,7 +98,6 @@
 .form__list-container {
   display: grid;
   gap: 24px;
-  align-items: center;
 
   @media #{$on-tablet} {
     gap: 72px;
@@ -106,6 +105,7 @@
 
   @media #{$on-desktop} {
     grid-template-columns: 1fr 1fr;
+    align-items: center;
     gap: 80px;
   }
 }
@@ -122,7 +122,7 @@
     gap: 14px;
 
     @media #{$on-tablet} {
-      gap: 20px;
+      gap: 20px 60px;
     }
 
     @media #{$on-desktop} {
@@ -157,45 +157,42 @@
     content: "";
     position: absolute;
     top: 0;
-    bottom: -1px;
+    bottom: 0;
+
+    border: 1px solid #ebebeb;
 
     @media #{$on-mobile} {
       left: calc(0px - var(--side-padding));
       right: calc(0px - var(--side-padding));
 
-      border-top: 1px solid #ebebeb;
-      border-bottom: 1px solid #ebebeb;
+      border-left: none;
+      border-right: none;
     }
 
     @media #{$on-tablet-desktop} {
       left: 0;
       right: 0;
-
-      border: 1px solid #ebebeb;
     }
   }
 
   &--checkbox {
+    display: grid;
     gap: 13px;
     align-items: center;
 
     @media #{$on-tablet} {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: repeat(2, 1fr);
       gap: 32px 60px;
     }
 
     @media #{$on-desktop} {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: repeat(4, 1fr);
       gap: 40px 80px;
     }
   }
 }
 
 .form__item {
-  position: relative;
-
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -212,13 +209,15 @@
 .form__label {
   order: -1;
 
+  display: block;
+
   font-family: $font-family-accent;
   font-size: 16px;
   text-transform: uppercase;
 
   word-break: break-word;
 
-  :where(:disabled, .form__input-container:has(:disabled)) + & {
+  :where(:disabled, :has(:disabled)) + & {
     color: $color-special_grey;
     pointer-events: none;
   }
@@ -228,12 +227,8 @@
     line-height: normal;
   }
 
-  &--required {
-    display: block;
-
-    &::after {
-      content: "*";
-    }
+  &--required::after {
+    content: "*";
   }
 
   &--radio,
@@ -244,12 +239,6 @@
 
     cursor: pointer;
 
-    :disabled + &::before {
-      background-color: $color-basic_grey;
-      filter: saturate(0);
-      pointer-events: none;
-    }
-
     &::before {
       content: "";
       flex-shrink: 0;
@@ -258,20 +247,25 @@
       border: 1px solid $color-special_grey;
     }
 
-    &:not(:disabled):hover::before {
+    &:hover::before {
       border-color: #bababa;
     }
 
-    input:checked + &::before {
+    :checked + &::before {
       background-image: var(--checked-background-image);
       background-size: var(--checked-icon-size);
       background-repeat: no-repeat;
       background-position: center;
     }
 
-    input:focus-visible + &::before {
+    :focus-visible + &::before {
       border: 1px solid $color-text-strong;
       outline: 1px solid $color-text-strong;
+    }
+
+    :disabled + &::before {
+      background-color: $color-basic_grey;
+      filter: saturate(0);
     }
 
     @media #{$on-tablet-desktop} {
@@ -313,8 +307,6 @@
 }
 
 .form__input {
-  position: relative;
-
   padding-top: 14px;
   padding-bottom: 13px;
   padding-left: 15px;
@@ -333,25 +325,8 @@
 
   transition: border-color $transition-basic;
 
-  &[type="number"]::-webkit-outer-spin-button,
-  &[type="number"]::-webkit-inner-spin-button {
-    appearance: none;
-  }
-
-  &[type="number"],
-  &[type="number"]:hover,
-  &[type="number"]:focus {
-    appearance: textfield;
-  }
-
   &:hover {
     border-color: $color-special_grey;
-  }
-
-  &:not(:where(:placeholder-shown, :active, :focus)):invalid,
-  &--invalid {
-    border-color: $color-status_error;
-    outline: 1px $color-status_error solid;
   }
 
   &:active,
@@ -363,6 +338,23 @@
   &:disabled {
     background-color: $color-basic_grey;
     pointer-events: none;
+  }
+
+  &:not(:where(:placeholder-shown, :active, :focus)):invalid,
+  &--invalid {
+    border-color: $color-status_error;
+    outline: 1px $color-status_error solid;
+  }
+
+  &[type="number"],
+  &[type="number"]:hover,
+  &[type="number"]:focus {
+    appearance: textfield;
+  }
+
+  &[type="number"]::-webkit-outer-spin-button,
+  &[type="number"]::-webkit-inner-spin-button {
+    appearance: none;
   }
 
   &::placeholder {
@@ -411,17 +403,17 @@
   transform: translateY(-50%);
   transition: stroke $transition-basic;
 
-  .form__input:not(:where(:placeholder-shown, :active, :focus)):invalid + &,
+  :not(:where(:placeholder-shown, :active, :focus)):invalid + &,
   .form__input--invalid + & {
     stroke: $color-status_error;
   }
 
-  .form__input:active + &,
-  .form__input:focus + & {
+  :active + &,
+  :focus + & {
     stroke: $color-accent;
   }
 
-  .form__input:disabled + & {
+  :disabled + & {
     stroke: $color-special_grey;
   }
 }
@@ -432,24 +424,18 @@
   align-items: center;
 
   @media #{$on-tablet} {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 60px;
   }
 
   @media #{$on-desktop} {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(2, 1fr);
     gap: 80px;
   }
 }
 
 .form__button {
   width: 100%;
-
-  &:disabled {
-    color: $color-basic_grey;
-    background-color: $color-special_grey;
-    pointer-events: none;
-  }
 
   @media #{$on-tablet-desktop} {
     padding-top: 14px;

@@ -34,6 +34,13 @@
     outline-offset: 4px;
   }
 
+  &:disabled,
+  &:not([href]) {
+    color: $color-basic_grey;
+    background-color: $color-special_grey;
+    pointer-events: none;
+  }
+
   &--secondary {
     color: $color-special_dark-grey;
     background-color: $color-basic_grey;
@@ -46,6 +53,11 @@
     &:active {
       color: $color-special_dark-grey;
       background-color: $color-special_grey;
+    }
+
+    &:disabled,
+    &:not([href]) {
+      color: $color-basic_grey;
     }
   }
 }

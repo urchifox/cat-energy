@@ -50,12 +50,13 @@
 
   &::before {
     content: "";
+
     width: var(--box-size);
     height: var(--box-size);
     flex-shrink: 0;
 
     background-color: $color-accent;
-    background-image: var(--url);
+    background-image: var(--icon-url);
     background-size: var(--icon-width) var(--icon-height);
     background-position: center;
     background-repeat: no-repeat;
@@ -90,27 +91,26 @@
     gap: 31px;
   }
 
-
   &--healthy {
-    --url: url("../../images/icons/stack.svg#leaf");
+    --icon-url: url("../../images/icons/stack.svg#leaf");
     --icon-width: 30px;
     --icon-height: 32px;
   }
 
   &--powder {
-    --url: url("../../images/icons/stack.svg#powder");
+    --icon-url: url("../../images/icons/stack.svg#powder");
     --icon-width: 26px;
     --icon-height: 29px;
   }
 
   &--food {
-    --url: url("../../images/icons/stack.svg#fork-knife");
+    --icon-url: url("../../images/icons/stack.svg#fork-knife");
     --icon-width: 25px;
     --icon-height: 30px;
   }
 
   &--time {
-    --url: url("../../images/icons/stack.svg#clock");
+    --icon-url: url("../../images/icons/stack.svg#clock");
     --icon-width: 26px;
     --icon-height: 31px;
   }
