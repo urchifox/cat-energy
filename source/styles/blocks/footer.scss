@@ -85,6 +85,25 @@
   cursor: pointer;
   transition: opacity $transition-basic;
 
+  &::after {
+    content: "";
+
+    display: block;
+    width: 27px;
+    height: 34px;
+    flex-shrink: 0;
+
+    background-color: $color-special_grey-2;
+    mask-image: url("../../images/icons/stack.svg#html-academy-logo");
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+
+    transition:
+      background-color $transition-basic,
+      opacity $transition-basic;
+  }
+
   &:hover {
     &::after {
       background-color: $color-accent;
@@ -106,24 +125,6 @@
     &::after {
       background-color: $color-accent;
     }
-  }
-
-  &::after {
-    content: "";
-    display: block;
-    width: 27px;
-    height: 34px;
-    flex-shrink: 0;
-
-    background-color: $color-special_grey-2;
-    mask-image: url("../../images/icons/stack.svg#html-academy-logo");
-    mask-size: contain;
-    mask-repeat: no-repeat;
-    mask-position: center;
-
-    transition:
-      background-color $transition-basic,
-      opacity $transition-basic;
   }
 
   @media #{$on-tablet-desktop} {

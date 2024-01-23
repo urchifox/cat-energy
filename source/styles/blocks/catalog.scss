@@ -33,6 +33,7 @@
     &::before,
     &::after {
       content: "";
+
       position: absolute;
       left: calc(0px - var(--side-padding));
       right: calc(0px - var(--side-padding));

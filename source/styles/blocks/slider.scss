@@ -21,7 +21,7 @@
   }
 }
 
-.slider__picture-container {
+.slider__picture-wrapper {
   display: flex;
   overflow: hidden;
 
@@ -30,6 +30,7 @@
 
     &::after {
       content: "";
+
       position: absolute;
       top: 0;
       bottom: 0;

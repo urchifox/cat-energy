@@ -1,40 +1,53 @@
-.header__container {
-  position: relative;
-
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-
-  background-color: $color-bg-basic;
-
+.header {
   @media #{$on-tablet} {
     padding-top: 25px;
     padding-bottom: 25px;
-
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 66px;
   }
 
   @media #{$on-desktop} {
     padding-top: 55px;
     padding-bottom: 55px;
-
-    flex-direction: row;
-    justify-content: space-between;
-    gap: 66px;
-
-    background-color: transparent;
-  }
-
-  &--with-separator {
-    @media #{$on-mobile} {
-      border-bottom: 1px solid $color-light_grey;
-    }
   }
 }
 
-.header__icons-container {
+.header__container {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  &::after {
+    content: "";
+
+    position: absolute;
+    z-index: 2;
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    height: 1px;
+    background-color: $color-light_grey;
+    opacity: 0;
+
+    transition: opacity $transition-basic;
+  }
+
+  &:has(.header__nav--is-opened)::after,
+  &--with-separator::after {
+    @media #{$on-mobile} {
+      opacity: 1;
+    }
+  }
+
+  @media #{$on-tablet-desktop} {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 66px;
+  }
+}
+
+.header__icons-wrapper {
   padding-top: 13px;
   padding-bottom: 15px;
   width: 100%;
@@ -52,11 +65,10 @@
 
   @media #{$on-tablet-desktop} {
     padding-top: 0;
-    padding-right: 0;
     padding-bottom: 0;
-
     width: fit-content;
-    display: flex;
+
+    grid-template-columns: auto auto;
     gap: 13px;
     flex-shrink: 0;
 
@@ -77,6 +89,11 @@
   cursor: pointer;
   transition: opacity $transition-basic;
 
+  &:focus-visible {
+    outline: 2px solid $color-text-strong;
+    outline-offset: 4px;
+  }
+
   @media #{$on-mobile} {
     &:hover {
       opacity: 0.8;
@@ -86,15 +103,17 @@
       opacity: 0.6;
     }
   }
-
-  &:focus-visible {
-    outline: 2px solid $color-text-strong;
-    outline-offset: 4px;
-  }
 }
 
 .header__logo-image {
   display: block;
+
+  &--text {
+    @media #{$on-desktop} {
+      width: 118px;
+      height: 21px;
+    }
+  }
 }
 
 .header__menu-toggle {
@@ -107,35 +126,18 @@
   width: 24px;
   height: 24px;
   border: none;
-  justify-self: end;
 
   display: none;
+  justify-self: end;
 
   background-color: transparent;
   transition: opacity $transition-basic;
   cursor: pointer;
 
-  &:hover {
-    opacity: 0.8;
-  }
-
-  &:active {
-    opacity: 0.6;
-  }
-
-  &:focus-visible {
-    outline: 2px solid $color-text-strong;
-    outline-offset: 4px;
-  }
-
-  &:disabled {
-    cursor: auto;
-    opacity: 0.3;
-  }
-
   &::before,
   &::after {
     content: "";
+
     position: absolute;
     top: 50%;
     left: 50%;
@@ -157,9 +159,25 @@
     transform: translate(-50%, -50%) translateY(8px);
   }
 
-  &--is-closed {
-    display: block;
+  &:hover {
+    opacity: 0.8;
+  }
 
+  &:active {
+    opacity: 0.6;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-text-strong;
+    outline-offset: 4px;
+  }
+
+  &:disabled {
+    pointer-events: none;
+    opacity: 0.3;
+  }
+
+  &--is-closed {
     &::before {
       animation-name: var(--animation-top-strip);
     }
@@ -168,16 +186,12 @@
       animation-name: var(--animation-bottom-strip);
     }
 
-    @media #{$on-tablet-desktop} {
-      display: none;
+    @media #{$on-mobile} {
+      display: block;
     }
   }
 
   &--is-opened {
-    display: block;
-
-    background: transparent;
-
     &::before {
       animation-name: top-to-cross;
     }
@@ -186,19 +200,17 @@
       animation-name: bottom-to-cross;
     }
 
-    @media #{$on-tablet-desktop} {
-      display: none;
+    @media #{$on-mobile} {
+      display: block;
     }
   }
 }
 
 .header__menu-toggle-inner {
-  margin-top: auto;
-  margin-bottom: auto;
-
-  display: block;
   width: 100%;
   height: 2px;
+  display: block;
+
   background-color: $color-text-strong;
   transition: opacity 0s 0.25s;
 
@@ -209,23 +221,46 @@
 
 .header__nav {
   @media #{$on-mobile} {
+    position: relative;
     width: 100%;
 
     text-align: center;
     background-color: $color-bg-basic;
 
-    &--is-opened {
+    &::after {
+      content: "";
+
+      position: absolute;
+      z-index: 2;
+      top: 0;
+      left: calc(0px - var(--side-padding));
+      right: calc(0px - var(--side-padding));
+
+      height: 1px;
+      background-color: $color-light_grey;
+    }
+
+    &--is-opened::after,
+    &--is-closed::after {
+      display: none;
+    }
+
+    &--is-opened,
+    &--is-closed {
       position: absolute;
       z-index: 1;
-      top: 100%;
+      top: calc(100% + 1px);
       left: 0;
       right: 0;
 
       padding-left: var(--side-padding);
       padding-right: var(--side-padding);
+    }
 
+    &--is-opened {
       transform: translateY(0);
       opacity: 1;
+
       transition:
         transform $transition-basic,
         opacity $transition-basic,
@@ -233,18 +268,10 @@
     }
 
     &--is-closed {
-      position: absolute;
-      z-index: 1;
-      top: 100%;
-      left: 0;
-      right: 0;
-
-      padding-left: var(--side-padding);
-      padding-right: var(--side-padding);
-
       transform: translateY(-40px);
       opacity: 0;
       visibility: hidden;
+
       transition:
         transform $transition-basic,
         opacity $transition-basic,
@@ -266,22 +293,6 @@
 .header__nav-list {
   @include clear-list();
 
-  position: relative;
-
-  @media #{$on-mobile} {
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: calc(0px - var(--side-padding));
-      right: calc(0px - var(--side-padding));
-
-      height: 1px;
-
-      background-color: $color-light_grey;
-    }
-  }
-
   @media #{$on-tablet-desktop} {
     display: flex;
     flex-direction: row;
@@ -301,6 +312,7 @@
   @media #{$on-mobile} {
     &::after {
       content: "";
+
       position: absolute;
       bottom: -1px;
       left: calc(0px - var(--side-padding));
@@ -313,13 +325,12 @@
   }
 
   @media #{$on-tablet-desktop} {
-    padding: 0;
+    padding-top: 0;
+    padding-bottom: 0;
   }
 }
 
 .header__nav-link {
-  position: relative;
-
   margin-left: auto;
   margin-right: auto;
 
@@ -351,6 +362,8 @@
   }
 
   @media #{$on-tablet-desktop} {
+    position: relative;
+
     font-size: 18px;
     text-align: right;
     line-height: 24px;
@@ -364,6 +377,7 @@
   &--current::after {
     @media #{$on-tablet-desktop} {
       content: "";
+
       position: absolute;
       bottom: -8px;
       left: 0;

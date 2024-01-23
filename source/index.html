@@ -17,7 +17,7 @@
 
     <header class="page__header header">
       <div class="header__container container">
-        <div class="header__icons-container">
+        <div class="header__icons-wrapper">
           <a class="header__logo" href="index.html" tabindex="-1" aria-current="page">
             <picture>
               <source type="image/svg+xml" media="(min-width: 1280px)"
@@ -27,14 +27,14 @@
                 srcset="images/logo-cat-med.svg"
                 width="60" height="50">
 
-              <img class="header__logo-image"
+              <img class="header__logo-image header__logo-image--icon"
                 src="images/logo-cat-min.svg"
                 width="33" height="38"
                 alt="Веселый кот-супергерой">
             </picture>
           </a>
           <a class="header__logo" href="index.html" aria-current="page">
-            <img class="header__logo-image"
+            <img class="header__logo-image header__logo-image--text"
               src="images/logo-text.svg"
               width="101" height="18"
               alt="Cat Energy на главную страницу">
@@ -64,11 +64,11 @@
     <main class="page__content content">
       <section class="content__hero hero">
         <div class="container">
-          <div class="hero__container">
+          <div class="hero__wrapper">
             <h1 class="hero__title title">Функциональное питание для&nbsp;котов</h1>
             <p class="hero__tagline tagline">Занялся собой? Займись котом!</p>
             <a class="hero__link button button--minor" href="program.html">Подобрать программу</a>
-            <div class="hero__image-container">
+            <div class="hero__image-wrapper">
               <picture>
                 <source type="image/webp" media="(min-width: 1280px)"
                   srcset="images/can-hero-552-499@1x.webp 1x,
@@ -174,7 +174,7 @@
           </div>
 
           <div class="example__slider slider">
-            <div class="slider__picture-container slider__picture-container--before">
+            <div class="slider__picture-wrapper slider__picture-wrapper--before">
               <picture>
                 <source type="image/webp" media="(min-width: 768px)"
                   srcset="images/cat-slider-before-560-512@1x.webp 1x,
@@ -197,7 +197,7 @@
                   alt="Толстый кот Борис до перехода на Cat Energy">
               </picture>
             </div>
-            <div class="slider__picture-container slider__picture-container--after">
+            <div class="slider__picture-wrapper slider__picture-wrapper--after">
               <picture>
                 <source type="image/webp" media="(min-width: 768px)"
                   srcset="images/cat-slider-after-560-512@1x.webp 1x,

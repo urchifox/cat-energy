@@ -17,7 +17,7 @@
 
     <header class="page__header header">
       <div class="header__container header__container--with-separator container">
-        <div class="header__icons-container">
+        <div class="header__icons-wrapper">
           <a class="header__logo" href="index.html" tabindex="-1">
             <picture>
               <source type="image/svg+xml" media="(min-width: 1280px)"
@@ -27,14 +27,14 @@
                 srcset="images/logo-cat-med.svg"
                 width="60" height="50">
 
-              <img class="header__logo-image"
+              <img class="header__logo-image header__logo-image--icon"
                 src="images/logo-cat-min.svg"
                 width="33" height="38"
                 alt="Веселый кот-супергерой">
             </picture>
           </a>
           <a class="header__logo" href="index.html">
-            <img class="header__logo-image"
+            <img class="header__logo-image header__logo-image--text"
               src="images/logo-text.svg"
               width="101" height="18"
               alt="Cat Energy на главную страницу">
@@ -70,7 +70,7 @@
           <form class="program-request__form form" name="program-request" action="https://echo.htmlacademy.ru" method="post">
             <fieldset class="form__section">
               <legend class="visually-hidden">Данные кота</legend>
-              <div class="form__list-container">
+              <div class="form__list-wrapper">
                 <ul class="form__list form__list--text">
                   <li class="form__item">
                     <input class="form__input" id="input-name" name="name" type="text" placeholder="Барсик" required>
@@ -106,7 +106,7 @@
               <legend class="form__title subtitle">Контактные данные<span class="form__title-break"></span>(владельца кота)</legend>
               <ul class="form__list form__list--text">
                 <li class="form__item">
-                  <div class="form__input-container">
+                  <div class="form__input-wrapper">
                     <input class="form__input form__input--with-icon" id="input-email" name="email" type="email" placeholder="kuklachev@gmail.com" required autocomplete="email">
                     <svg class="form__icon" width="17" height="13" aria-hidden="true">
                       <use href="images/icons/stack.svg#email"></use>
@@ -115,7 +115,7 @@
                   <label class="form__label form__label--required" for="input-email">E-mail:</label>
                 </li>
                 <li class="form__item">
-                  <div class="form__input-container">
+                  <div class="form__input-wrapper">
                     <input class="form__input form__input--with-icon" id="input-tel" name="tel" type="tel" placeholder="8 (960) 900-60-90" required autocomplete="tel">
                     <svg class="form__icon" width="15" height="15" aria-hidden="true">
                       <use href="images/icons/stack.svg#telephone"></use>
@@ -155,7 +155,7 @@
               </ul>
             </fieldset>
 
-            <div class="form__footer-container">
+            <div class="form__footer-wrapper">
               <button class="form__button button" type="submit">Отправить заявку</button>
               <p class="form__note" aria-hidden="true">*&nbsp;— Обязательные поля</p>
             </div>

@@ -55,7 +55,7 @@
   }
 }
 
-.hero__container {
+.hero__wrapper {
   display: grid;
   grid-template-areas:
     "title"
@@ -130,7 +130,7 @@
   }
 }
 
-.hero__image-container {
+.hero__image-wrapper {
   margin-bottom: 3px;
 
   grid-area: picture;
