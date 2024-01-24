@@ -301,7 +301,13 @@
   &--addition {
     margin-left: 0;
 
-    text-align: inherit;
+    flex-grow: 1;
+
+    text-align: left;
+
+    @media #{$on-tablet} {
+      text-align: right;
+    }
   }
 }
 

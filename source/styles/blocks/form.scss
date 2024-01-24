@@ -79,7 +79,7 @@
 
   @media #{$on-desktop} {
     --side-offset: 40px;
-    margin-bottom: 70px;
+    margin-bottom: 76px;
 
     line-height: 36px;
   }
@@ -182,11 +182,15 @@
     align-items: center;
 
     @media #{$on-tablet} {
+      margin-top: -20px;
+      
       grid-template-columns: repeat(2, 1fr);
       gap: 32px 60px;
     }
 
     @media #{$on-desktop} {
+      margin-top: -20px;
+
       grid-template-columns: repeat(4, 1fr);
       gap: 40px 80px;
     }
@@ -203,6 +207,12 @@
   @media #{$on-desktop} {
     &:not(.form__item--textarea) {
       max-width: 570px;
+    }
+  }
+
+  &--textarea {
+    @media #{$on-tablet} {
+      margin-top: 15px;
     }
   }
 }
@@ -297,6 +307,7 @@
 
     @media #{$on-tablet-desktop} {
       --input-size: 40px;
+      --checked-icon-size: 33px 33px;
     }
   }
 }
