@@ -284,6 +284,10 @@
     align-items: center;
   }
 
+  @media #{$on-tablet} {
+    padding-right: 5px;
+  }
+
   &--shortened {
     @media #{$on-desktop} {
       max-width: 570px;
@@ -380,7 +384,7 @@
       content: "";
 
       position: absolute;
-      bottom: -8px;
+      bottom: -10px;
       left: 0;
       right: 0;
       height: 2px;

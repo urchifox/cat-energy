@@ -93,8 +93,8 @@
 
   &--healthy {
     --icon-url: url("../../images/icons/stack.svg#leaf");
-    --icon-width: 30px;
-    --icon-height: 32px;
+    --icon-width: 24px;
+    --icon-height: 28px;
   }
 
   &--powder {
@@ -118,4 +118,6 @@
 
 .features__text {
   margin: 0;
+
+  word-break: break-word;
 }
