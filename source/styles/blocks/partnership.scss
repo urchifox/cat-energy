@@ -22,7 +22,7 @@
   padding-bottom: 26px;
 
   display: grid;
-  grid-template-columns: 130px 140px;
+  grid-template-columns: minmax(auto, 130px) minmax(auto, 140px);
   justify-content: space-between;
   gap: 10px;
 

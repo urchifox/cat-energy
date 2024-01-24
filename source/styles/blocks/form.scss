@@ -116,9 +116,9 @@
 
   display: flex;
   flex-wrap: wrap;
-  align-items: flex-start;
 
   &--text {
+    align-items: flex-end;
     gap: 14px;
 
     @media #{$on-tablet} {
@@ -136,6 +136,7 @@
     padding-top: 22px;
     padding-bottom: 19px;
 
+    align-items: center;
     gap: 13px;
 
     @media #{$on-tablet} {
@@ -157,6 +158,7 @@
     content: "";
 
     position: absolute;
+    z-index: -1;
     top: 0;
     bottom: 0;
 
@@ -177,13 +179,15 @@
   }
 
   &--checkbox {
+    margin-top: -2px;
+
     display: grid;
-    gap: 13px;
+    gap: 12px;
     align-items: center;
 
     @media #{$on-tablet} {
-      margin-top: -20px;
-      
+      margin-top: -18px;
+
       grid-template-columns: repeat(2, 1fr);
       gap: 32px 60px;
     }
@@ -211,8 +215,14 @@
   }
 
   &--textarea {
+    margin-top: 5px;
+
     @media #{$on-tablet} {
       margin-top: 15px;
+    }
+
+    @media #{$on-desktop} {
+      margin-top: 0;
     }
   }
 }
@@ -316,7 +326,7 @@
   position: relative;
 
   flex-grow: 1;
-  width: 150px;
+  width: 50%;
 }
 
 .form__input {
@@ -328,7 +338,7 @@
   border: 1px solid #e7e7e7;
 
   flex-grow: 1;
-  width: 150px;
+  width: 50%;
 
   font-family: $font-family-accent;
   font-size: 16px;
