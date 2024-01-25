@@ -2,12 +2,13 @@
   @include clear-list();
 
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   gap: 24px;
 }
 
 .socials__link {
-  position: relative;
+  --icon-color: #{$color-special_grey-2};
 
   display: block;
   width: 28px;
@@ -15,29 +16,30 @@
 
   cursor: pointer;
 
-  &:hover::after {
-    background-color: $color-accent;
+  &:hover {
+    --icon-color: #{$color-accent};
   }
 
-  &:active::after {
-    background-color: $color-accent;
+  &:active {
+    --icon-color: #{$color-accent};
     opacity: 0.3;
   }
 
   &:focus-visible {
+    --icon-color: #{$color-accent};
+
     outline: 2px solid $color-text-strong;
     outline-offset: 4px;
   }
 
   &::after {
     content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
 
-    background-color: $color-special_grey-2;
+    display: block;
+    width: 100%;
+    height: 100%;
+
+    background-color: var(--icon-color);
     mask-image: var(--icon-url);
     mask-size: contain;
     mask-repeat: no-repeat;

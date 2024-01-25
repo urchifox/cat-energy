@@ -1,22 +1,36 @@
 .slider {
   --left-width: 50%;
+  --icon-color: #{$color-special_grey-2};
 
   position: relative;
 
   display: grid;
-  grid-template-columns: var(--left-width) calc(100% - var(--left-width));
+  grid-template-columns: var(--left-width) 1fr;
+
+  &:has(.slider__control:hover),
+  &:has(.slider__control:focus-visible) {
+    --icon-color: #{$color-accent};
+  }
+
+  &:has(.slider__control:active) {
+    --icon-color: #{$color-accent-2};
+  }
+
+  &:has(.slider__control:disabled) {
+    --icon-color: #{$color-special_grey};
+  }
 }
 
-.slider__picture-container {
+.slider__picture-wrapper {
   display: flex;
   overflow: hidden;
 
   &--before {
-    --separator-color: #{$color-special_grey-2};
     justify-content: flex-start;
 
     &::after {
       content: "";
+
       position: absolute;
       top: 0;
       bottom: 0;
@@ -25,18 +39,9 @@
 
       width: 4px;
       border-radius: 2px;
-      background-color: var(--separator-color);
-    }
-
-    .slider__control:hover + & {
-      --separator-color: #{$color-accent};
-    }
-
-    .slider__control:active + & {
-      --separator-color: #{$color-accent-2};
+      background-color: var(--icon-color);
     }
   }
-
 
   &--after {
     justify-content: flex-end;
@@ -49,8 +54,6 @@
 }
 
 .slider__control {
-  --icon-color: #{$color-special_grey-2};
-
   position: absolute;
   z-index: 1;
   top: 50%;
@@ -59,27 +62,11 @@
 
   width: 40px;
   height: 40px;
-  border: 2px solid $color-special_grey-2;
+  border: 2px solid var(--icon-color);
   border-radius: 50%;
 
   background-color: $color-bg-basic;
   cursor: pointer;
-
-  &:hover {
-    --icon-color: #{$color-accent};
-    border-color: $color-accent;
-  }
-
-  &:active,
-  &:focus-visible {
-    --icon-color: #{$color-accent-2};
-    border-color: $color-accent-2;
-  }
-
-  &:focus-visible {
-    outline: 2px solid $color-text-strong;
-    outline-offset: 4px;
-  }
 
   &::after {
     content: "";
@@ -99,5 +86,15 @@
       transparent 66%,
       var(--icon-color) 66%
     );
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-text-strong;
+    outline-offset: 4px;
+  }
+
+  &:disabled {
+    background-color: $color-basic_grey;
+    pointer-events: none;
   }
 }

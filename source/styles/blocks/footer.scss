@@ -13,7 +13,7 @@
   gap: 20px;
 
   @media #{$on-tablet-desktop} {
-    grid-template-columns: 1fr auto 1fr;
+    grid-template-columns: minmax(20%, 1fr) auto minmax(20%, 1fr);
     justify-items: normal;
     align-items: center;
     gap: 48px;
@@ -32,6 +32,8 @@
 
 .footer__logo {
   width: fit-content;
+  cursor: pointer;
+  transition: opacity $transition-basic;
 
   &:focus-visible {
     outline: 2px solid $color-text-strong;
@@ -39,11 +41,9 @@
   }
 }
 
-.footer__logo-icon {
+.footer__logo-image {
   display: block;
   fill: #111111;
-  cursor: pointer;
-  transition: fill $transition-basic;
 
   &:hover {
     fill: #3e3e3e;
@@ -55,11 +55,13 @@
 }
 
 .footer__socials {
-  padding-top: 20px;
-  padding-bottom: 20px;
+  padding-top: 19px;
+  padding-bottom: 19px;
   width: 100%;
   border-top: 1px solid $color-special_grey;
   border-bottom: 1px solid $color-special_grey;
+
+  justify-self: center;
 
   @media #{$on-tablet-desktop} {
     padding-top: 0;
@@ -85,6 +87,25 @@
   cursor: pointer;
   transition: opacity $transition-basic;
 
+  &::after {
+    content: "";
+
+    display: block;
+    width: 27px;
+    height: 34px;
+    flex-shrink: 0;
+
+    background-color: $color-special_grey-2;
+    mask-image: url("../../images/icons/stack.svg#html-academy-logo");
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+
+    transition:
+      background-color $transition-basic,
+      opacity $transition-basic;
+  }
+
   &:hover {
     &::after {
       background-color: $color-accent;
@@ -108,26 +129,10 @@
     }
   }
 
-  &::after {
-    content: "";
-    display: block;
-    width: 27px;
-    height: 34px;
-    flex-shrink: 0;
-
-    background-color: $color-special_grey-2;
-    mask-image: url("../../images/icons/stack.svg#html-academy-logo");
-    mask-size: contain;
-    mask-repeat: no-repeat;
-    mask-position: center;
-
-    transition:
-      background-color $transition-basic,
-      opacity $transition-basic;
-  }
-
   @media #{$on-tablet-desktop} {
     justify-self: flex-end;
+    justify-content: flex-end;
     width: fit-content;
+    text-align: right;
   }
 }

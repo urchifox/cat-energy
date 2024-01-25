@@ -3,7 +3,7 @@
   line-height: 18px;
   text-transform: uppercase;
   color: $color-text-strong;
-  overflow-wrap: break-word;
+  word-break: break-word;
 
   @media #{$on-tablet-desktop} {
     font-size: 20px;

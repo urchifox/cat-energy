@@ -83,7 +83,7 @@
   margin-top: 22px;
   margin-bottom: 14px;
 
-  overflow-wrap: break-word;
+  word-break: break-word;
   color: $color-special_dark-grey;
 
   @media #{$on-mobile} {
@@ -132,6 +132,21 @@
   cursor: pointer;
   transition: opacity $transition-basic;
 
+  &::after {
+    content: "";
+
+    width: 32px;
+    height: 12px;
+    flex-shrink: 0;
+
+    background-image: url("../../images/icons/stack.svg#arrow");
+    background-size: cover;
+    background-position: right 8px center;
+    background-repeat: no-repeat;
+
+    transition: background-position $transition-basic;
+  }
+
   &:hover {
     &::after {
       background-position: right center;
@@ -151,21 +166,6 @@
     font-size: 20px;
     gap: 25px;
   }
-
-  &::after {
-    content: "";
-
-    width: 32px;
-    height: 12px;
-    flex-shrink: 0;
-
-    background-image: url("../../images/icons/stack.svg#arrow");
-    background-size: cover;
-    background-position: right 8px center;
-    background-repeat: no-repeat;
-
-    transition: background-position $transition-basic;
-  }
 }
 
 .goals__icon {
@@ -181,12 +181,13 @@
 
   &::after {
     content: "";
+
     position: absolute;
 
-    width: var(--cat-width);
-    height: var(--cat-height);
+    width: var(--icon-width);
+    height: var(--icon-height);
 
-    background-image: var(--url-to-vector);
+    background-image: var(--icon-url);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
@@ -197,37 +198,37 @@
   }
 
   &--weight-loss::after {
-    --url-to-vector: url("../../images/icons/stack.svg#cat-slim");
-    --cat-width: 36px;
-    --cat-height: 50px;
+    --icon-url: url("../../images/icons/stack.svg#cat-slim");
+    --icon-width: 36px;
+    --icon-height: 50px;
     --vertical-shift: -3px;
 
     @media #{$on-tablet} {
-      --cat-width: 140px;
-      --cat-height: 194px;
+      --icon-width: 140px;
+      --icon-height: 194px;
       --vertical-shift: -11px;
     }
 
     @media #{$on-desktop} {
-      --cat-width: 70px;
-      --cat-height: 97px;
+      --icon-width: 70px;
+      --icon-height: 97px;
       --vertical-shift: -6px;
     }
   }
 
   &--weight-gain::after {
-    --url-to-vector: url("../../images/icons/stack.svg#cat-pro");
-    --cat-width: 67px;
-    --cat-height: 28px;
+    --icon-url: url("../../images/icons/stack.svg#cat-pro");
+    --icon-width: 67px;
+    --icon-height: 28px;
 
     @media #{$on-tablet} {
-      --cat-width: 268px;
-      --cat-height: 112px;
+      --icon-width: 268px;
+      --icon-height: 112px;
     }
 
     @media #{$on-desktop} {
-      --cat-width: 134px;
-      --cat-height: 56px;
+      --icon-width: 134px;
+      --icon-height: 56px;
     }
   }
 }
