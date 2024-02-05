@@ -1,7 +1,7 @@
 .partnership {
-  position: relative;
-
   @media #{$on-desktop} {
+    position: relative;
+
     padding-top: 95px;
     padding-bottom: 106px;
   }
@@ -22,7 +22,7 @@
   padding-bottom: 26px;
 
   display: grid;
-  grid-template-columns: 130px 140px;
+  grid-template-columns: minmax(auto, 130px) minmax(auto, 140px);
   justify-content: space-between;
   gap: 10px;
 
@@ -69,7 +69,7 @@
   }
 }
 
-.partnership__adress {
+.partnership__address {
   font-style: normal;
   line-height: 20px;
   word-break: break-word;
@@ -100,6 +100,9 @@
 
   width: 100%;
   height: var(--map-height);
+  overflow: hidden;
+
+  background-color: $color-light_grey;
 
   @media #{$on-tablet} {
     --map-height: 400px;

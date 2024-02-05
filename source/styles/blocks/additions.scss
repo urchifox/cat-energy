@@ -18,6 +18,7 @@
 
   &::before {
     content: "";
+
     position: absolute;
     z-index: -1;
     top: 15px;
@@ -37,7 +38,7 @@
   @media #{$on-tablet} {
     --side-offset: 0px;
 
-    margin-bottom: 83px;
+    margin-bottom: 80px;
 
     padding-left: 40px;
     padding-right: 40px;
@@ -53,7 +54,7 @@
   }
 }
 
-.additions__container {
+.additions__wrapper {
   display: flex;
   flex-direction: column;
 

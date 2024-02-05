@@ -1,7 +1,3 @@
-.content {
-  flex-grow: 1;
-}
-
 .content__hero {
   margin-bottom: 20px;
 
@@ -15,14 +11,14 @@
 }
 
 .content__goals {
-  margin-bottom: 20px;
+  margin-bottom: 23px;
 
   @media #{$on-tablet} {
     margin-bottom: 45px;
   }
 
   @media #{$on-desktop} {
-    margin-bottom: 71px;
+    margin-bottom: 73px;
   }
 }
 
@@ -39,7 +35,7 @@
 }
 
 .content__catalog {
-  margin-bottom: 25px;
+  margin-bottom: 27px;
 
   @media #{$on-tablet} {
     margin-bottom: 70px;
